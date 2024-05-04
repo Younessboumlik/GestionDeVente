@@ -1,5 +1,12 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+<<<<<<< HEAD
 Label{
 
     -fx-background-color : red;
 }
+=======
+
+/*#tableventes{
+	-fx-color:black;
+}*/
+>>>>>>> 6b8b3f21bb029daa4b7135329f0989e453f09e71
