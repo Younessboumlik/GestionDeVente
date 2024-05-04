@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="663.0" style="-fx-background-color: #F1FEFC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <children>
-      <TableView fx:id="tableventes" layoutY="126.0" prefHeight="297.0" prefWidth="663.0">
+      <TableView fx:id="tableventes" layoutY="126.0" prefHeight="297.0" prefWidth="663.0" style="-fx-background-color: #D6FFF6;">
         <columns>
-          <TableColumn prefWidth="77.33331298828125" text="id" />
-          <TableColumn prefWidth="73.33334350585938" text="C2" />
+          <TableColumn fx:id="numerofacture" prefWidth="174.0" text="numero de facture" />
+          <TableColumn fx:id="datefacture" minWidth="0.0" prefWidth="247.99996948242188" text="date de la facture" />
+            <TableColumn fx:id="montant" prefWidth="240.66668701171875" text="montant" />
         </columns>
       </TableView>
+      <MenuBar layoutX="6.0" layoutY="1.0" prefHeight="25.0" prefWidth="149.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+         </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
