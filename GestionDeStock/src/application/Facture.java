@@ -1,16 +1,17 @@
 package application;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Facture {
+
 	int numeroFacture;
-	Date dateFacture;
+	LocalDate dateFacture;
 	float montant;
 	
 	
-	public Facture(int numeroFacture, Date dateFacture, float montant) {
+	public Facture(int numeroFacture, LocalDate date1, float montant) {
 		this.numeroFacture = numeroFacture;
-		this.dateFacture = dateFacture;
+		this.dateFacture = date1;
 		this.montant = montant;
 	}
 
@@ -25,12 +26,12 @@ public class Facture {
 	}
 
 
-	public Date getDateFacture() {
+	public LocalDate getDateFacture() {
 		return dateFacture;
 	}
 
 
-	public void setDateFacture(Date dateFacture) {
+	public void setDateFacture(LocalDate dateFacture) {
 		this.dateFacture = dateFacture;
 	}
 

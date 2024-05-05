@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class ConnectToDB {
 	
@@ -38,7 +39,7 @@ public class ConnectToDB {
 	
 //	prendre des donnes d'une collone d'un tableau preciser a partir d'une connection.
 	
-	public static void getData(Connection connection,String table,String column) {
+	public static ArrayList<String> getData(Connection connection,String table,String column) {
 		
 		try {
 			Statement statement = connection.createStatement();
@@ -47,23 +48,27 @@ public class ConnectToDB {
 			
 			
 			ResultSet result = statement.executeQuery(request);
+			
+			ArrayList <String> results = new ArrayList<String>();
 	
 			while (result.next()) {
-			    System.out.println(result.getString(column));
-			    // Process columnValue
+			    results.add(result.getString(column));
 			}
+			
+			return results;
 			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
 	}
 	
-	public static void main(String[] args) {
-		Connection connexion = ConnectToDB.connectionDB();
-		getData(connexion,"facture","montant");
-	}
+//	public static void main(String[] args) {
+//		Connection connexion = ConnectToDB.connectionDB();
+//		getData(connexion,"facture","montant");
+//	}
 	
 
 }
