@@ -65,6 +65,20 @@ public class ConnectToDB {
 		return null;
 	}
 	
+	public static void delete(Connection connection, String table,String columnid,Integer ind) {
+		try {
+			Statement statement = connection.createStatement();
+			
+			String request = "DELETE FROM " + table +" WHERE " + columnid + " = "  +ind ;
+			
+			statement.executeUpdate(request);
+			
+			System.out.println("Suppresion reussite.");
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
 //	public static void main(String[] args) {
 //		Connection connexion = ConnectToDB.connectionDB();
 //		getData(connexion,"facture","montant");
