@@ -97,11 +97,7 @@ public class ClientsuppmodifController implements Initializable{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	    	 nomcolon.setCellValueFactory(new PropertyValueFactory<Client,String>("nom"));
-	    	 prenomcolone.setCellValueFactory(new PropertyValueFactory<Client,String>("prenom"));
-	    	 adresscolone.setCellValueFactory(new PropertyValueFactory<Client,String>("adresse"));
-	    	 telecolone.setCellValueFactory(new PropertyValueFactory<Client,Integer>("telephone"));
-	    	 modifcolone.setCellValueFactory(new PropertyValueFactory<Client,Button>("modifbutton"));
+	    	
 	    	 TableClient.setItems(ListClient);
 	    }
 
@@ -135,7 +131,7 @@ public class ClientsuppmodifController implements Initializable{
 			            "telephone"
 			        );
 			combobox.setItems(options);
-			Connection connection = ConnectToDB.connectionDB();
+			 Connection connection = ConnectToDB.connectionDB();
 	    	 ResultSet result = ConnectToDB.selecttous(connection,"client");
 	    	 ObservableList<Client> ListClient = FXCollections.observableArrayList();
 	    	 try {
@@ -153,7 +149,25 @@ public class ClientsuppmodifController implements Initializable{
 	    	 adresscolone.setCellValueFactory(new PropertyValueFactory<Client,String>("adresse"));
 	    	 telecolone.setCellValueFactory(new PropertyValueFactory<Client,Integer>("telephone"));
 	    	 modifcolone.setCellValueFactory(new PropertyValueFactory<Client,Button>("modifbutton"));
+	    	 suppcolone.setCellValueFactory(new PropertyValueFactory<Client,Button>("suppbutton"));
 	    	 TableClient.setItems(ListClient);
 			
 		}
+	    public static void refreshClient() {
+	    	 
+	    	 Connection connection = ConnectToDB.connectionDB();
+	    	 ResultSet result = ConnectToDB.selecttous(connection,"client");
+	    	 ObservableList<Client> ListClient = FXCollections.observableArrayList();
+	    	 try {
+	    	 while(result.next()) {
+	    		
+					ListClient.add(new Client(result.getInt("numeroclient"),result.getString("nom"),result.getString("prenom"),result.getString("adresse"),result.getInt("telephone")));
+				}
+	    	 }
+	    	 catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    	 controller.TableClient.setItems(ListClient);
+	    }
 }

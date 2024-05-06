@@ -1,5 +1,7 @@
 package application;
 
+import java.sql.Connection;
+
 import javafx.scene.control.Button;
 
 
@@ -15,8 +17,10 @@ public class Client{
 		this.id_client = id;
 		this.nom = nom;
 		this.suppbutton = new Button("supprimer");
-//		this.suppbutton.setOnAction(event -> delet());
+		this.suppbutton.setOnAction(event -> delet());
+		this.suppbutton.setStyle("-fx-background-color:red");
 		this.modifbutton = new Button("modifier");
+		this.modifbutton.setStyle("-fx-background-color:blue");
 		this.modifbutton.setOnAction(event -> modifie());
 		
 		this.prenom = prenom;
@@ -67,6 +71,11 @@ public class Client{
 	}
 	public void modifie() {
 		ClientsuppmodifController.setvaluesontextfield(this);
+	}
+	public void delet() {
+		 Connection connection = ConnectToDB.connectionDB();
+		ConnectToDB.delete(connection, "client","numeroclient", this.id_client);
+		ClientsuppmodifController.refreshClient();
 	}
 	
 	
