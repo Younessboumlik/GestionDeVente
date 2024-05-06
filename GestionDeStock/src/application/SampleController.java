@@ -1,15 +1,22 @@
 package application;
 
 
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.net.URL;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -53,10 +60,6 @@ public class SampleController implements Initializable{
     public static void main(String[] args) {
 //        LocalDate  date1 = LocalDate.parse("2024-06-04");
 //        LocalDate  date2 = LocalDate.parse("2024-04-02");
-    
-
-    	
-
       
     }
     
@@ -77,7 +80,7 @@ public class SampleController implements Initializable{
     	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     	
     	
-    	for (int i = 0;i < list.size();i++) {
+    	for (int i = 0; i < list.size(); i++) {
     		Facture facture = new Facture(Integer.parseInt(list.get(i)),LocalDate.parse(list2.get(i)),Float.parseFloat(list3.get(i)));
     		listFacture.add(facture);
     	}
@@ -97,6 +100,39 @@ public class SampleController implements Initializable{
 		montant.setCellValueFactory(new PropertyValueFactory<Facture,Float>("montant"));
 		
 		tableventes.setItems(getfacturedata());
+	}
+	
+    @FXML
+    void toCsv(ActionEvent event) {
+		
+    	FileWriter w;
+		try {
+			w = new FileWriter("C:\\Users\\YOUNESS\\Desktop\\studies\\ENSA\\IID\\S2\\Java\\factures.csv");
+	    	BufferedWriter w2 = new BufferedWriter(w);
+	    	
+	    	 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+	    	
+//	    	w2.write();
+	    	for (Facture facture : getfacturedata()) {
+	    		String value = Integer.toString(facture.numeroFacture) + ',' +facture.dateFacture.format(formatter) + ',' + facture.montant ;
+	    		w2.write(value);
+	    		System.out.println(facture.numeroFacture);
+	    		w2.newLine();
+	    	}
+	    	
+	        w2.flush();
+	        w2.close();
+	        
+	        System.out.println("Le fichiers est cree avec succes");
+	   
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		
+		
 	}
 
 }

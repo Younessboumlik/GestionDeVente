@@ -1,0 +1,8 @@
+#numerofacture{
+    -fx-alignment: center;
+}
+
+
+#exportToCsv:hover{
+	-fx-background-color :  #F1F000;
+}
