@@ -46,6 +46,8 @@ public class Facture {
 		else if(result.get() == ButtonType.OK) {
 			Connection connexion = ConnectToDB.connectionDB();
 			ConnectToDB.delete(connexion, "facture", "numerofacture", this.numeroFacture);
+
+			SampleController.refreshfacture();
 		}
 	}
 

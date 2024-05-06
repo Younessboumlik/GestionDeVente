@@ -26,6 +26,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SampleController implements Initializable{
 	
+	static SampleController  controller;
+	
+//	public SampleController() {
+//		controller = this;
+//	}
+	
+	public static SampleController  returnController() {
+		return controller;
+	}
+	
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	
     @FXML
@@ -40,7 +50,7 @@ public class SampleController implements Initializable{
 
 
     @FXML
-    private TableView<Facture> tableventes;
+    public TableView<Facture> tableventes;
     
   
 
@@ -64,6 +74,7 @@ public class SampleController implements Initializable{
       
     }
     
+//    retourn une list ObservableList qui contient tout les factures de la base de donnes.
     public static ObservableList <Facture> getfacturedata() {
     	
     	ObservableList<Facture> listFacture = FXCollections.observableArrayList(
@@ -86,9 +97,7 @@ public class SampleController implements Initializable{
     		listFacture.add(facture);
     		
     	}
-    	
-    	
-    	
+
     	return listFacture;
     	
 //        listFacture.add(new Facture(1, date1, 4.4f));
@@ -98,6 +107,14 @@ public class SampleController implements Initializable{
 //    @FXML
 //    private TableColumn<Facture, Void> deleteButtonColumn;
 
+    
+//    permer de refrechir le tableau des factures
+    public static void refreshfacture() {
+
+    	controller = SampleController.returnController();
+    	controller.tableventes.setItems(getfacturedata());
+    }
+//    permet d'initialiser le tableau des factures
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -105,9 +122,6 @@ public class SampleController implements Initializable{
 //		TableColumn<Facture,Button> deletebutton = new TableColumn<Facture,Button>("Supprimer");
 		TableColumn<Facture, Button> deletebutton = new TableColumn<>("Supprimer");
 		
-
-
-
 		
 		numerofacture.setCellValueFactory(new PropertyValueFactory<Facture,Integer>("numeroFacture"));
 		datefacture.setCellValueFactory(new PropertyValueFactory<Facture,LocalDate>("dateFacture"));
