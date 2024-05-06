@@ -35,7 +35,7 @@ public class ConnectToDB {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Connextion reussite");
+		System.out.println("Connextion reussite...");
 		return connection;	
 	
 	}

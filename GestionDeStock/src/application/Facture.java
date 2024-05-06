@@ -26,7 +26,7 @@ public class Facture {
 		this.deletebutton = new Button();
 		this.deletebutton.setText("Delete");
 		this.deletebutton.setOnAction(event -> deletefacture());
-//		this.deletebutton.sty
+		this.deletebutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
 	}
 
 //	l'evenement pour supprimer une facture.

@@ -28,9 +28,9 @@ public class SampleController implements Initializable{
 	
 	static SampleController  controller;
 	
-//	public SampleController() {
-//		controller = this;
-//	}
+	public SampleController() {
+		controller = this;
+	}
 	
 	public static SampleController  returnController() {
 		return controller;

@@ -14,8 +14,8 @@
       <TableView fx:id="tableventes" layoutY="126.0" prefHeight="297.0" prefWidth="663.0" style="-fx-background-color: #D6FFF6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
         <columns>
           <TableColumn fx:id="numerofacture" prefWidth="174.0" text="numero de facture" />
-          <TableColumn fx:id="datefacture" minWidth="0.0" prefWidth="247.99996948242188" style="-fx-text-align: center;" text="date de la facture" />
-            <TableColumn fx:id="montant" prefWidth="240.66668701171875" text="montant" />
+          <TableColumn fx:id="datefacture" minWidth="0.0" prefWidth="181.33338928222656" style="-fx-text-align: center;" text="date de la facture" />
+            <TableColumn fx:id="montant" prefWidth="121.33331298828125" text="montant" />
         </columns>
       </TableView>
       <MenuBar layoutX="-17.0" layoutY="1.0" prefHeight="25.0" prefWidth="149.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
