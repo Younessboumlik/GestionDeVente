@@ -29,8 +29,6 @@ public class SampleController implements Initializable{
     @FXML
     private TableColumn<Facture, Float> montant;
 
-
-
     @FXML
     private TableView<Facture> tableventes;
     
@@ -39,9 +37,7 @@ public class SampleController implements Initializable{
     
     
     
-    ObservableList<Facture> listFacture = FXCollections.observableArrayList(
-
-    	);
+ 
     
     
 //    listFacture.add(new Facture(1, date1, 4.4f));
@@ -95,7 +91,7 @@ public class SampleController implements Initializable{
 		numerofacture.setCellValueFactory(new PropertyValueFactory<Facture,Integer>("numeroFacture"));
 		datefacture.setCellValueFactory(new PropertyValueFactory<Facture,LocalDate>("dateFacture"));
 		montant.setCellValueFactory(new PropertyValueFactory<Facture,Float>("montant"));
-		
+
 		tableventes.setItems(getfacturedata());
 	}
 
