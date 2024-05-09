@@ -15,11 +15,20 @@ public class ConnectToDB {
 
 //	etablir une connection a la db.
 	public static Connection connectionDB() {
-
+		
+		
 		String url = "jdbc:mysql://localhost:3306/gestioncommande";
 		String user = "root";
-		String password = "12345678";
+		String password = "";
 		Connection connection = null;
+		
+
+
+		
+//		String url = "jdbc:mysql://localhost:3306/gestioncommande";
+//		String user = "root";
+//		String password = "";
+//		Connection connection = null;
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -159,6 +168,7 @@ public static ResultSet selecttous(Connection connection,String Table) {
 //		Connection connexion = ConnectToDB.connectionDB();
 //		getData(connexion,"facture","montant");
 //	}
+
 static void insertcommande(Connection connection,Commande commande) {
 	try {
 		PreparedStatement prepare = connection.prepareStatement("insert into commande(datecommande,numeroclient) values (?,?);");
@@ -191,5 +201,6 @@ static void insertcommande(Connection connection,Commande commande) {
 		e.printStackTrace();
 	}
 }
+
 
 }

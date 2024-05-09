@@ -15,12 +15,17 @@ public class Facture {
 	float montant;
 //	Ce button est associe a chaque objet de type Facture, il va nous permet de le supprimer du tableauview.
 	Button deletebutton;
+	
+	int numeroCommande;
 
 
-	public Facture(int numeroFacture, LocalDate date1, float montant) {
+	public Facture(int numeroFacture, LocalDate date1, float montant,int numeroCommande) {
 		this.numeroFacture = numeroFacture;
 		this.dateFacture = date1;
 		this.montant = montant;
+		
+		
+		this.numeroCommande = numeroCommande;
 		
 //		Le button de suppresion
 		this.deletebutton = new Button();
@@ -90,6 +95,14 @@ public class Facture {
 
 	public void setDeletebutton(Button deletebutton) {
 		this.deletebutton = deletebutton;
+	}
+
+	public int getNumeroCommande() {
+		return numeroCommande;
+	}
+
+	public void setNumeroCommande(int numeroCommande) {
+		this.numeroCommande = numeroCommande;
 	}
 	
 	
