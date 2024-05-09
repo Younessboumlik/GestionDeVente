@@ -1,8 +1,10 @@
 package application;
 
+import java.awt.Checkbox;
 import java.sql.Connection;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 
 
 public class Client{
@@ -13,6 +15,8 @@ public class Client{
 	private int telephone;
 	private Button suppbutton;
 	private Button modifbutton;
+	private CheckBox checkbox;
+	
 	public Client(int id,String nom,String prenom,String adress,int tele) {
 		this.id_client = id;
 		this.nom = nom;
@@ -26,6 +30,13 @@ public class Client{
 		this.prenom = prenom;
 		this.adresse = adress;
 		this.telephone = tele;
+	}
+	public CheckBox getCheckbox() {
+		return checkbox;
+	}
+	public void setCheckbox(CheckBox checkbox) {
+		this.checkbox = checkbox;
+		this.checkbox.setOnAction(event->checkdecheck());
 	}
 	public int getId_client() {
 		return id_client;
@@ -77,6 +88,17 @@ public class Client{
 		ConnectToDB.delete(connection, "client","numeroclient", this.id_client);
 		ClientsuppmodifController.refreshClient();
 	}
+	public void checkdecheck() {
+		if (this.checkbox.isSelected()) {
+			AjouterCommandeController.checkboxIsSelected(true,this.id_client);
+		}
+		else {
+			AjouterCommandeController.checkboxIsSelected(false,this.id_client);
+
+		}
+		}
+
+	}
+
 	
 	
-}

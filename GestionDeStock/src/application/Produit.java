@@ -1,11 +1,28 @@
 package application;
-import java.awt.Checkbox;
+import javafx.scene.control.CheckBox;
+
+import javafx.scene.control.TextField;
 public class Produit{
    int numProduit;
    String nomProduit;
    int QuantiteProduit;
    double prix;
-   Checkbox checkProduit;
+   CheckBox checkProduit;
+   public CheckBox getCheckProduit() {
+	return checkProduit;
+}
+public void setCheckProduit(CheckBox checkProduit) {
+	this.checkProduit = checkProduit;
+	this.checkProduit.setOnAction(event->unablequatitetext());
+}
+public TextField getQuantitetext() {
+	return quantitetext;
+}
+public void setQuantitetext(TextField quantitetext) {
+	this.quantitetext = quantitetext;
+	this.quantitetext.setDisable(true);
+}
+TextField quantitetext;
    public Produit(int numProduit,String nomProduit,int QuantiteProduit,double prix) {
 	   this.numProduit = numProduit;
 	   this.nomProduit = nomProduit;
@@ -36,6 +53,16 @@ public double getPrix() {
 }
 public void setPrix(double prix) {
 	this.prix = prix;
+}
+void unablequatitetext(){
+	if (this.checkProduit.isSelected()){
+	 AjouterCommandeController.Ajouterproduit(this);
+	this.quantitetext.setDisable(false);
+	}
+	else {
+		AjouterCommandeController.Ajouterproduit(this);
+	 this.quantitetext.setDisable(true);
+	}
 }
    
 }

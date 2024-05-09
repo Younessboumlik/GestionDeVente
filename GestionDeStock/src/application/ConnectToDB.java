@@ -1,5 +1,5 @@
 package application;
-
+import java.sql.Date;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -159,6 +159,37 @@ public static ResultSet selecttous(Connection connection,String Table) {
 //		Connection connexion = ConnectToDB.connectionDB();
 //		getData(connexion,"facture","montant");
 //	}
-	
+static void insertcommande(Connection connection,Commande commande) {
+	try {
+		PreparedStatement prepare = connection.prepareStatement("insert into commande(datecommande,numeroclient) values (?,?);");
+		prepare.setDate(1,Date.valueOf(commande.getDatecomande()));
+		prepare.setInt(2,commande.getNum_client());
+		prepare.execute();
+//		prepare = connection.prepareStatement("select numerocommande from commande DESC limit 1");
+//		ResultSet numerocommand
+		Statement statement;
+		statement = connection.createStatement();
+		ResultSet result = statement.executeQuery("select numerocommande from commande order by numerocommande DESC limit 1");
+		result.next();
+		int numcom = result.getInt("numerocommande");
+		for(int i =0;i<commande.list_produit.size();i++) {
+			prepare = connection.prepareStatement("insert into avoir(numerocommande,numeroproduit,Quantite_prod) values (?,?,?);");
+			PreparedStatement prepare2 = connection.prepareStatement("Update produits set quantite = ? where numeroproduit;");
+			prepare2.setInt(1,commande.list_produit.get(i).numProduit);
+			prepare2.setInt(1,commande.list_produit.get(i).QuantiteProduit-Integer.parseInt((commande.list_produit.get(i).getQuantitetext().getText())));
+			prepare2.execute();
+			prepare.setInt(1,numcom);
+			prepare.setInt(2,commande.list_produit.get(i).numProduit);
+			prepare.setInt(3,Integer.parseInt((commande.list_produit.get(i).getQuantitetext().getText())));
+			prepare.execute();
+			
+		}
+		
+	    
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 
 }
