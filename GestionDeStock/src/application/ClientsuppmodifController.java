@@ -114,7 +114,7 @@ public class ClientsuppmodifController implements Initializable{
 	    }
 	    public static void setvaluesontextfield(Client client) {
 	        controller = ClientsuppmodifController.returncreatcontroller();
-	    	System.out.println("kkkkkkkkkk");
+	    	
 	    	controller.nomtext.setText(client.getNom());
 	    	controller.prenomtext.setText(client.getPrenom());
 	    	controller.adresstext.setText(client.getAdresse());
