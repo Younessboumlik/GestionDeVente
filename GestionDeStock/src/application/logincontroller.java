@@ -2,9 +2,9 @@ package application;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-
 import java.io.IOException;
 
+import org.jasypt.util.text.BasicTextEncryptor;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,19 +23,26 @@ public class logincontroller {
     @FXML
     void submit(ActionEvent event) {
       try {
+    	  
+	        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+	        textEncryptor.setPassword("Gestion de vente");
+	        
+	        
         BufferedReader readline = new BufferedReader(new FileReader("userdata"));
         String input = usernametext.getText();
         String password = passwordtext.getText();
+//        String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
+        
         if (input.equals(readline.readLine())){
-           if (password.equals(readline.readLine())){
+           if (password.equals(textEncryptor.decrypt(readline.readLine()))){
             labelcheck.setText("your password is correct !");
            }
            else {
-            labelcheck.setText("yerooooooor you are incorrect !");
+            labelcheck.setText("erooooooor you are incorrect !");
            }
         }
         else {
-            labelcheck.setText("yerooooooor you are incorrect !");
+            labelcheck.setText("erooooooor you are incorrect !");
       
         }
         
