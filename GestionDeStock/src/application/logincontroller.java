@@ -11,6 +11,9 @@ import java.util.Properties;
 
 import com.mysql.cj.protocol.Message;
 
+import org.jasypt.util.text.BasicTextEncryptor;
+
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -81,19 +84,26 @@ public class logincontroller {
     @FXML
     void submit(ActionEvent event) {
       try {
+    	  
+	        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+	        textEncryptor.setPassword("Gestion de vente");
+	        
+	        
         BufferedReader readline = new BufferedReader(new FileReader("userdata"));
         String input = usernametext.getText();
         String password = passwordtext.getText();
+//        String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
+        
         if (input.equals(readline.readLine())){
-           if (password.equals(readline.readLine())){
+           if (password.equals(textEncryptor.decrypt(readline.readLine()))){
             labelcheck.setText("your password is correct !");
            }
            else {
-            labelcheck.setText("yerooooooor you are incorrect !");
+            labelcheck.setText("erooooooor you are incorrect !");
            }
         }
         else {
-            labelcheck.setText("yerooooooor you are incorrect !");
+            labelcheck.setText("erooooooor you are incorrect !");
       
         }
         

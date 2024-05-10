@@ -2,14 +2,11 @@ package application;
 import java.sql.Date;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import javafx.scene.control.Button;
-
-import java.sql.*;
 public class ConnectToDB {
 	
 
