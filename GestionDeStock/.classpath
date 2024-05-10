@@ -6,7 +6,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySqlConnector"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sql"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/mail.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jaf-1.0.2/activation.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

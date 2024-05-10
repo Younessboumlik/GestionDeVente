@@ -14,8 +14,7 @@
    <children>
       <Label layoutX="85.0" layoutY="196.0" prefHeight="29.0" prefWidth="75.0" text="  password" />
       <PasswordField fx:id="passwordtext" layoutX="160.0" layoutY="198.0" prefHeight="25.0" prefWidth="217.0" />
-      <Button layoutX="220.0" layoutY="243.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="75.0" text="log in" />
-      <Label fx:id="labelcheck" layoutX="277.0" layoutY="241.0" prefHeight="29.0" prefWidth="315.0" />
+      <Button layoutX="160.0" layoutY="240.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="75.0" text="log in" />
       <Pane prefHeight="188.0" prefWidth="539.0">
          <children>
             <TextField fx:id="usernametext" layoutX="161.0" layoutY="137.0" prefHeight="29.0" prefWidth="217.0" />
@@ -29,7 +28,9 @@
                </effect>
             </Label>
             <ImageView fitHeight="93.0" fitWidth="105.0" layoutX="205.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="labelcheck" layoutX="112.0" layoutY="40.0" prefHeight="29.0" prefWidth="315.0" />
          </children>
       </Pane>
+      <Button fx:id="oubliermotdepass" layoutX="305.0" layoutY="240.0" mnemonicParsing="false" onAction="#opencodeverifwindow" prefHeight="25.0" prefWidth="143.0" text="mot de passe oublie ?" />
    </children>
 </AnchorPane>
