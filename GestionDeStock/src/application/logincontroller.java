@@ -1,18 +1,20 @@
 package application;
-import javax.mail.*;
-
-import javax.mail.internet.*;
-import java.util.Properties;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+//import java.util.Properties;
+//
+//import com.mysql.cj.protocol.Message;
 import java.util.Properties;
 
-import com.mysql.cj.protocol.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import org.jasypt.util.text.BasicTextEncryptor;
-
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,18 +36,22 @@ public class logincontroller {
     @FXML
     void opencodeverifwindow(ActionEvent event) {
     	Properties props = new Properties();
+//    	props.put("mail.smtp.user", "boulidamabdellah8@gmail.com");
+    	props.put("mail.smtp.debug", "true");
+    	props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true"); // Enable authentication if needed
         props.put("mail.smtp.starttls.enable", "true"); // Enable TLS encryption
-        props.setProperty("mail.smtp.port", "25");
+        props.setProperty("mail.smtp.ssl.trust","*");
+        props.setProperty("mail.smtp.port", "2525");
         // Get mail session
-        Session session = Session.getDefaultInstance(props);
+        Session session = Session.getInstance(props);
 
         try {
           // Create MimeMessage object
           MimeMessage email = new MimeMessage(session);
 
           // Set sender address
-          email.setFrom(new InternetAddress("boulidamabdellah8@gmail.com"));
+          email.setFrom(new InternetAddress("admin@localserver.com"));
 
           // Set recipient address
           email.setRecipients(MimeMessage.RecipientType.TO, InternetAddress.parse("boulidamabdellah8@gmail.com"));
@@ -59,7 +65,7 @@ public class logincontroller {
           // Send the email
           System.out.println("lllllll");
           Transport transport = session.getTransport("smtp");
-          transport.connect("smtp.elasticemail.com", "boulidamabdellah8@gmail.com", "2D1FD71013A1879345965F0A0A31F96B386B"); // Connect to SMTP server
+          transport.connect("sandbox.smtp.mailtrap.io", "boulidamabdellah8@gmail.com", "d6c113fabad2e1"); // Connect to SMTP server
           transport.sendMessage(email, email.getAllRecipients()); // Send email
           transport.close();
 
@@ -68,6 +74,9 @@ public class logincontroller {
         } catch (MessagingException e) {
           e.printStackTrace();
         }
+    	
+
+    	
     	try {
     		Stage  primaryStage = new Stage();
 			Parent root;
@@ -92,10 +101,9 @@ public class logincontroller {
         BufferedReader readline = new BufferedReader(new FileReader("userdata"));
         String input = usernametext.getText();
         String password = passwordtext.getText();
-//        String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
-        
         if (input.equals(readline.readLine())){
            if (password.equals(textEncryptor.decrypt(readline.readLine()))){
+              labelcheck.setText("your password is correct !");
             labelcheck.setText("your password is correct !");
            }
            else {
@@ -108,7 +116,8 @@ public class logincontroller {
         }
         
         readline.close();
-     } 
+     }
+      
      catch (FileNotFoundException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();

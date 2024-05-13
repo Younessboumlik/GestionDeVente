@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AjouterCommandeController">
    <children>
-      <ComboBox fx:id="cobobox" layoutX="31.0" layoutY="101.0" prefHeight="25.0" prefWidth="229.0" />
+      <ComboBox fx:id="combobox" layoutX="31.0" layoutY="101.0" prefHeight="25.0" prefWidth="229.0" />
       <Label layoutX="269.0" layoutY="14.0" prefHeight="17.0" prefWidth="169.0" text="Ajouter une commande " />
       <Label layoutX="84.0" layoutY="71.0" prefHeight="17.0" prefWidth="152.0" text="search a client by " />
       <TableView fx:id="TabeaulClient" layoutX="6.0" layoutY="175.0" prefHeight="200.0" prefWidth="335.0">
@@ -23,8 +23,8 @@
             <TableColumn fx:id="checkclient" prefWidth="59.333333333333314" text="checked" />
         </columns>
       </TableView>
-      <TextField fx:id="searchtexh" layoutX="39.0" layoutY="142.0" />
-      <Button fx:id="cherche" layoutX="197.0" layoutY="142.0" mnemonicParsing="false" text="searche" />
+      <TextField fx:id="searchtext" layoutX="39.0" layoutY="142.0" />
+      <Button fx:id="cherche" layoutX="197.0" layoutY="142.0" mnemonicParsing="false" onAction="#cherche" text="searche" />
       <Label layoutX="76.0" layoutY="39.0" prefHeight="17.0" prefWidth="121.0" />
       <Label layoutX="455.0" layoutY="133.0" prefHeight="17.0" prefWidth="169.0" text="liste des produit " />
       <TableView fx:id="TableauProduit" layoutX="341.0" layoutY="175.0" prefHeight="200.0" prefWidth="335.0">

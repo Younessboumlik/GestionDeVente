@@ -1,6 +1,6 @@
 package application;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-
 import javafx.scene.control.TextField;
 public class Produit{
    int numProduit;
@@ -8,6 +8,25 @@ public class Produit{
    int QuantiteProduit;
    double prix;
    CheckBox checkProduit;
+   int Quantitechoisie;
+   Button suppproduittinavoir;
+   Button modifproduitinavoir;
+   public Button getSuppproduittinavoir() {
+	return suppproduittinavoir;
+}
+public void setSuppproduittinavoir(Button suppproduittinavoir) {
+	this.suppproduittinavoir = suppproduittinavoir;
+	this.suppproduittinavoir.setOnAction(event->suppproduitinavoir());
+}
+public Button getModifproduitinavoir() {
+	return modifproduitinavoir;
+}
+public void setModifproduitinavoir(Button modifproduitinavoir) {
+	this.modifproduitinavoir = modifproduitinavoir;
+	this.modifproduitinavoir.setOnAction(event->modifierproduitinavoir());
+
+}
+
    public CheckBox getCheckProduit() {
 	return checkProduit;
 }
@@ -18,16 +37,29 @@ public void setCheckProduit(CheckBox checkProduit) {
 public TextField getQuantitetext() {
 	return quantitetext;
 }
+public int getQuantitechoisie() {
+	return Quantitechoisie;
+}
+public void setQuantitechoisie(int quantitechoisie) {
+	Quantitechoisie = quantitechoisie;
+}
 public void setQuantitetext(TextField quantitetext) {
 	this.quantitetext = quantitetext;
 	this.quantitetext.setDisable(true);
 }
 TextField quantitetext;
-   public Produit(int numProduit,String nomProduit,int QuantiteProduit,double prix) {
+   public Produit(int numProduit,String nomProduit,int QuantiteProduit,double prix ) {
 	   this.numProduit = numProduit;
 	   this.nomProduit = nomProduit;
 	   this.QuantiteProduit = QuantiteProduit;
 	   this.prix = prix;
+	   
+   }
+   public Produit(int numProduit,String nomProduit,int Quantitechoisie) {
+	   this.numProduit = numProduit;
+	   this.nomProduit = nomProduit;
+	   this.Quantitechoisie = Quantitechoisie;
+	   
 	   
    }
 public int getNumProduit() {
@@ -60,9 +92,15 @@ void unablequatitetext(){
 	this.quantitetext.setDisable(false);
 	}
 	else {
-		AjouterCommandeController.Ajouterproduit(this);
+		AjouterCommandeController.removeproduit(null);
 	 this.quantitetext.setDisable(true);
 	}
+}
+void modifierproduitinavoir() {
+	supmodifcommandecontroller.setinfotomodifproduit(this);
+}
+void suppproduitinavoir() {
+	supmodifcommandecontroller.suppproduitfromavoir(this.numProduit);
 }
    
 }

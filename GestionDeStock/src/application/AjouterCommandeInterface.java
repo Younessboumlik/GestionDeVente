@@ -19,7 +19,6 @@ public class AjouterCommandeInterface extends Application {
 				primaryStage.setScene(Scene);
 				primaryStage.show();
 			} catch (IOException e) {
-				e.printStackTrace();
 			}
 			
 			// primaryStage.setHeight(400);

@@ -7,12 +7,49 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
-
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sql"/>
 	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/mail.jar"/>
 	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jaf-1.0.2/activation.jar"/>
-
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jasypt"/>
-
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/lib/dsn.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/lib/imap.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/lib/smtp.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-1.9.0-lite.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-acegisecurity-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-acegisecurity-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-acegisecurity-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-hibernate3-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-hibernate3-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-hibernate3-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-hibernate4-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-hibernate4-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-hibernate4-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring2-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring2-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring2-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring3-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring3-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring3-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring31-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring31-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-spring31-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-springsecurity2-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-springsecurity2-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-springsecurity2-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-springsecurity3-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-springsecurity3-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-springsecurity3-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-wicket13-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-wicket13-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-wicket13-1.9.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,12 +1,14 @@
 package application;
-import java.sql.Date;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import javafx.collections.ObservableList;
 public class ConnectToDB {
 	
 
@@ -198,6 +200,71 @@ static void insertcommande(Connection connection,Commande commande) {
 		e.printStackTrace();
 	}
 }
-
+static ResultSet getproducts(Connection connection,int numcommmande){
+	Statement statement;
+	try {
+		statement = connection.createStatement();
+		return statement.executeQuery("select * from avoir,produits where avoir.numeroproduit = produits.numeroproduit and avoir.numerocommande = "+ Integer.toString(numcommmande)+ ";");
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+}
+static void supprimercommande(Connection connection , Commande commande) {
+	
+	try {
+		PreparedStatement prepare = connection.prepareStatement("DELETE FROM avoir WHERE numerocommande = ?");
+		prepare.setInt(1, commande.numerocommande);
+		prepare.execute();
+		prepare = connection.prepareStatement("delete from commande where numerocommande = ?");
+		prepare.setInt(1, commande.numerocommande);
+		prepare.execute();
+	}  catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+}
+static void  modifiercomande(Connection connection ,Commande commande) {
+	try {
+		PreparedStatement prepare = connection.prepareStatement("Update commande set numeroclient = ?,datecommande = ? where numerocommande = ?;");
+		System.out.println(commande.num_client);
+		prepare.setInt(1, commande.num_client);
+		prepare.setDate(2, Date.valueOf(commande.getDatecomande()));
+		prepare.setInt(3, commande.numerocommande);
+		prepare.execute();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+static void modifierproduit(Connection connection ,Produit produit,int numCommande) {
+	try {
+		PreparedStatement prepare = connection.prepareStatement("Update avoir set Quantite_prod = ? where numerocommande = ? and numeroproduit = ? ;");
+		
+		prepare.setInt(1, produit.getQuantitechoisie());
+		prepare.setInt(2, numCommande);
+		prepare.setInt(3, produit.getNumProduit());
+		prepare.execute();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+static void supprimerrproduit(Connection connection , int num_produit ,int num_commande) {
+	try {
+		PreparedStatement prepare = connection.prepareStatement("Delete from avoir  where numerocommande = ? and numeroproduit = ? ;");
+		
+		prepare.setInt(1,num_commande);
+		prepare.setInt(2, num_produit);
+		
+		prepare.execute();
+		System.out.println("llllllllll");
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 
 }
