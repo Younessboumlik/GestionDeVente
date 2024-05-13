@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.ZoneId;
 import java.util.ArrayList;
 
 import javafx.collections.ObservableList;
@@ -18,7 +19,7 @@ public class ConnectToDB {
 		
 		String url = "jdbc:mysql://localhost:3306/gestioncommande";
 		String user = "root";
-		String password = "12345678";
+		String password = "";
 		Connection connection = null;
 		
 
@@ -93,6 +94,57 @@ public class ConnectToDB {
 		  e.printStackTrace();
 	  }
 	  }
+	
+	public static void insertFactureData(Connection connection,Facture facture) {
+		  try {
+			  String query = "insert into Facture(datefacture,montant,numerocommande) values "
+			  		+ "(?,?,?);";
+			  PreparedStatement prepare = connection.prepareStatement(query);
+
+			  prepare.setDate(1,Date.valueOf(facture.getDateFacture()));
+			  prepare.setFloat(2,facture.getMontant());
+			  prepare.setInt(3,(facture.getNumeroCommande()));
+			  
+			  prepare.execute();
+			  
+			  
+		  }
+		  catch (SQLException e){
+			  e.printStackTrace();
+		  }
+		  }
+
+	public static void insertLivraisonData(Connection connection,Livraison livraison) {
+          try {
+              String query = "insert into Livraison(datelivraison,numerocommande) values "
+              		+ "(?,?);";
+              PreparedStatement prepare = connection.prepareStatement(query);
+              prepare.setDate(1,Date.valueOf(livraison.getDateLivraison()));
+              prepare.setInt(2,livraison.getNumeroCommande());
+              prepare.execute();
+              
+              
+          }
+          catch (SQLException e){
+              e.printStackTrace();
+          }
+          }
+public static void updatefacture(Connection connextion,Facture facture) {
+	try {
+		PreparedStatement prepare = connextion.prepareStatement(
+				"Update facture set dateFacture = ? ,montant = ? ,numeroCommande = ? where numeroFacture = ? ");
+		prepare.setInt(4, facture.getNumeroFacture());
+		prepare.setDate(1, Date.valueOf(facture.getDateFacture()));
+		prepare.setFloat(2, facture.getMontant());
+		prepare.setInt(3, facture.getNumeroCommande());
+
+		prepare.execute();
+		SampleController.refreshfacture();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 	
 public static ResultSet data(Connection connection,String table,String condition,String value){
 	

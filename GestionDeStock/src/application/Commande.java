@@ -1,10 +1,16 @@
 package application;
 
+
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.scene.control.Button;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+
 import javafx.scene.control.CheckBox;
 
 public class Commande {
@@ -12,7 +18,9 @@ public class Commande {
  LocalDate datecomande;
  int num_client;
  CheckBox check;
+
  CheckBox checkforproducts;
+
  ArrayList<Produit> list_produit;
  Button suppbutton;
  Button modifbutton;
@@ -34,7 +42,8 @@ public Commande(int numerocommande, LocalDate datecomande, int num_client){
 	this.numerocommande = numerocommande;
 	this.datecomande = datecomande;
 	this.num_client = num_client;
-	
+	this.check = new CheckBox();
+	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 }
 public CheckBox getCheck() {
 	return check;

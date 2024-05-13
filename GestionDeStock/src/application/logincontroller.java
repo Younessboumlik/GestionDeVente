@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 //import java.util.Properties;
+
 //
 //import com.mysql.cj.protocol.Message;
 import java.util.Properties;
@@ -14,7 +15,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+//import com.mysql.cj.protocol.Message;
+
+
 import org.jasypt.util.text.BasicTextEncryptor;
+import javax.activation.DataSource;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,8 +46,13 @@ public class logincontroller {
     	props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true"); // Enable authentication if needed
         props.put("mail.smtp.starttls.enable", "true"); // Enable TLS encryption
+
         props.setProperty("mail.smtp.ssl.trust","*");
         props.setProperty("mail.smtp.port", "2525");
+
+        props.setProperty("mail.smtp.port", "25");
+        props.setProperty("mail.smtp.ssl.trust","*");
+
         // Get mail session
         Session session = Session.getInstance(props);
 
@@ -65,7 +75,11 @@ public class logincontroller {
           // Send the email
           System.out.println("lllllll");
           Transport transport = session.getTransport("smtp");
+
           transport.connect("sandbox.smtp.mailtrap.io", "boulidamabdellah8@gmail.com", "d6c113fabad2e1"); // Connect to SMTP server
+
+          transport.connect("smtp-mail.outlook.com", "testsmtplib@outlook.com", "smtplib2023."); // Connect to SMTP server
+
           transport.sendMessage(email, email.getAllRecipients()); // Send email
           transport.close();
 
