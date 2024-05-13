@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 //import java.util.Properties;
-
 //
 //import com.mysql.cj.protocol.Message;
 import java.util.Properties;
@@ -19,7 +18,6 @@ import javax.mail.internet.MimeMessage;
 
 
 import org.jasypt.util.text.BasicTextEncryptor;
-import javax.activation.DataSource;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -9,5 +9,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sql"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MysqlConnector"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jasypt"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
