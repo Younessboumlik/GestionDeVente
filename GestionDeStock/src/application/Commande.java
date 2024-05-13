@@ -1,25 +1,27 @@
 package application;
 
-import java.awt.Checkbox;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import javafx.scene.control.CheckBox;
 
 public class Commande {
  int numerocommande;
  LocalDate datecomande;
  int num_client;
- Checkbox check;
+ CheckBox check;
  ArrayList<Produit> list_produit;
 public Commande(int numerocommande, LocalDate datecomande, int num_client){
 	this.numerocommande = numerocommande;
 	this.datecomande = datecomande;
 	this.num_client = num_client;
-	
+	this.check = new CheckBox();
+	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 }
-public Checkbox getCheck() {
+public CheckBox getCheck() {
 	return check;
 }
-public void setCheck(Checkbox check) {
+public void setCheck(CheckBox check) {
 	this.check = check;
 }
 public ArrayList<Produit> getList_produit() {

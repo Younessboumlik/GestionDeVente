@@ -23,7 +23,7 @@ public class login extends Application {
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.getCause();
 		}
 		
 		// primaryStage.setHeight(400);

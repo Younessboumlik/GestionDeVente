@@ -7,12 +7,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
-
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sql"/>
-	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/javamail-1.4.4/mail.jar"/>
-	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/jaf-1.0.2/activation.jar"/>
-
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jasypt"/>
-
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MysqlConnector"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jaf"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

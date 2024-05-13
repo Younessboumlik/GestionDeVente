@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -37,9 +38,7 @@ public class SampleController implements Initializable{
 		controller = this;
 	}
 	
-	public static SampleController  returnController() {
-		return controller;
-	}
+
 	
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	
@@ -57,26 +56,22 @@ public class SampleController implements Initializable{
     
     @FXML
     private TableColumn<Facture, Integer> numerocommande;
-
-
-    
   
     @FXML
-    private TextField adresstext;
+    private DatePicker newDateFacture;
+    
+
+    @FXML
+    private TextField newMontant;
+
+    @FXML
+    private TextField newNumeroCommande;
+
+    @FXML
+    private TextField newNumeroFacture;
     
     @FXML
     private TextField choosetext;
-    
-    @FXML
-    private TextField nomtext;
-    
-    @FXML
-    private TextField prenomtext;
-
-    @FXML
-    private TextField telephonetext;
-    
-    
 
     @FXML
     private Button cherche;
@@ -122,10 +117,29 @@ public class SampleController implements Initializable{
    	
    	tableventes.setItems(listFacture);
     }
+    
+    
 
+
+
+//  l'evenement apres clicker sur le button pour modifier une facture.
     @FXML
     void modifier(ActionEvent event) {
-
+        Connection connection = ConnectToDB.connectionDB();
+        new Facture(Integer.parseInt(newNumeroFacture.getText()),newDateFacture.getValue(),Float.parseFloat(newMontant.getText()),Integer.parseInt(newNumeroCommande.getText()));
+        ConnectToDB.updatefacture(connection, new Facture(Integer.parseInt(newNumeroFacture.getText()),newDateFacture.getValue(),Float.parseFloat(newMontant.getText()),Integer.parseInt(newNumeroCommande.getText())));
+        
+        
+    }
+    
+//    apres clicker le button modifier dans le tableau de facture
+    public static void  modifierFacture(Facture facture) {
+    	
+    	controller.newNumeroFacture.setText(Integer.toString(facture.numeroFacture));
+    	controller.newNumeroFacture.setDisable(true);
+    	controller.newDateFacture.setValue(facture.dateFacture);
+    	controller.newMontant.setText(Float.toString(facture.montant));
+    	controller.newNumeroCommande.setText(Integer.toString(facture.numeroCommande));	
     }
      
     
@@ -183,7 +197,6 @@ public class SampleController implements Initializable{
     
     public static void refreshfacture() {
 
-    	controller = SampleController.returnController();
     	controller.tableventes.setItems(getfacturedata());
     }
     
@@ -198,16 +211,19 @@ public class SampleController implements Initializable{
 		
 //		TableColumn<Facture,Button> deletebutton = new TableColumn<Facture,Button>("Supprimer");
 		TableColumn<Facture, Button> deletebutton = new TableColumn<>("Supprimer");
+		TableColumn<Facture, Button> modifiebutton = new TableColumn<>("Modifier");
 		
 		
 		numerofacture.setCellValueFactory(new PropertyValueFactory<Facture,Integer>("numeroFacture"));
 		datefacture.setCellValueFactory(new PropertyValueFactory<Facture,LocalDate>("dateFacture"));
 		montant.setCellValueFactory(new PropertyValueFactory<Facture,Float>("montant"));
 		numerocommande.setCellValueFactory(new PropertyValueFactory<Facture,Integer>("numeroCommande"));
+		modifiebutton.setCellValueFactory(new PropertyValueFactory<Facture,Button>("modifbutton"));
 
 //		deletebutton.setCellValueFactory(new PropertyValueFactory<Facture,String>("deletebutton"));
 		deletebutton.setCellValueFactory(new PropertyValueFactory<Facture,Button>("deletebutton"));
 		
+		tableventes.getColumns().add(modifiebutton);
 		tableventes.getColumns().add(deletebutton);
 		
 		
@@ -216,6 +232,8 @@ public class SampleController implements Initializable{
 		
 	}
 	
+	
+//	convert data to csv file
     @FXML
     void toCsv(ActionEvent event) {
 		

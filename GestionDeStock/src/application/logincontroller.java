@@ -7,11 +7,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Properties;
+//import java.util.Properties;
 
-import com.mysql.cj.protocol.Message;
+//import com.mysql.cj.protocol.Message;
 
 import org.jasypt.util.text.BasicTextEncryptor;
+import javax.activation.DataSource;
 
 
 import javafx.event.ActionEvent;
@@ -37,6 +38,7 @@ public class logincontroller {
         props.put("mail.smtp.auth", "true"); // Enable authentication if needed
         props.put("mail.smtp.starttls.enable", "true"); // Enable TLS encryption
         props.setProperty("mail.smtp.port", "25");
+        props.setProperty("mail.smtp.ssl.trust","*");
         // Get mail session
         Session session = Session.getDefaultInstance(props);
 
@@ -59,7 +61,7 @@ public class logincontroller {
           // Send the email
           System.out.println("lllllll");
           Transport transport = session.getTransport("smtp");
-          transport.connect("smtp.elasticemail.com", "boulidamabdellah8@gmail.com", "2D1FD71013A1879345965F0A0A31F96B386B"); // Connect to SMTP server
+          transport.connect("smtp-mail.outlook.com", "testsmtplib@outlook.com", "smtplib2023."); // Connect to SMTP server
           transport.sendMessage(email, email.getAllRecipients()); // Send email
           transport.close();
 
