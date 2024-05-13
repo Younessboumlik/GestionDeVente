@@ -43,7 +43,7 @@ public Commande(int numerocommande, LocalDate datecomande, int num_client){
 	this.datecomande = datecomande;
 	this.num_client = num_client;
 	this.check = new CheckBox();
-//	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
+ this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 }
 public CheckBox getCheck() {
 	return check;

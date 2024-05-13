@@ -20,6 +20,7 @@ public class supmodifcommandeinterface extends Application{
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 

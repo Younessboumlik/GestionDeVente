@@ -22,7 +22,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class supmodifcommandecontroller implements Initializable{
-
+	 @FXML
+	    private Button cherche;
     @FXML
     private TableColumn<Commande, CheckBox> checkocommande;
 
@@ -87,6 +88,37 @@ public class supmodifcommandecontroller implements Initializable{
     int num_commandeAmodifier;
     ArrayList<CheckBox> arrayofcheckboxes = new ArrayList<>();
     ObservableList<Produit> observerlistofproduit = FXCollections.observableArrayList();
+    @FXML
+    void chercher(ActionEvent event) {
+       ResultSet Commandes = ConnectToDB.data(connection, "Commande",combobox.getValue() , cherchetext.getText());
+       ObservableList<Commande> ListCommandes = FXCollections.observableArrayList();
+       try {
+	    	 while(Commandes.next()){
+	    		 
+	    		 Commande commande = new Commande(Commandes.getInt("numerocommande"),Commandes.getDate("datecommande").toLocalDate(),Commandes.getInt("numeroclient"));
+	    		 
+	    		 commande.setCheckforproducts(new CheckBox());
+	    		 commande.setModifbutton(new Button("modifier"));
+	    		 commande.setSuppbutton(new Button("supprimer"));
+	    		 controller.arrayofcheckboxes.add(commande.getCheckforproducts());
+	    		 ListCommandes.add(commande);
+	    		 System.out.println("ddddddddd");
+				}
+//	    	
+	    	 numclient.setCellValueFactory(new PropertyValueFactory<Commande,Integer>("num_client"));
+	    	 numcommande.setCellValueFactory(new PropertyValueFactory<Commande,Integer>("numerocommande"));
+	    	 date.setCellValueFactory(new PropertyValueFactory<Commande,LocalDate>("datecomande"));
+	    	 suppcommande.setCellValueFactory(new PropertyValueFactory<Commande,Button>("suppbutton"));
+	    	 modifiercommande.setCellValueFactory(new PropertyValueFactory<Commande,Button>("modifbutton"));
+	    	 checkocommande.setCellValueFactory(new PropertyValueFactory<Commande,CheckBox>("checkforproducts"));
+	    	 tableaucommand.setItems(ListCommandes);
+       }
+       catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	}    
+       
+    }
     static void detruiretableau() {
     	controller.observerlistofproduit = FXCollections.observableArrayList();
     	controller.tableauproduit.setItems(controller.observerlistofproduit);

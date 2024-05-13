@@ -6,6 +6,9 @@ import java.io.IOException;
 
 import org.jasypt.util.text.BasicTextEncryptor;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,21 +17,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 public class firstVisitcontroller {
+
 	@FXML
-	private TextField password;
+	private PasswordField password;
 
     @FXML
     private Button save;
 
     @FXML
-    private TextField sicuritykey;
+    private PasswordField sicuritykey;
 
     @FXML
     private TextField username;
@@ -36,6 +39,10 @@ public class firstVisitcontroller {
     private Label waitlabel;
     int i = 0;
     Timeline timeline;
+
+    @FXML
+    private ProgressIndicator progressbar;
+    double progressVlue ;
     @FXML
     void save(ActionEvent event) {
 
@@ -49,9 +56,12 @@ public class firstVisitcontroller {
 			writer.write('\n');
 			writer.write(textEncryptor.encrypt(sicuritykey.getText()));
 			writer.close();
-			
+			progressbar.setVisible(true);
+			progressVlue = progressbar.getProgress();
 			    timeline = new Timeline(new KeyFrame(Duration.seconds(1),e ->{
 				i++;
+				progressVlue = progressVlue + 0.33333;
+				progressbar.setProgress(progressVlue);
 				waitlabel.setText("wait for " + Integer.toString(i) + " s ...");
 				if (i == 3) {
 					timeline.pause();
@@ -79,7 +89,8 @@ public class firstVisitcontroller {
 			e.printStackTrace();
 		}
     }
-   
+    
 
+    
     
 }

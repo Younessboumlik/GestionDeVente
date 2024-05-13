@@ -39,5 +39,6 @@
       <ComboBox fx:id="combobox" layoutX="40.0" layoutY="40.0" prefWidth="150.0" />
       <TextField fx:id="cherchetext" layoutX="40.0" layoutY="72.0" />
       <Label layoutX="393.0" layoutY="360.0" prefHeight="17.0" prefWidth="55.0" text="quantite" />
+      <Button fx:id="cherche" layoutX="214.0" layoutY="72.0" mnemonicParsing="false" onAction="#chercher" text="chercher" />
    </children>
 </AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProduitsupmodifController">
+   <children>
+      <TableView fx:id="TableProduit" layoutX="196.0" layoutY="170.0" prefHeight="209.0" prefWidth="460.0">
+        <columns>
+          <TableColumn fx:id="numeroproduit" prefWidth="75.0" text="numeroproduit" />
+          <TableColumn fx:id="nomproduit" prefWidth="75.0" text="nomproduit" />
+          <TableColumn fx:id="quantite" prefWidth="75.0" text="quantite" />
+          <TableColumn fx:id="prix" prefWidth="75.0" text="prix" />
+          <TableColumn fx:id="supprimer" prefWidth="75.0" text="supprimer" />
+          <TableColumn fx:id="modifier" prefWidth="75.0" text="modifier" />
+        </columns>
+      </TableView>
+      <!-- Rest of your FXML code -->
+   </children>
+</AnchorPane>
