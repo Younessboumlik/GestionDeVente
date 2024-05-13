@@ -30,7 +30,7 @@ public class Livraison {
 //		Le button de modification
 		this.modifbutton = new Button("modifier");
 		this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
-		this.modifbutton.setOnAction(event -> modifieclicked());
+//		this.modifbutton.setOnAction(event -> modifieclicked());
 	}
 	public void deletefacture() {
 
@@ -52,9 +52,9 @@ public class Livraison {
 		}
 	}
 	
-	public void modifieclicked() {
-		SampleController.modifierFacture(this);
-	}
+//	public void modifieclicked() {
+//		SampleController.modifierFacture(this);
+//	}
 	public int getNumeroLivraison() {
 		return numeroLivraison;
 	}
