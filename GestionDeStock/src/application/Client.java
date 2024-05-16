@@ -21,7 +21,7 @@ public class Client{
 		this.nom = nom;
 		this.suppbutton = new Button("supprimer");
 		this.suppbutton.setOnAction(event -> delet());
-		this.suppbutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+		this.suppbutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:red;");
 		this.modifbutton = new Button("modifier");
 		this.modifbutton.setStyle("-fx-background-color:blue");
 		this.modifbutton.setOnAction(event -> modifie());

@@ -41,6 +41,6 @@
             <Image url="@../imges/sign-up-form-button-graphic-concept.jpg" />
          </image>
       </ImageView>
-      <ProgressIndicator fx:id="progressbar" layoutX="525.0" layoutY="54.0" progress="0.0" visible="false" />
+      <ProgressIndicator fx:id="progressbar" accessibleRole="TREE_ITEM" layoutX="511.0" layoutY="53.0" progress="0.0" style="-fx-background-image: #00ff00;" visible="false" />
    </children>
 </AnchorPane>

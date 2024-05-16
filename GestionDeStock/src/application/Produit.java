@@ -1,4 +1,6 @@
 package application;
+import java.sql.Connection;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -11,12 +13,31 @@ public class Produit{
    int Quantitechoisie;
    Button suppproduittinavoir;
    Button modifproduitinavoir;
-   public Button getSuppproduittinavoir() {
+   Button supprimerprd;
+   Button modifierprd;
+   public Button getSupprimerprd() {
+	return supprimerprd;
+}
+public void setSupprimerprd(Button supprimerprd) {
+	this.supprimerprd = supprimerprd;
+	supprimerprd.setOnAction(event->supprimerproduit());
+	this.supprimerprd.setStyle("-fx-background-color:red");
+}
+public Button getModifierprd() {
+	return modifierprd;
+}
+public void setModifierprd(Button modifierprd) {
+	this.modifierprd = modifierprd;
+	this.modifierprd.setOnAction(event->modifierproduit());
+	this.modifierprd.setStyle("-fx-background-color:blue");
+}
+public Button getSuppproduittinavoir() {
 	return suppproduittinavoir;
 }
 public void setSuppproduittinavoir(Button suppproduittinavoir) {
 	this.suppproduittinavoir = suppproduittinavoir;
 	this.suppproduittinavoir.setOnAction(event->suppproduitinavoir());
+	this.suppproduittinavoir.setStyle("-fx-background-color:red");
 }
 public Button getModifproduitinavoir() {
 	return modifproduitinavoir;
@@ -24,6 +45,8 @@ public Button getModifproduitinavoir() {
 public void setModifproduitinavoir(Button modifproduitinavoir) {
 	this.modifproduitinavoir = modifproduitinavoir;
 	this.modifproduitinavoir.setOnAction(event->modifierproduitinavoir());
+	this.modifproduitinavoir.setStyle("-fx-background-color:blue");
+	
 
 }
 
@@ -101,6 +124,15 @@ void modifierproduitinavoir() {
 }
 void suppproduitinavoir() {
 	supmodifcommandecontroller.suppproduitfromavoir(this.numProduit);
+}
+void supprimerproduit() {
+	 Connection connection = ConnectToDB.connectionDB();
+		ConnectToDB.delete(connection, "produits","numeroproduit", this.numProduit);
+		supmodifproduitcontroller.refreche();
+}
+void modifierproduit() {
+	supmodifproduitcontroller.setvaluesontextfield(this);
+	
 }
    
 }

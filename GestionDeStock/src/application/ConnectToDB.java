@@ -315,5 +315,37 @@ static void supprimerrproduit(Connection connection , int num_produit ,int num_c
 		e.printStackTrace();
 	}
 }
+static void modifierproduit(Connection connection,Produit produit) {
+	try {
+
+		 PreparedStatement prepare = connection.prepareStatement("Update produits set nomproduit = ? ,quantite = ? ,prix = ? where numeroproduit = ?");
+		  prepare.setString(1, produit.getNomProduit());
+		  prepare.setInt(2, produit.getQuantiteProduit());
+		  prepare.setDouble(3, produit.getPrix());
+		  prepare.setInt(4, produit.getNumProduit());
+		  prepare.execute();
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+static void AJouterProduit(Connection connection ,Produit produit) {
+	try {
+		  String query = "insert into produits(numeroproduit,nomproduit,quantite,prix) values (?,?,?,?);";
+		  PreparedStatement prepare = connection.prepareStatement(query);
+		 
+		  prepare.setInt(1, produit.getNumProduit());
+		  prepare.setString(2, produit.getNomProduit());
+		  prepare.setInt(3, produit.getQuantiteProduit());
+		  prepare.setDouble(4, produit.getPrix());
+		  prepare.execute();
+		  
+		  
+	  }
+	  catch (SQLException e){
+		  e.getNextException();
+}
+}
 
 }

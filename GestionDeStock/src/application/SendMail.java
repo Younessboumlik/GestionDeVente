@@ -20,7 +20,7 @@ public class SendMail {
 //	        props.put("mail.smtp.auth", "true"); // Enable authentication if needed
 	        props.put("mail.smtp.starttls.enable", "true"); // Enable TLS encryption
 	        props.setProperty("mail.smtp.ssl.trust","*");
-	        props.setProperty("mail.smtp.port", "587");
+	        props.setProperty("mail.smtp.port", "25");
 	        // Get mail session
 	        Session session = Session.getInstance(props);
 
@@ -31,7 +31,7 @@ public class SendMail {
 	          // Set sender address
 	          email.setFrom(new InternetAddress("admin@localserver.com"));
 
-	          // Set recipient address
+	          // Set recipient address	
 	          email.setRecipients(MimeMessage.RecipientType.TO, InternetAddress.parse("boulidamabdellah8@gmail.com"));
 
 	          // Set subject
