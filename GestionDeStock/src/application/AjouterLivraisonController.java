@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -21,7 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AjouterLivraisonController {
+public class AjouterLivraisonController implements Initializable{
 	
 	
 	Connection connection = ConnectToDB.connectionDB();
@@ -85,7 +86,7 @@ public class AjouterLivraisonController {
 //	    		 creation d'un objet commande a partir de ResultSet.
 	    		 Commande commandes = new Commande(result.getInt("numerocommande"),result.getDate("datecommande").toLocalDate(),result.getInt("numeroclient"));
 //	    		  definition de checkbox pour chaque commande.
-	    		 controller.Checkboxs.add(commandes.getCheck());
+	    		 controller.Checkboxs.add(commandes.getCheckForLivraison());
 	    		 ListCommande.add(commandes);
 				}
 	    	 }
@@ -105,14 +106,14 @@ public class AjouterLivraisonController {
 	          ConnectToDB.insertLivraisonData(connection, newLivraison);
 }
 
-	    	public void initialize(URL arg0, ResourceBundle arg1) {
+	    
+	    public void initialize(URL arg0, ResourceBundle arg1) {
 	    
 	    	
 	    	ResultSet commande = ConnectToDB.selecttous(connection, "Commande");
 	    	ObservableList<Commande> listCommande = FXCollections.observableArrayList();
 
 	    	try {
-	    		System.out.println("hiiiii");
 
 		    	 while(commande.next()) {
 //		    		  creation d'un objet commande a partir de ResultSet.
@@ -120,20 +121,20 @@ public class AjouterLivraisonController {
 		    		 
 //		    		 definition de checkbox pour chaque commande.
 		    		 
-		    		 controller.Checkboxs.add(commandes.getCheck());
+		    		 controller.Checkboxs.add(commandes.getCheckForLivraison());
 		    		 
 		    		 listCommande.add(commandes);	 
 		    }
   	    
 		    	 TableColumn<Commande, CheckBox> checkbox = new TableColumn<Commande, CheckBox>("Selectionner") ;
-
+		    	 
 		    	 numeroCommande.setCellValueFactory(new PropertyValueFactory<Commande,Integer>("numerocommande"));
 		    	 dateCommande.setCellValueFactory(new PropertyValueFactory<Commande,LocalDate>("datecomande"));
 		    	 numeroClient.setCellValueFactory(new PropertyValueFactory<Commande,Integer>("num_client"));
 		    	 checkbox.setCellValueFactory(new PropertyValueFactory<Commande,CheckBox>("check"));
-		    	 TableauCommande.getColumns().add(checkbox);
+
 		    	 TableauCommande.setItems(listCommande);
-		    	
+		    	 TableauCommande.getColumns().add(checkbox);
 				 ObservableList<String> options = 
 					        FXCollections.observableArrayList(
 					            "Numerocommande",
@@ -147,6 +148,7 @@ public class AjouterLivraisonController {
 						e.printStackTrace();
 					}
 	    }
+
 	    
 //	    action pour desactiver les autres checkboxes si une checkbox est selectionner.
 	    

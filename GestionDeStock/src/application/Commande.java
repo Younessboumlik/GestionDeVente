@@ -2,6 +2,7 @@ package application;
 
 
 import java.sql.Connection;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class Commande {
  LocalDate datecomande;
  int num_client;
  CheckBox check;
+ CheckBox checkForLivraison;
 
  CheckBox checkforproducts;
 
@@ -42,8 +44,16 @@ public Commande(int numerocommande, LocalDate datecomande, int num_client){
 	this.numerocommande = numerocommande;
 	this.datecomande = datecomande;
 	this.num_client = num_client;
+
 	this.check = new CheckBox();
+
  this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
+
+	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
+	this.checkForLivraison = new CheckBox();
+	this.checkForLivraison.setOnAction(event -> AjouterLivraisonController.disableCheckboxes(this));
+
+
 }
 public CheckBox getCheck() {
 	return check;
@@ -100,5 +110,12 @@ void supprimercommmande() {
 void setinfotomodif() {
 	supmodifcommandecontroller .setinfotomodifcommande(this);
 }
+public CheckBox getCheckForLivraison() {
+	return checkForLivraison;
+}
+public void setCheckForLivraison(CheckBox checkForLivraison) {
+	this.checkForLivraison = checkForLivraison;
+}
  
+
 }

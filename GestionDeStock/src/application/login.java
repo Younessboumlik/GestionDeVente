@@ -20,7 +20,8 @@ public class login extends Application {
 			Parent root;
 			root = FXMLLoader.load(getClass().getResource("login.fxml"));
 			Scene Scene = new Scene(root);
-//			Scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+			Scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+			primaryStage.setResizable(false);
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {

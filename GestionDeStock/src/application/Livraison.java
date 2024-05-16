@@ -55,6 +55,7 @@ public class Livraison {
 //	public void modifieclicked() {
 //		SampleController.modifierFacture(this);
 //	}
+//	les getters et les setters.
 	public int getNumeroLivraison() {
 		return numeroLivraison;
 	}
@@ -67,6 +68,7 @@ public class Livraison {
 	public void setDateLivraison(LocalDate dateLivraison) {
 		this.dateLivraison = dateLivraison;
 	}
+	
 	public int getNumeroCommande() {
 		return numeroCommande;
 	}
