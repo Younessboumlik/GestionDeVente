@@ -29,7 +29,7 @@
          <children>
             <ImageView fitHeight="190.0" fitWidth="323.0" layoutX="-7.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../imges/login-01.png" />
+                  <Image url="@../images/login-01.png" />
                </image>
             </ImageView>
             <Label layoutX="37.0" layoutY="126.0" minWidth="-Infinity" prefHeight="69.0" prefWidth="238.0" text="BIENVENUE  ADMIN" textAlignment="CENTER" textFill="WHITE">

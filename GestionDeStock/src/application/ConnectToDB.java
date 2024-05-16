@@ -16,7 +16,7 @@ public class ConnectToDB {
 		
 		String url = "jdbc:mysql://localhost:3306/gestioncommande";
 		String user = "root";
-		String password = "12345678";
+		String password = "";
 		Connection connection = null;
 		
 
