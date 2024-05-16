@@ -109,7 +109,7 @@ public class ConnectToDB {
 		  catch (SQLException e){
 			  e.printStackTrace();
 		  }
-		  }
+}
 
 	public static void insertLivraisonData(Connection connection,Livraison livraison) {
           try {
@@ -137,6 +137,23 @@ public static void updatefacture(Connection connextion,Facture facture) {
 
 		prepare.execute();
 		SampleController.refreshfacture();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+
+public static void updateLivraison(Connection connexion,Livraison livraison) {
+	try {
+		PreparedStatement prepare = connexion.prepareStatement(
+				"Update livraison set datelivraison = ? ,numeroCommande = ? where numeroLivraison = ? ");
+
+		prepare.setDate(1, Date.valueOf(livraison.getDateLivraison()));
+		prepare.setInt(2, livraison.getNumeroCommande());
+		prepare.setInt(3, livraison.getNumeroLivraison());
+
+		prepare.execute();
+		SupModifLivraisonController.refreshLivraison();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

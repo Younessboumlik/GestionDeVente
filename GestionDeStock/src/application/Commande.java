@@ -44,11 +44,15 @@ public Commande(int numerocommande, LocalDate datecomande, int num_client){
 	this.numerocommande = numerocommande;
 	this.datecomande = datecomande;
 	this.num_client = num_client;
+<<<<<<< Updated upstream
 
 	this.check = new CheckBox();
 
  this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 
+=======
+	this.check = new CheckBox();
+>>>>>>> Stashed changes
 	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 	this.checkForLivraison = new CheckBox();
 	this.checkForLivraison.setOnAction(event -> AjouterLivraisonController.disableCheckboxes(this));
