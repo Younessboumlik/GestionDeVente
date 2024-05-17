@@ -2,16 +2,10 @@ package application;
 
 
 import java.sql.Connection;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.scene.control.Button;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-
-
 import javafx.scene.control.CheckBox;
 
 public class Commande {
@@ -22,6 +16,9 @@ public class Commande {
  CheckBox checkForLivraison;
 
  CheckBox checkforproducts;
+ 
+ CheckBox checkcommandetofacture;
+ CheckBox checkcommandetolivraison;
 
  ArrayList<Produit> list_produit;
  Button suppbutton;
@@ -44,20 +41,20 @@ public Commande(int numerocommande, LocalDate datecomande, int num_client){
 	this.numerocommande = numerocommande;
 	this.datecomande = datecomande;
 	this.num_client = num_client;
-<<<<<<< Updated upstream
 
 	this.check = new CheckBox();
 
- this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
+	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 
-=======
-	this.check = new CheckBox();
->>>>>>> Stashed changes
 	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 	this.checkForLivraison = new CheckBox();
 	this.checkForLivraison.setOnAction(event -> AjouterLivraisonController.disableCheckboxes(this));
+	
+	this.checkcommandetofacture = new CheckBox();
+	this.checkcommandetofacture.setOnAction(event -> FactureToCommandeController.disableCheckboxes(this));
 
-
+	this.checkcommandetolivraison = new CheckBox();
+	this.checkcommandetolivraison.setOnAction(event -> LivraisonToCommandeController.disableCheckboxes(this));
 }
 public CheckBox getCheck() {
 	return check;
@@ -120,6 +117,20 @@ public CheckBox getCheckForLivraison() {
 public void setCheckForLivraison(CheckBox checkForLivraison) {
 	this.checkForLivraison = checkForLivraison;
 }
+public CheckBox getCheckcommandetofacture() {
+	return checkcommandetofacture;
+}
+public void setCheckcommandetofacture(CheckBox checkcommandetofacture) {
+	this.checkcommandetofacture = checkcommandetofacture;
+}
+public CheckBox getCheckcommandetolivraison() {
+	return checkcommandetolivraison;
+}
+public void setCheckcommandetolivraison(CheckBox checkcommandetolivraison) {
+	this.checkcommandetolivraison = checkcommandetolivraison;
+}
+
+
  
 
 }

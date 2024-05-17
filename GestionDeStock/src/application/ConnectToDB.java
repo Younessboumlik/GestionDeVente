@@ -165,9 +165,7 @@ public static ResultSet data(Connection connection,String table,String condition
 	try {
 		Statement statement;
 		statement = connection.createStatement();
-	 System.out.println(table);
-	 System.out.println(condition);
-	 System.out.println(value);
+
 	
 	
 		return statement.executeQuery("select * from "+ table +" where " + condition + " = '"+ value + "' ;");
