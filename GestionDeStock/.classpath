@@ -4,9 +4,11 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
+			<attribute name="limit-modules" value="java.se,jdk.accessibility,jdk.dynalink,jdk.httpserver,jdk.incubator.vector,jdk.jartool,jdk.javadoc,jdk.jconsole,jdk.jshell,jdk.jsobject,jdk.management.jfr,jdk.net,jdk.nio.mapmode,jdk.sctp,jdk.security.auth,jdk.security.jgss,jdk.unsupported,jdk.unsupported.desktop,jdk.xml.dom,jdk.charsets,jdk.hotspot.agent,jdk.jstatd,jdk.jcmd,jdk.crypto.cryptoki,jdk.random,jdk.naming.rmi,jdk.crypto.mscapi,jdk.editpad,java.smartcardio,jdk.internal.vm.compiler,jdk.internal.vm.compiler.management,jdk.jpackage,jdk.naming.dns,jdk.localedata"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
+
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sql"/>
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx.base.jar"/>
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx.controls.jar"/>
@@ -53,5 +55,11 @@
 	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0.jar"/>
 	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0-sources.jar"/>
+
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jasypt"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jaf"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MysqlConnector"/>
+
 	<classpathentry kind="output" path="bin"/>
 </classpath>

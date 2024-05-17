@@ -24,15 +24,17 @@ public class Livraison {
 		this.numeroCommande = numeroCommande;
 		
 //		Le button de suppresion
+		this.deletebutton = new Button();
 		this.deletebutton.setText("Delete");
-		this.deletebutton.setOnAction(event -> deletefacture());
+		this.deletebutton.setOnAction(event -> deleteLivraison());
 		this.deletebutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
 //		Le button de modification
 		this.modifbutton = new Button("modifier");
 		this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
-//		this.modifbutton.setOnAction(event -> modifieclicked());
+		this.modifbutton.setOnAction(event -> modifieLivraison());
+		
 	}
-	public void deletefacture() {
+	public void deleteLivraison() {
 
 //		System.out.println(this.montant);
 		
@@ -46,10 +48,14 @@ public class Livraison {
 		}
 		else if(result.get() == ButtonType.OK) {
 			Connection connexion = ConnectToDB.connectionDB();
-			ConnectToDB.delete(connexion, "facture", "numerofacture", this.numeroLivraison);
+			ConnectToDB.delete(connexion, "livraison", "numerolivraison", this.numeroLivraison);
 
-			SampleController.refreshfacture();
+			SupModifLivraisonController.refreshLivraison();
 		}
+	}
+	
+	public void modifieLivraison() {
+		SupModifLivraisonController.modifierLivraison(this);
 	}
 	
 //	public void modifieclicked() {

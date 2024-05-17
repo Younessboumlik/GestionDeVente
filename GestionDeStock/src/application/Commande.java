@@ -2,14 +2,10 @@ package application;
 
 
 import java.sql.Connection;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javafx.scene.control.Button;
-
-
-
 
 import javafx.scene.control.CheckBox;
 
@@ -21,6 +17,9 @@ public class Commande {
  CheckBox checkForLivraison;
 
  CheckBox checkforproducts;
+ 
+ CheckBox checkcommandetofacture;
+ CheckBox checkcommandetolivraison;
 
  ArrayList<Produit> list_produit;
  Button suppbutton;
@@ -54,13 +53,17 @@ public Commande(int numerocommande, LocalDate datecomande, int num_client){
 
 	this.check = new CheckBox();
 
- this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
+	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 
 	this.check.setOnAction(event -> AjouterFactureController.disableCheckboxes(this));
 	this.checkForLivraison = new CheckBox();
 	this.checkForLivraison.setOnAction(event -> AjouterLivraisonController.disableCheckboxes(this));
+	
+	this.checkcommandetofacture = new CheckBox();
+	this.checkcommandetofacture.setOnAction(event -> FactureToCommandeController.disableCheckboxes(this));
 
-
+	this.checkcommandetolivraison = new CheckBox();
+	this.checkcommandetolivraison.setOnAction(event -> LivraisonToCommandeController.disableCheckboxes(this));
 }
 public CheckBox getCheck() {
 	return check;
@@ -131,6 +134,22 @@ public void afichierproduitdecommande() {
 		produitDunecommandeController.checkboxIsSelected(false, numerocommande);
 	}
 }
+
+public CheckBox getCheckcommandetofacture() {
+	return checkcommandetofacture;
+}
+public void setCheckcommandetofacture(CheckBox checkcommandetofacture) {
+	this.checkcommandetofacture = checkcommandetofacture;
+}
+public CheckBox getCheckcommandetolivraison() {
+	return checkcommandetolivraison;
+}
+public void setCheckcommandetolivraison(CheckBox checkcommandetolivraison) {
+	this.checkcommandetolivraison = checkcommandetolivraison;
+}
+
+
+
  
 
 }

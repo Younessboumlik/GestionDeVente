@@ -88,6 +88,7 @@ public class supmodifcommandecontroller implements Initializable{
     int num_commandeAmodifier;
     ArrayList<CheckBox> arrayofcheckboxes = new ArrayList<>();
     ObservableList<Produit> observerlistofproduit = FXCollections.observableArrayList();
+    
     @FXML
     void chercher(ActionEvent event) {
        ResultSet Commandes = ConnectToDB.data(connection, "Commande",combobox.getValue() , cherchetext.getText());

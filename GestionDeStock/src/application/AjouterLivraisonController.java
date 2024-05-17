@@ -102,7 +102,9 @@ public class AjouterLivraisonController implements Initializable{
 	    void Ajoutercommand(ActionEvent event){
 	    	System.out.println("numeroCommandeChoisie" + numeroCommandeChoisie);
 	          Livraison newLivraison = new Livraison(0,dateLivraison.getValue(),numeroCommandeChoisie);
+	          System.out.println("2");
 	          Connection connection = ConnectToDB.connectionDB();
+	          System.out.println("3");
 	          ConnectToDB.insertLivraisonData(connection, newLivraison);
 }
 
@@ -121,7 +123,7 @@ public class AjouterLivraisonController implements Initializable{
 		    		 
 //		    		 definition de checkbox pour chaque commande.
 		    		 
-		    		 controller.Checkboxs.add(commandes.getCheckForLivraison());
+		    		 controller.Checkboxs.add(commandes.checkForLivraison);
 		    		 
 		    		 listCommande.add(commandes);	 
 		    }
@@ -131,7 +133,7 @@ public class AjouterLivraisonController implements Initializable{
 		    	 numeroCommande.setCellValueFactory(new PropertyValueFactory<Commande,Integer>("numerocommande"));
 		    	 dateCommande.setCellValueFactory(new PropertyValueFactory<Commande,LocalDate>("datecomande"));
 		    	 numeroClient.setCellValueFactory(new PropertyValueFactory<Commande,Integer>("num_client"));
-		    	 checkbox.setCellValueFactory(new PropertyValueFactory<Commande,CheckBox>("check"));
+		    	 checkbox.setCellValueFactory(new PropertyValueFactory<Commande,CheckBox>("checkForLivraison"));
 
 		    	 TableauCommande.setItems(listCommande);
 		    	 TableauCommande.getColumns().add(checkbox);
@@ -153,11 +155,11 @@ public class AjouterLivraisonController implements Initializable{
 //	    action pour desactiver les autres checkboxes si une checkbox est selectionner.
 	    
 		static void  disableCheckboxes(Commande commande) {
-			if(commande.check.isSelected()) {controller.Checkboxs.forEach(checkbox -> {
+			if(commande.checkForLivraison.isSelected()) {controller.Checkboxs.forEach(checkbox -> {
 				checkbox.setDisable(true);
 			});
 			
-			commande.check.setDisable(false);
+			commande.checkForLivraison.setDisable(false);
 			controller.numeroCommandeChoisie = commande.numerocommande;
 		} else {
 			controller.Checkboxs.forEach(checkbox -> {
