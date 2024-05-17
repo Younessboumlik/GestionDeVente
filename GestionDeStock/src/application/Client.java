@@ -16,6 +16,14 @@ public class Client{
 	private Button modifbutton;
 	private CheckBox checkbox;
 	
+	CheckBox checkforcommands;
+	public CheckBox getCheckforcommands() {
+		return checkforcommands;
+	}
+	public void setCheckforcommands(CheckBox checkforcommands) {
+		this.checkforcommands = checkforcommands;
+		this.checkforcommands.setOnAction(event->affichecommande());
+	}
 	public Client(int id,String nom,String prenom,String adress,int tele) {
 		this.id_client = id;
 		this.nom = nom;
@@ -96,6 +104,14 @@ public class Client{
 
 		}
 		}
+	void affichecommande() {
+		if (checkforcommands.isSelected()) {
+			CommandeDunClientController.checkboxIsSelected(true, id_client);
+		}
+		else {
+			CommandeDunClientController.checkboxIsSelected(false, id_client);
+		}
+	}
 
 	}
 

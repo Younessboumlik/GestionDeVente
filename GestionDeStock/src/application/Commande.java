@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 import javafx.scene.control.Button;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+
 
 
 import javafx.scene.control.CheckBox;
@@ -26,6 +25,14 @@ public class Commande {
  ArrayList<Produit> list_produit;
  Button suppbutton;
  Button modifbutton;
+ CheckBox checkboxProduitpourcommande;
+public CheckBox getCheckboxProduitpourcommande() {
+	return checkboxProduitpourcommande;
+}
+public void setCheckboxProduitpourcommande(CheckBox checkboxProduitpourcommande) {
+	this.checkboxProduitpourcommande = checkboxProduitpourcommande;
+	this.checkboxProduitpourcommande.setOnAction(event ->afichierproduitdecommande());
+}
 public Button getSuppbutton() {
 	return suppbutton;
 }
@@ -115,6 +122,14 @@ public CheckBox getCheckForLivraison() {
 }
 public void setCheckForLivraison(CheckBox checkForLivraison) {
 	this.checkForLivraison = checkForLivraison;
+}
+public void afichierproduitdecommande() {
+	if(checkboxProduitpourcommande.isSelected()) {
+	produitDunecommandeController.checkboxIsSelected(true, numerocommande);
+	}
+	else {
+		produitDunecommandeController.checkboxIsSelected(false, numerocommande);
+	}
 }
  
 
