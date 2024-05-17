@@ -8,7 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
-
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sql"/>
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx.base.jar"/>
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx.controls.jar"/>
@@ -18,48 +17,10 @@
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx.swing.jar"/>
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx.web.jar"/>
 	<classpathentry kind="lib" path="C:/java_Project/javafx-sdk-22.0.1/lib/javafx-swt.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jasypt"/>
 	<classpathentry kind="lib" path="C:/javamail-1.4.4/mail.jar"/>
 	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/icu4j-3.4.4.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-1.9.0-lite.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-acegisecurity-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-acegisecurity-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-acegisecurity-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-hibernate3-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-hibernate3-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-hibernate3-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-hibernate4-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-hibernate4-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-hibernate4-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring2-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring2-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring2-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring3-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring3-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring3-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring31-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring31-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-spring31-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-springsecurity2-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-springsecurity2-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-springsecurity2-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-springsecurity3-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-springsecurity3-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-springsecurity3-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket13-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket13-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket13-1.9.0-sources.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/jasypt-1.9.0/lib/jasypt-wicket15-1.9.0-sources.jar"/>
-
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Jasypt"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jaf"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MysqlConnector"/>
-
+	<classpathentry kind="lib" path="C:/mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
