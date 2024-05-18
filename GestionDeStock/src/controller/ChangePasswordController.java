@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import org.jasypt.util.text.BasicTextEncryptor;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

@@ -17,8 +17,8 @@ public class Livraison {
 	public int numeroCommande;
 
 //	Ce button est associe a chaque objet de type Facture, il va nous permet de le supprimer du tableauview.
-	Button deletebutton;
-	Button modifbutton;
+	public Button deletebutton;
+	public Button modifbutton;
 	
 	public Livraison(int numeroLivraison, LocalDate dateLivraison,int numeroCommande) {
 		this.numeroLivraison = numeroLivraison;
@@ -36,6 +36,7 @@ public class Livraison {
 		this.modifbutton.setOnAction(event -> modifieLivraison());
 		
 	}
+
 	public void  deleteLivraison() {
 
 //		System.out.println(this.montant);

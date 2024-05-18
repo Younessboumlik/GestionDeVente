@@ -174,7 +174,7 @@ public class SampleController implements Initializable{
     	
     	Connection connexion = ConnectToDB.connectionDB();
 
-    	ArrayList <Facture> factures = new ArrayList<Facture>();
+//    	ArrayList <Facture> factures = new ArrayList<Facture>();
 
     	ArrayList<String> list = ConnectToDB.getData(connexion, "facture", "numeroFacture");
     	ArrayList<String> list2 = ConnectToDB.getData(connexion, "facture", "dateFacture");
@@ -182,7 +182,7 @@ public class SampleController implements Initializable{
     	ArrayList<String> list4 = ConnectToDB.getData(connexion, "facture", "numeroCommande");
     	
     	
-    	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//    	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     	
     	
     	for (int i = 0; i < list.size(); i++) {
