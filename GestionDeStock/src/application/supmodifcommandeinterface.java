@@ -16,7 +16,7 @@ public class supmodifcommandeinterface extends Application{
 		
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("modifsuppcommande.fxml"));
+			root = FXMLLoader.load(getClass().getResource("../fxml/modifsuppcommande.fxml"));
 			Scene Scene = new Scene(root);
 //			Scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(Scene);

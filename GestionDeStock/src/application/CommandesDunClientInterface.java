@@ -39,7 +39,7 @@ public class CommandesDunClientInterface extends Application{
 		// primaryStage.setResizable(false);
 		// primaryStage.setFullScreen(true);
 		// primaryStage.show();
-	}
+	
 
 	public static void main(String[] args) {
 		launch(args);

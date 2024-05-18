@@ -16,21 +16,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 
 public class Commande {
- int numerocommande;
- LocalDate datecomande;
- int num_client;
- CheckBox check;
- CheckBox checkForLivraison;
+ public int numerocommande;
+ public LocalDate datecomande;
+ public int num_client;
+ public CheckBox check;
+ public CheckBox checkForLivraison;
 
- CheckBox checkforproducts;
+ public CheckBox checkforproducts;
  
- CheckBox checkcommandetofacture;
- CheckBox checkcommandetolivraison;
+ public CheckBox checkcommandetofacture;
+ public CheckBox checkcommandetolivraison;
 
- ArrayList<Produit> list_produit;
- Button suppbutton;
- Button modifbutton;
- CheckBox checkboxProduitpourcommande;
+ public ArrayList<Produit> list_produit;
+ public Button suppbutton;
+ public Button modifbutton;
+ public CheckBox checkboxProduitpourcommande;
 public CheckBox getCheckboxProduitpourcommande() {
 	return checkboxProduitpourcommande;
 }

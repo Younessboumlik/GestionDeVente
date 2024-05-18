@@ -12,9 +12,9 @@ import javafx.scene.control.ButtonType;
 
 public class Livraison {
 
-	int numeroLivraison;
-	LocalDate dateLivraison;
-	int numeroCommande;
+	public int numeroLivraison;
+	public LocalDate dateLivraison;
+	public int numeroCommande;
 
 //	Ce button est associe a chaque objet de type Facture, il va nous permet de le supprimer du tableauview.
 	Button deletebutton;
