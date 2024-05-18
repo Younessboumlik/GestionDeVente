@@ -17,7 +17,13 @@ public class ChangePassword extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) { 
-			e.printStackTrace();
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		}
 	}
 

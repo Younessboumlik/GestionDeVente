@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.supmodifcommandecontroller">
+   <children>
+      <TableView fx:id="tableaucommand" layoutY="110.0" prefHeight="200.0" prefWidth="353.0">
+        <columns>
+          <TableColumn fx:id="numclient" prefWidth="56.00003182888031" text="numclient" />
+          <TableColumn fx:id="numcommande" prefWidth="60.66665267944336" text="numcom" />
+            <TableColumn fx:id="date" prefWidth="77.3333511352539" text="date" />
+            <TableColumn fx:id="checkocommande" prefWidth="26.6666259765625" />
+            <TableColumn fx:id="modifiercommande" prefWidth="60.66661071777344" text="modifier" />
+            <TableColumn fx:id="suppcommande" prefWidth="70.0" text="supprimer" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableauproduit" layoutX="382.0" layoutY="110.0" prefHeight="200.0" prefWidth="274.0">
+        <columns>
+          <TableColumn fx:id="nomproduit" prefWidth="75.0" text="nomprod" />
+          <TableColumn fx:id="quantiteprod" prefWidth="75.0" text="quatitepris" />
+            <TableColumn fx:id="modifierprod" prefWidth="53.999969482421875" text="modifier" />
+            <TableColumn fx:id="supprimerprod" prefWidth="66.66668701171875" text="supprimer" />
+        </columns>
+      </TableView>
+      <TextField fx:id="textnumclient" layoutX="121.0" layoutY="322.0" />
+      <DatePicker fx:id="datetext" layoutX="115.0" layoutY="368.0" />
+      <Button fx:id="modifiercomm" layoutX="153.0" layoutY="411.0" mnemonicParsing="false" onAction="#modifiercomm" text="save changes" />
+      <TextField fx:id="quantitetext" layoutX="452.0" layoutY="355.0" />
+      <Label layoutX="26.0" layoutY="326.0" prefHeight="17.0" prefWidth="95.0" text="num de client" />
+      <Label layoutX="46.0" layoutY="372.0" prefHeight="17.0" prefWidth="55.0" text="date" />
+      <Button fx:id="modifierproduit" layoutX="484.0" layoutY="406.0" mnemonicParsing="false" onAction="#modifierproduit" text="save changes" />
+      <ComboBox fx:id="combobox" layoutX="40.0" layoutY="40.0" prefWidth="150.0" />
+      <TextField fx:id="cherchetext" layoutX="40.0" layoutY="72.0" />
+      <Label layoutX="393.0" layoutY="360.0" prefHeight="17.0" prefWidth="55.0" text="quantite" />
+      <Button fx:id="cherche" layoutX="214.0" layoutY="72.0" mnemonicParsing="false" onAction="#chercher" text="chercher" />
+   </children>
+</AnchorPane>

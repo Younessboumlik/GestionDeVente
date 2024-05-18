@@ -19,7 +19,13 @@ public class LivraisonToCommandeInterface extends Application{
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {
-			e.printStackTrace();
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		}
 		
 		// primaryStage.setHeight(400);

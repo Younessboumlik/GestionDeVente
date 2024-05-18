@@ -7,6 +7,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import classes.Client;
+import classes.Commande;
+import classes.Facture;
+import classes.Produit;
+import controller.SampleController;
+import controller.SupModifLivraisonController;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 public class ConnectToDB {
 	
 
@@ -31,14 +40,26 @@ public class ConnectToDB {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		}
 		
 		try {
 			connection = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		}
 		
 		System.out.println("Connextion reussite...");
@@ -69,7 +90,13 @@ public class ConnectToDB {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		}
 		return null;
 	}
@@ -88,7 +115,13 @@ public class ConnectToDB {
 		  
 	  }
 	  catch (SQLException e){
-		  e.printStackTrace();
+		      Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	  }
 	  }
 	
@@ -107,7 +140,13 @@ public class ConnectToDB {
 			  
 		  }
 		  catch (SQLException e){
-			  e.printStackTrace();
+			      Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		  }
 }
 
@@ -123,7 +162,13 @@ public class ConnectToDB {
               
           }
           catch (SQLException e){
-              e.printStackTrace();
+                  Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
           }
           }
 public static void updatefacture(Connection connextion,Facture facture) {
@@ -139,7 +184,13 @@ public static void updatefacture(Connection connextion,Facture facture) {
 		SampleController.refreshfacture();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 
@@ -156,7 +207,13 @@ public static void updateLivraison(Connection connexion,Livraison livraison) {
 		SupModifLivraisonController.refreshLivraison();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 	
@@ -172,7 +229,13 @@ public static ResultSet data(Connection connection,String table,String condition
 	}
 	catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		return null;
 	}
 }
@@ -191,7 +254,13 @@ public static void modifieuser(Connection connection,Client client) {
 		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 public static ResultSet selecttous(Connection connection,String Table) {
@@ -202,8 +271,13 @@ public static ResultSet selecttous(Connection connection,String Table) {
 		return statement.executeQuery("select * from "+ Table );
 	}
 	catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		return null;
 	}
 	
@@ -224,7 +298,13 @@ public static ResultSet selecttous(Connection connection,String Table) {
 			System.out.println("Suppresion reussite.");
 		}
 		catch(SQLException e) {
-			e.printStackTrace();
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		}
 	}
 //	public static void main(String[] args) {
@@ -261,7 +341,13 @@ static void insertcommande(Connection connection,Commande commande) {
 	    
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 static ResultSet getproducts(Connection connection,int numcommmande){
@@ -271,7 +357,13 @@ static ResultSet getproducts(Connection connection,int numcommmande){
 		return statement.executeQuery("select * from avoir,produits where avoir.numeroproduit = produits.numeroproduit and avoir.numerocommande = "+ Integer.toString(numcommmande)+ ";");
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 		return null;
 	}
 }
@@ -286,7 +378,13 @@ static void supprimercommande(Connection connection , Commande commande) {
 		prepare.execute();
 	}  catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 	
 }
@@ -300,7 +398,13 @@ static void  modifiercomande(Connection connection ,Commande commande) {
 		prepare.execute();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 static void modifierproduit(Connection connection ,Produit produit,int numCommande) {
@@ -313,7 +417,13 @@ static void modifierproduit(Connection connection ,Produit produit,int numComman
 		prepare.execute();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 static void supprimerrproduit(Connection connection , int num_produit ,int num_commande) {
@@ -327,7 +437,13 @@ static void supprimerrproduit(Connection connection , int num_produit ,int num_c
 		System.out.println("llllllllll");
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 static void modifierproduit(Connection connection,Produit produit) {
@@ -342,7 +458,13 @@ static void modifierproduit(Connection connection,Produit produit) {
 		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+        alert.showAndWait();
+    });
 	}
 }
 static void AJouterProduit(Connection connection ,Produit produit) {

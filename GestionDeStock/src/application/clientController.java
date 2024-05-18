@@ -3,6 +3,7 @@ package application;
 
 import java.sql.Connection;
 
+import classes.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
