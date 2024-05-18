@@ -16,9 +16,9 @@ public class suppmodifProduitInterface extends Application{
 		
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("produitsupmodif.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/fxml/produitsupmodif.fxml"));
 			Scene Scene = new Scene(root);
-    		Scene.getStylesheets().add(getClass().getResource("tablestyle.css").toExternalForm());
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {

@@ -17,9 +17,9 @@ public void  start(Stage primaryStage){
 		  
 	       
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("firstvisit.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/fxml/firstvisit.fxml"));
 			Scene Scene = new Scene(root);
-//			Scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+//			Scene.getStylesheets().add(getClass().getResource("/fxml/login.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {
