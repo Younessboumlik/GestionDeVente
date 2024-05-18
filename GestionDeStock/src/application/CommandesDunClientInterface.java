@@ -1,7 +1,5 @@
 package application;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
 
 public class CommandesDunClientInterface extends Application{
 	public void  start(Stage primaryStage){
@@ -39,7 +38,7 @@ public class CommandesDunClientInterface extends Application{
 		// primaryStage.setResizable(false);
 		// primaryStage.setFullScreen(true);
 		// primaryStage.show();
-	}
+	
 
 	public static void main(String[] args) {
 		launch(args);

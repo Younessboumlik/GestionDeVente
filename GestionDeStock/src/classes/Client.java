@@ -11,14 +11,14 @@ import javafx.scene.control.CheckBox;
 
 
 public class Client{
-	private int id_client;
-	private String nom;
-	private String prenom ;
-	private String adresse;
-	private int telephone;
-	private Button suppbutton;
-	private Button modifbutton;
-	private CheckBox checkbox;
+	public int id_client;
+	public String nom;
+	public String prenom ;
+	public String adresse;
+	public int telephone;
+	public Button suppbutton;
+	public Button modifbutton;
+	public CheckBox checkbox;
 	
 	CheckBox checkforcommands;
 	public CheckBox getCheckforcommands() {

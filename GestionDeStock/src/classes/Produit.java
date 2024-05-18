@@ -9,16 +9,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 public class Produit{
-   int numProduit;
-   String nomProduit;
-   int QuantiteProduit;
-   double prix;
-   CheckBox checkProduit;
-   int Quantitechoisie;
-   Button suppproduittinavoir;
-   Button modifproduitinavoir;
-   Button supprimerprd;
-   Button modifierprd;
+   public int numProduit;
+   public String nomProduit;
+   public int QuantiteProduit;
+   public double prix;
+   public CheckBox checkProduit;
+   public int Quantitechoisie;
+   public Button suppproduittinavoir;
+   public Button modifproduitinavoir;
+   public Button supprimerprd;
+   public Button modifierprd;
    public Button getSupprimerprd() {
 	return supprimerprd;
 }

@@ -78,15 +78,15 @@ public class logincontroller {
 //          transport.close();
 //
 //          System.out.println("Email sent successfully!");
-//
+////
 //        } catch (MessagingException e) {
 //              Platform.runLater(() -> {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur");
-        alert.setHeaderText("Une erreur s'est produite.");
-        alert.setContentText(e.getMessage());
-        alert.showAndWait();
-    });
+//        Alert alert = new Alert(Alert.AlertType.ERROR);
+//        alert.setTitle("Erreur");
+//        alert.setHeaderText("Une erreur s'est produite.");
+//        alert.setContentText(e.getMessage());
+//        alert.showAndWait();
+    
 //        }
     	
 
@@ -99,16 +99,19 @@ public class logincontroller {
 //			Scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
-		} catch (IOException e) {
-			    Platform.runLater(() -> {
+		}      catch (Exception e) {
+        // TODO Auto-generated catch block
+            Platform.runLater(() -> {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
         alert.showAndWait();
-    });
-		}
-    }
+			});
+		} 
+	}
+    	
+    
 
     @FXML
     public void  submit(ActionEvent event) {

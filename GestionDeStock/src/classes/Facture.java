@@ -13,15 +13,15 @@ import javafx.scene.control.CheckBox;
 
 public class Facture {
 
-	int numeroFacture;
-	LocalDate dateFacture;
-	float montant;
+	public int numeroFacture;
+	public LocalDate dateFacture;
+	public float montant;
 //	Ce button est associe a chaque objet de type Facture, il va nous permet de le supprimer du tableauview.
-	Button deletebutton;
-	Button modifbutton;
-	CheckBox check;
+	public Button deletebutton;
+	public Button modifbutton;
+	public CheckBox check;
 	
-	int numeroCommande;
+	public int numeroCommande;
 
 
 	public Facture(int numeroFacture, LocalDate date1, float montant,int numeroCommande) {

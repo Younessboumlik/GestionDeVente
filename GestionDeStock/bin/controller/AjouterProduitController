@@ -1,0 +1,27 @@
+package application;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+public class clientController {
+
+    @FXML
+    private Button ajouter;
+
+    @FXML
+    private TextField textnomproduit;
+
+    @FXML
+    private TextField textprix;
+
+    @FXML
+    private TextField textquantite;
+
+    @FXML
+    public void  AjouterProduit(ActionEvent event) {
+
+    }
+
+}

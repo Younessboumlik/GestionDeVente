@@ -2,6 +2,7 @@ package application;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 // import javafx.scene.Group;
 import javafx.scene.Parent;
@@ -17,7 +18,7 @@ public class clientAjoueinterface extends Application {
 		
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("clientAjoue.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/fxml/clientAjoue.fxml"));
 			Scene Scene = new Scene(root);
 //			Scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(Scene);

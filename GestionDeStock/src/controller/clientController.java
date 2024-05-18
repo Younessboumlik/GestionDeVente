@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 
 import java.sql.Connection;
@@ -24,8 +24,8 @@ public class clientController{
 		  System.out.println("lllllllllllllllllllll");
           Client client = new Client(0,textnomclient.getText(),textprenomclient.getText(),
         		  textadressclient.getText(),Integer.parseInt(textteleclient.getText()));
-          Connection connection = ConnectToDB.connectionDB();
-          ConnectToDB.insertClientData(connection, client);
+          Connection connection = application.ConnectToDB.connectionDB();
+          application.ConnectToDB.insertClientData(connection, client);
 //		 
 	    }
 
