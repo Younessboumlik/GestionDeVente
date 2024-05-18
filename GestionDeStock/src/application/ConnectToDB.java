@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import classes.Client;
 import classes.Commande;
 import classes.Facture;
+import classes.Livraison;
 import classes.Produit;
 import controller.SampleController;
 import controller.SupModifLivraisonController;
@@ -312,7 +313,7 @@ public static ResultSet selecttous(Connection connection,String Table) {
 //		getData(connexion,"facture","montant");
 //	}
 
-static void insertcommande(Connection connection,Commande commande) {
+public static void insertcommande(Connection connection,Commande commande) {
 	try {
 		PreparedStatement prepare = connection.prepareStatement("insert into commande(datecommande,numeroclient) values (?,?);");
 		prepare.setDate(1,Date.valueOf(commande.getDatecomande()));
@@ -350,7 +351,7 @@ static void insertcommande(Connection connection,Commande commande) {
     });
 	}
 }
-static ResultSet getproducts(Connection connection,int numcommmande){
+public static ResultSet getproducts(Connection connection,int numcommmande){
 	Statement statement;
 	try {
 		statement = connection.createStatement();
@@ -367,7 +368,7 @@ static ResultSet getproducts(Connection connection,int numcommmande){
 		return null;
 	}
 }
-static void supprimercommande(Connection connection , Commande commande) {
+public static void supprimercommande(Connection connection , Commande commande) {
 	
 	try {
 		PreparedStatement prepare = connection.prepareStatement("DELETE FROM avoir WHERE numerocommande = ?");
@@ -388,7 +389,7 @@ static void supprimercommande(Connection connection , Commande commande) {
 	}
 	
 }
-static void  modifiercomande(Connection connection ,Commande commande) {
+public static void  modifiercomande(Connection connection ,Commande commande) {
 	try {
 		PreparedStatement prepare = connection.prepareStatement("Update commande set numeroclient = ?,datecommande = ? where numerocommande = ?;");
 		System.out.println(commande.num_client);
@@ -407,7 +408,7 @@ static void  modifiercomande(Connection connection ,Commande commande) {
     });
 	}
 }
-static void modifierproduit(Connection connection ,Produit produit,int numCommande) {
+public static void modifierproduit(Connection connection ,Produit produit,int numCommande) {
 	try {
 		PreparedStatement prepare = connection.prepareStatement("Update avoir set Quantite_prod = ? where numerocommande = ? and numeroproduit = ? ;");
 		
@@ -426,7 +427,7 @@ static void modifierproduit(Connection connection ,Produit produit,int numComman
     });
 	}
 }
-static void supprimerrproduit(Connection connection , int num_produit ,int num_commande) {
+public static void supprimerrproduit(Connection connection , int num_produit ,int num_commande) {
 	try {
 		PreparedStatement prepare = connection.prepareStatement("Delete from avoir  where numerocommande = ? and numeroproduit = ? ;");
 		
@@ -446,7 +447,7 @@ static void supprimerrproduit(Connection connection , int num_produit ,int num_c
     });
 	}
 }
-static void modifierproduit(Connection connection,Produit produit) {
+public static void modifierproduit(Connection connection,Produit produit) {
 	try {
 
 		 PreparedStatement prepare = connection.prepareStatement("Update produits set nomproduit = ? ,quantite = ? ,prix = ? where numeroproduit = ?");
@@ -467,7 +468,7 @@ static void modifierproduit(Connection connection,Produit produit) {
     });
 	}
 }
-static void AJouterProduit(Connection connection ,Produit produit) {
+public static void AJouterProduit(Connection connection ,Produit produit) {
 	try {
 		  String query = "insert into produits(numeroproduit,nomproduit,quantite,prix) values (?,?,?,?);";
 		  PreparedStatement prepare = connection.prepareStatement(query);

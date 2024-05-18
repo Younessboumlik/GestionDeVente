@@ -22,7 +22,7 @@ public class Produit{
    public Button getSupprimerprd() {
 	return supprimerprd;
 }
-public void setSupprimerprd(Button supprimerprd) {
+public void  setSupprimerprd(Button supprimerprd) {
 	this.supprimerprd = supprimerprd;
 	supprimerprd.setOnAction(event->supprimerproduit());
 	this.supprimerprd.setStyle("-fx-background-color:red");
@@ -30,7 +30,7 @@ public void setSupprimerprd(Button supprimerprd) {
 public Button getModifierprd() {
 	return modifierprd;
 }
-public void setModifierprd(Button modifierprd) {
+public void  setModifierprd(Button modifierprd) {
 	this.modifierprd = modifierprd;
 	this.modifierprd.setOnAction(event->modifierproduit());
 	this.modifierprd.setStyle("-fx-background-color:blue");
@@ -38,7 +38,7 @@ public void setModifierprd(Button modifierprd) {
 public Button getSuppproduittinavoir() {
 	return suppproduittinavoir;
 }
-public void setSuppproduittinavoir(Button suppproduittinavoir) {
+public void  setSuppproduittinavoir(Button suppproduittinavoir) {
 	this.suppproduittinavoir = suppproduittinavoir;
 	this.suppproduittinavoir.setOnAction(event->suppproduitinavoir());
 	this.suppproduittinavoir.setStyle("-fx-background-color:red");
@@ -46,7 +46,7 @@ public void setSuppproduittinavoir(Button suppproduittinavoir) {
 public Button getModifproduitinavoir() {
 	return modifproduitinavoir;
 }
-public void setModifproduitinavoir(Button modifproduitinavoir) {
+public void  setModifproduitinavoir(Button modifproduitinavoir) {
 	this.modifproduitinavoir = modifproduitinavoir;
 	this.modifproduitinavoir.setOnAction(event->modifierproduitinavoir());
 	this.modifproduitinavoir.setStyle("-fx-background-color:blue");
@@ -57,7 +57,7 @@ public void setModifproduitinavoir(Button modifproduitinavoir) {
    public CheckBox getCheckProduit() {
 	return checkProduit;
 }
-public void setCheckProduit(CheckBox checkProduit) {
+public void  setCheckProduit(CheckBox checkProduit) {
 	this.checkProduit = checkProduit;
 	this.checkProduit.setOnAction(event->unablequatitetext());
 }
@@ -67,10 +67,10 @@ public TextField getQuantitetext() {
 public int getQuantitechoisie() {
 	return Quantitechoisie;
 }
-public void setQuantitechoisie(int quantitechoisie) {
+public void  setQuantitechoisie(int quantitechoisie) {
 	Quantitechoisie = quantitechoisie;
 }
-public void setQuantitetext(TextField quantitetext) {
+public void  setQuantitetext(TextField quantitetext) {
 	this.quantitetext = quantitetext;
 	this.quantitetext.setDisable(true);
 }
@@ -92,28 +92,28 @@ TextField quantitetext;
 public int getNumProduit() {
 	return numProduit;
 }
-public void setNumProduit(int numProduit) {
+public void  setNumProduit(int numProduit) {
 	this.numProduit = numProduit;
 }
 public String getNomProduit() {
 	return nomProduit;
 }
-public void setNomProduit(String nomProduit) {
+public void  setNomProduit(String nomProduit) {
 	this.nomProduit = nomProduit;
 }
 public int getQuantiteProduit() {
 	return QuantiteProduit;
 }
-public void setQuantiteProduit(int quantiteProduit) {
+public void  setQuantiteProduit(int quantiteProduit) {
 	QuantiteProduit = quantiteProduit;
 }
 public double getPrix() {
 	return prix;
 }
-public void setPrix(double prix) {
+public void  setPrix(double prix) {
 	this.prix = prix;
 }
-void unablequatitetext(){
+public void  unablequatitetext(){
 	if (this.checkProduit.isSelected()){
 	 AjouterCommandeController.Ajouterproduit(this);
 	this.quantitetext.setDisable(false);
@@ -123,18 +123,18 @@ void unablequatitetext(){
 	 this.quantitetext.setDisable(true);
 	}
 }
-void modifierproduitinavoir() {
+public void  modifierproduitinavoir() {
 	supmodifcommandecontroller.setinfotomodifproduit(this);
 }
-void suppproduitinavoir() {
+public void  suppproduitinavoir() {
 	supmodifcommandecontroller.suppproduitfromavoir(this.numProduit);
 }
-void supprimerproduit() {
+public void  supprimerproduit() {
 	 Connection connection = ConnectToDB.connectionDB();
 		ConnectToDB.delete(connection, "produits","numeroproduit", this.numProduit);
 		supmodifproduitcontroller.refreche();
 }
-void modifierproduit() {
+public void  modifierproduit() {
 	supmodifproduitcontroller.setvaluesontextfield(this);
 	
 }

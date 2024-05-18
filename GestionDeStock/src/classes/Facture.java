@@ -46,7 +46,7 @@ public class Facture {
 
 //	l'evenement pour supprimer une facture.
 
-	public void deletefacture() {
+	public void  deletefacture() {
 
 //		System.out.println(this.montant);
 		
@@ -66,7 +66,7 @@ public class Facture {
 		}
 	}
 	
-	public void modifieclicked() {
+	public void  modifieclicked() {
 		SampleController.modifierFacture(this);
 	}
 
@@ -77,7 +77,7 @@ public class Facture {
 	}
 
 
-	public void setNumeroFacture(int numeroFacture) {
+	public void  setNumeroFacture(int numeroFacture) {
 		this.numeroFacture = numeroFacture;
 	}
 
@@ -87,7 +87,7 @@ public class Facture {
 	}
 
 
-	public void setDateFacture(LocalDate dateFacture) {
+	public void  setDateFacture(LocalDate dateFacture) {
 		this.dateFacture = dateFacture;
 	}
 
@@ -97,7 +97,7 @@ public class Facture {
 	}
 
 
-	public void setMontant(float montant) {
+	public void  setMontant(float montant) {
 		this.montant = montant;
 	}
 
@@ -107,7 +107,7 @@ public class Facture {
 	}
 
 
-	public void setDeletebutton(Button deletebutton) {
+	public void  setDeletebutton(Button deletebutton) {
 		this.deletebutton = deletebutton;
 	}
 
@@ -115,7 +115,7 @@ public class Facture {
 		return numeroCommande;
 	}
 
-	public void setNumeroCommande(int numeroCommande) {
+	public void  setNumeroCommande(int numeroCommande) {
 		this.numeroCommande = numeroCommande;
 	}
 
@@ -123,7 +123,7 @@ public class Facture {
 		return modifbutton;
 	}
 
-	public void setModifbutton(Button modifbutton) {
+	public void  setModifbutton(Button modifbutton) {
 		this.modifbutton = modifbutton;
 	}
 	

@@ -3,8 +3,6 @@ package controller;
 
 
 import java.io.BufferedWriter;
-
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +23,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -36,7 +35,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SampleController implements Initializable{
 	
-	static SampleController  controller;
+	public static SampleController  controller;
 	
 	public SampleController() {
 		controller = this;
@@ -99,7 +98,7 @@ public class SampleController implements Initializable{
 
 
     @FXML
-    void cherche(ActionEvent event) {
+    public void  cherche(ActionEvent event) {
    	 String Valeur = choosetext.getText();
    	 Connection connection = ConnectToDB.connectionDB();
    	 ResultSet result = ConnectToDB.data(connection,"facture",combobox.getValue(),Valeur);
@@ -134,7 +133,7 @@ public class SampleController implements Initializable{
 
 //  l'evenement apres clicker sur le button pour modifier une facture.
     @FXML
-    void modifier(ActionEvent event) {
+    public void  modifier(ActionEvent event) {
         Connection connection = ConnectToDB.connectionDB();
         new Facture(Integer.parseInt(newNumeroFacture.getText()),newDateFacture.getValue(),Float.parseFloat(newMontant.getText()),Integer.parseInt(newNumeroCommande.getText()));
         ConnectToDB.updatefacture(connection, new Facture(Integer.parseInt(newNumeroFacture.getText()),newDateFacture.getValue(),Float.parseFloat(newMontant.getText()),Integer.parseInt(newNumeroCommande.getText())));
@@ -198,7 +197,7 @@ public class SampleController implements Initializable{
     }
     
 //    @FXML
-//    private TableColumn<Facture, Void> deleteButtonColumn;
+//    private TableColumn<Facture, public void > deleteButtonColumn;
 
     
 //    permer de refrechir le tableau des factures
@@ -212,7 +211,7 @@ public class SampleController implements Initializable{
     
 //    permet d'initialiser le tableau des factures
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void  initialize(URL arg0, ResourceBundle arg1) {
 		
 		ObservableList<String> options = FXCollections.observableArrayList("numeroFacture", "dateFacture", "montant", "numeroCommande");
 		combobox.setItems(options);
@@ -245,7 +244,7 @@ public class SampleController implements Initializable{
 	
 //	convert data to csv file
     @FXML
-    void toCsv(ActionEvent event) {
+    public void  toCsv(ActionEvent event) {
 		
     	FileWriter w;
 		try {

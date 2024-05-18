@@ -20,7 +20,7 @@ public class clientController {
     private TextField textquantite;
 
     @FXML
-    void AjouterProduit(ActionEvent event) {
+    public void  AjouterProduit(ActionEvent event) {
 
     }
 

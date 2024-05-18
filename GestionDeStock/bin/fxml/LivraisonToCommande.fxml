@@ -9,13 +9,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FactureToCommandeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LivraisonToCommandeController">
    <children>
-      <TableView fx:id="tableventes" layoutX="29.0" layoutY="216.0" prefHeight="209.0" prefWidth="488.0">
+      <TableView fx:id="tableLivraison" layoutX="29.0" layoutY="216.0" prefHeight="209.0" prefWidth="488.0">
          <columns>
-            <TableColumn fx:id="numerofacture" prefWidth="109.9999942779541" text="numero de facture" />
-            <TableColumn fx:id="datefacture" prefWidth="77.33331298828125" text="datefacture" />
-            <TableColumn fx:id="montant" prefWidth="79.33338928222656" text="montant" />
+            <TableColumn fx:id="numeroLivraison" prefWidth="109.9999942779541" text="numero de livraison" />
+            <TableColumn fx:id="dateLivraison" prefWidth="77.33331298828125" text="date de livraison" />
             <TableColumn fx:id="numerocommande" prefWidth="142.0" text="numero de commande" />
          </columns>
       </TableView>

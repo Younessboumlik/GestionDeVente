@@ -3,27 +3,19 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-//import java.util.Properties;
-//
-//import com.mysql.cj.protocol.Message;
-import java.util.Properties;
-
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 //import com.mysql.cj.protocol.Message;
 
 
 import org.jasypt.util.text.BasicTextEncryptor;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -41,7 +33,7 @@ public class logincontroller {
     Button oubliermotdepass;
     @FXML
 
-    void opencodeverifwindow(ActionEvent event) {
+    public void  opencodeverifwindow(ActionEvent event) {
 //    	Properties props = new Properties();
 ////    	props.put("mail.smtp.user", "boulidamabdellah8@gmail.com");
 //    	props.put("mail.smtp.debug", "true");
@@ -119,7 +111,7 @@ public class logincontroller {
     }
 
     @FXML
-    void submit(ActionEvent event) {
+    public void  submit(ActionEvent event) {
       try {
     	  
 	        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();

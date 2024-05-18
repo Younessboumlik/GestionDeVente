@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import application.ConnectToDB;
+import controller.SupModifLivraisonController;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -34,7 +36,7 @@ public class Livraison {
 		this.modifbutton.setOnAction(event -> modifieLivraison());
 		
 	}
-	public void deleteLivraison() {
+	public void  deleteLivraison() {
 
 //		System.out.println(this.montant);
 		
@@ -54,43 +56,43 @@ public class Livraison {
 		}
 	}
 	
-	public void modifieLivraison() {
+	public void  modifieLivraison() {
 		SupModifLivraisonController.modifierLivraison(this);
 	}
 	
-//	public void modifieclicked() {
+//	public void  modifieclicked() {
 //		SampleController.modifierFacture(this);
 //	}
 //	les getters et les setters.
 	public int getNumeroLivraison() {
 		return numeroLivraison;
 	}
-	public void setNumeroLivraison(int numeroLivraison) {
+	public void  setNumeroLivraison(int numeroLivraison) {
 		this.numeroLivraison = numeroLivraison;
 	}
 	public LocalDate getDateLivraison() {
 		return dateLivraison;
 	}
-	public void setDateLivraison(LocalDate dateLivraison) {
+	public void  setDateLivraison(LocalDate dateLivraison) {
 		this.dateLivraison = dateLivraison;
 	}
 	
 	public int getNumeroCommande() {
 		return numeroCommande;
 	}
-	public void setNumeroCommande(int numeroCommande) {
+	public void  setNumeroCommande(int numeroCommande) {
 		this.numeroCommande = numeroCommande;
 	}
 	public Button getDeletebutton() {
 		return deletebutton;
 	}
-	public void setDeletebutton(Button deletebutton) {
+	public void  setDeletebutton(Button deletebutton) {
 		this.deletebutton = deletebutton;
 	}
 	public Button getModifbutton() {
 		return modifbutton;
 	}
-	public void setModifbutton(Button modifbutton) {
+	public void  setModifbutton(Button modifbutton) {
 		this.modifbutton = modifbutton;
 	}
 

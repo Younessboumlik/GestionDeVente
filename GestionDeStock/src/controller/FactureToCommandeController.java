@@ -72,7 +72,7 @@ public class FactureToCommandeController implements Initializable{
    	 
    	 
 	    @FXML
-	    void cherche(ActionEvent event) {
+	    public void  cherche(ActionEvent event) {
 			controller.tableventes.getItems().clear();
 	        ResultSet Commandes = ConnectToDB.data(connection, "Commande",combobox.getValue() , searchtext.getText());
 	        ObservableList<Commande> ListCommandes = FXCollections.observableArrayList();
@@ -115,8 +115,8 @@ public class FactureToCommandeController implements Initializable{
 	    ArrayList<CheckBox> arrayofcheckboxes = new ArrayList<>();
 	    
 	    
-//	    controller static pour acceder au attribue non static dans les methode static.
-	    static FactureToCommandeController controller;
+//	    controller public static pour acceder au attribue non public static dans les methode static.
+	    public static FactureToCommandeController controller;
 	    
 	    
 	    public FactureToCommandeController() {
@@ -126,7 +126,7 @@ public class FactureToCommandeController implements Initializable{
 	    Connection connection = ConnectToDB.connectionDB();
 	    
 	    
-	    public void initialize(URL arg0, ResourceBundle arg1) {
+	    public void  initialize(URL arg0, ResourceBundle arg1) {
 	    	ObservableList<String> options = 
 			        FXCollections.observableArrayList(
 			            "numerocommande",
@@ -173,7 +173,7 @@ public class FactureToCommandeController implements Initializable{
 				}    
 	    }
 	    
-		static void  disableCheckboxes(Commande commande) {
+		public static void  disableCheckboxes(Commande commande) {
 			System.out.println("clicked");
 			if(commande.checkcommandetofacture.isSelected()) {controller.arrayofcheckboxes.forEach(checkbox -> {
 

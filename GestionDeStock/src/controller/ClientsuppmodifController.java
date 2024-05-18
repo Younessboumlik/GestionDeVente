@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -68,7 +69,7 @@ public class ClientsuppmodifController implements Initializable{
 	    private TableColumn<Client,Button> modifcolone;
 	    @FXML
 	    private TableColumn<Client, Button> suppcolone;
-		static ClientsuppmodifController controller ;
+		public static ClientsuppmodifController controller ;
        String selectedValue;
        String Valeur;
        int id_client;
@@ -84,7 +85,7 @@ public class ClientsuppmodifController implements Initializable{
        
        
 	    @FXML
-	    void cherche(ActionEvent event) {
+	    public void  cherche(ActionEvent event) {
 	    	 Valeur = choosetext.getText();
 	    	 Connection connection = ConnectToDB.connectionDB();
 	    	 ResultSet result = ConnectToDB.data(connection,"client",selectedValue,Valeur);
@@ -110,13 +111,13 @@ public class ClientsuppmodifController implements Initializable{
 	    }
 
 	    @FXML
-	    void modifier(ActionEvent event) {
+	    public void  modifier(ActionEvent event) {
          Client client = new Client(id_client,nomtext.getText(),prenomtext.getText(),adresstext.getText(),Integer.parseInt(telephonetext.getText()));
          Connection connection = ConnectToDB.connectionDB();
          ConnectToDB.modifieuser(connection, client);
 	    }
 	    @FXML
-	    void getvalue(ActionEvent event) {
+	    public void  getvalue(ActionEvent event) {
 	    	selectedValue = combobox.getValue();
 	    	label.setText("chercher par "+ selectedValue);
 	    }
@@ -130,7 +131,7 @@ public class ClientsuppmodifController implements Initializable{
 	    	controller.id_client = client.getId_client();
 	    }
 	    @Override
-		public void initialize(URL arg0, ResourceBundle arg1) {
+		public void  initialize(URL arg0, ResourceBundle arg1) {
 			ObservableList<String> options = 
 			        FXCollections.observableArrayList(
 			            "nom",

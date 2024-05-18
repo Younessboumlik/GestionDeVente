@@ -10,11 +10,13 @@ import java.util.ResourceBundle;
 
 import application.ConnectToDB;
 import classes.Commande;
+import classes.Livraison;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -63,7 +65,7 @@ public class LivraisonToCommandeController implements Initializable {
 
     ArrayList<CheckBox> arrayofcheckboxes = new ArrayList<>();
 
-    static LivraisonToCommandeController controller;
+    public static LivraisonToCommandeController controller;
     
 //    le numero de la commande choisie par le checkbox
 	int numeroCommandeChoisie = 0;
@@ -77,7 +79,7 @@ public class LivraisonToCommandeController implements Initializable {
 
     Connection connection = ConnectToDB.connectionDB();
 
-    public void initialize(URL arg0, ResourceBundle arg1) {
+    public void  initialize(URL arg0, ResourceBundle arg1) {
         ObservableList<String> options = FXCollections.observableArrayList(
             "numerocommande",
             "datecommande",
@@ -117,7 +119,7 @@ public class LivraisonToCommandeController implements Initializable {
     }
 
     @FXML
-    void cherche(ActionEvent event) {
+    public void  cherche(ActionEvent event) {
 //    	D'abord effacer le contenur du tableau de livraison.
 		controller.tableLivraison.getItems().clear();
 
@@ -158,7 +160,7 @@ public class LivraisonToCommandeController implements Initializable {
 }  
     
 
-	static void  disableCheckboxes(Commande commande) {
+	public static void  disableCheckboxes(Commande commande) {
 		
 //		System.out.println("disabled");
 		if(commande.checkcommandetolivraison.isSelected()) {controller.arrayofcheckboxes.forEach(checkbox -> {

@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import application.ConnectToDB;
 import classes.Commande;
+import classes.Livraison;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -69,7 +70,7 @@ public class AjouterLivraisonController implements Initializable{
 	
 //	Ceci va nous pemer d'acceder au champ de la classe AjouterLivraisonController dans une methode static.
 	 
-	static AjouterLivraisonController  controller;
+	public static AjouterLivraisonController  controller;
 	
 
 	 public AjouterLivraisonController() {
@@ -77,7 +78,7 @@ public class AjouterLivraisonController implements Initializable{
 	 }
 	    
 	    @FXML
-	    void cherche(ActionEvent event) {
+	    public void  cherche(ActionEvent event) {
 	    	 String Valeur = searchtext.getText();
 	    	 String selectedValue = combobox.getValue();
 	    	 Connection connection = ConnectToDB.connectionDB();
@@ -109,7 +110,7 @@ public class AjouterLivraisonController implements Initializable{
 	    }
 	    
 	    @FXML
-	    void Ajoutercommand(ActionEvent event){
+	    public void  Ajoutercommand(ActionEvent event){
 	    	System.out.println("numeroCommandeChoisie" + numeroCommandeChoisie);
 	          Livraison newLivraison = new Livraison(0,dateLivraison.getValue(),numeroCommandeChoisie);
 	          System.out.println("2");
@@ -119,7 +120,7 @@ public class AjouterLivraisonController implements Initializable{
 }
 
 	    
-	    public void initialize(URL arg0, ResourceBundle arg1) {
+	    public void  initialize(URL arg0, ResourceBundle arg1) {
 	    
 	    	
 	    	ResultSet commande = ConnectToDB.selecttous(connection, "Commande");
@@ -170,7 +171,7 @@ public class AjouterLivraisonController implements Initializable{
 	    
 //	    action pour desactiver les autres checkboxes si une checkbox est selectionner.
 	    
-		static void  disableCheckboxes(Commande commande) {
+		public static void  disableCheckboxes(Commande commande) {
 			if(commande.checkForLivraison.isSelected()) {controller.Checkboxs.forEach(checkbox -> {
 				checkbox.setDisable(true);
 			});

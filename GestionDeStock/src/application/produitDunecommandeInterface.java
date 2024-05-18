@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class produitDunecommandeInterface extends Application{
-	public void start(Stage primaryStage){
+	public void  start(Stage primaryStage){
 		
 		try {
 			Parent root;

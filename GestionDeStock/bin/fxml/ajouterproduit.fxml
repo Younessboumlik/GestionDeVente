@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ajouetrproduitcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ajouetrproduitcontroller">
    <children>
       <TextField fx:id="textnomproduit" layoutX="152.0" layoutY="85.0" prefHeight="25.0" prefWidth="219.0" />
       <TextField fx:id="textquantite" layoutX="152.0" layoutY="151.0" prefHeight="25.0" prefWidth="227.0" />

@@ -73,18 +73,18 @@ public class AjouterCommandeController implements Initializable{
 	    ArrayList<CheckBox> arrayOfcheckboxs = new ArrayList<>();
 	    ArrayList<Produit> arrayOfProduit = new ArrayList<>();
 	    
-	    static AjouterCommandeController controller;
+	    public static AjouterCommandeController controller;
 	    int num_client;
 	    public AjouterCommandeController() {
 	    	controller = this;
 	    }
-	    static void Ajouterproduit(Produit produit) {
+	    public static void Ajouterproduit(Produit produit) {
 	    	controller.arrayOfProduit.add(produit);
 	    }
-	    static void removeproduit(Produit produit) {
+	    public static void removeproduit(Produit produit) {
 	    	controller.arrayOfProduit.remove(produit);
 	    }
-	    static void checkboxIsSelected(boolean selected,int numClient) {
+	    public static void checkboxIsSelected(boolean selected,int numClient) {
 	      if(selected) {
 	    	  controller.num_client = numClient;
 	    	for (int i =0;i<controller.arrayOfcheckboxs.size();i++) {
@@ -107,7 +107,7 @@ public class AjouterCommandeController implements Initializable{
 	    	
 	    }
 	    @FXML
-	    void Ajoutercommand(ActionEvent event){
+	    public void  Ajoutercommand(ActionEvent event){
 	    	Commande commande = new Commande(0,calendrier.getValue(),num_client);
 	    	commande.setList_produit(arrayOfProduit);
 	    	ConnectToDB.insertcommande(connection, commande);
@@ -115,7 +115,7 @@ public class AjouterCommandeController implements Initializable{
 	    	refreche();
 	    }
 	    @FXML
-	    void cherche() {
+	    public void  cherche() {
 	    	ResultSet Clients = ConnectToDB.data(connection, "client", combobox.getValue(), searchtext.getText());
 	    	ObservableList<Client> ListClient = FXCollections.observableArrayList();
 	    	try {
@@ -136,7 +136,7 @@ public class AjouterCommandeController implements Initializable{
 	    		 
 	    		 
 	    }
-	    void refreche() {
+	    public void  refreche() {
 	    	ResultSet Clients = ConnectToDB.selecttous(connection, "client");
 	    	ObservableList<Client> ListClient = FXCollections.observableArrayList();
 	    	ResultSet produits = ConnectToDB.selecttous(connection, "produits");
@@ -168,7 +168,7 @@ public class AjouterCommandeController implements Initializable{
             
 	    	
 	    }
-	    public void initialize(URL arg0, ResourceBundle arg1) {
+	    public void  initialize(URL arg0, ResourceBundle arg1) {
 	    	ObservableList<String> options = 
 			        FXCollections.observableArrayList(
 			            "nom",

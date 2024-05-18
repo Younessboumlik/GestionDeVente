@@ -24,7 +24,7 @@ public class Client{
 	public CheckBox getCheckforcommands() {
 		return checkforcommands;
 	}
-	public void setCheckforcommands(CheckBox checkforcommands) {
+	public void  setCheckforcommands(CheckBox checkforcommands) {
 		this.checkforcommands = checkforcommands;
 		this.checkforcommands.setOnAction(event->affichecommande());
 	}
@@ -45,26 +45,26 @@ public class Client{
 	public CheckBox getCheckbox() {
 		return checkbox;
 	}
-	public void setCheckbox(CheckBox checkbox) {
+	public void  setCheckbox(CheckBox checkbox) {
 		this.checkbox = checkbox;
 		this.checkbox.setOnAction(event->checkdecheck());
 	}
 	public int getId_client() {
 		return id_client;
 	}
-	public void setId_client(int id_client) {
+	public void  setId_client(int id_client) {
 		this.id_client = id_client;
 	}
 	public String getNom() {
 		return nom;
 	}
-	public void setNom(String nom) {
+	public void  setNom(String nom) {
 		this.nom = nom;
 	}
 	public String getPrenom() {
 		return prenom;
 	}
-	public void setPrenom(String prenom) {
+	public void  setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 	public String getAdresse() {
@@ -73,33 +73,33 @@ public class Client{
 	public Button getSuppbutton() {
 		return suppbutton;
 	}
-	public void setSuppbutton(Button suppbutton) {
+	public void  setSuppbutton(Button suppbutton) {
 		this.suppbutton = suppbutton;
 	}
 	public Button getModifbutton() {
 		return modifbutton;
 	}
-	public void setModifbutton(Button modifbutton) {
+	public void  setModifbutton(Button modifbutton) {
 		this.modifbutton = modifbutton;
 	}
-	public void setAdresse(String adresse) {
+	public void  setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
 	public int getTelephone() {
 		return telephone;
 	}
-	public void setTelephone(int telephone) {
+	public void  setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
-	public void modifie() {
+	public void  modifie() {
 		ClientsuppmodifController.setvaluesontextfield(this);
 	}
-	public void delet() {
+	public void  delet() {
 		 Connection connection = ConnectToDB.connectionDB();
 		ConnectToDB.delete(connection, "client","numeroclient", this.id_client);
 		ClientsuppmodifController.refreshClient();
 	}
-	public void checkdecheck() {
+	public void  checkdecheck() {
 		if (this.checkbox.isSelected()) {
 			AjouterCommandeController.checkboxIsSelected(true,this.id_client);
 		}
@@ -108,7 +108,7 @@ public class Client{
 
 		}
 		}
-	void affichecommande() {
+	public void  affichecommande() {
 		if (checkforcommands.isSelected()) {
 			CommandeDunClientController.checkboxIsSelected(true, id_client);
 		}

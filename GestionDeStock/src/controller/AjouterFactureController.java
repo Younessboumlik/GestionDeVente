@@ -76,7 +76,7 @@ public class AjouterFactureController implements Initializable {
 	ArrayList<Commande> Commandes = new ArrayList<>();
 
 	 
-	static AjouterFactureController  controller;
+	public static AjouterFactureController  controller;
 	
 
 	 public AjouterFactureController() {
@@ -84,7 +84,7 @@ public class AjouterFactureController implements Initializable {
 	 }
 	    
 	    @FXML
-	    void cherche(ActionEvent event) {
+	    public void  cherche(ActionEvent event) {
 	    	 String Valeur = searchtext.getText();
 	    	 String selectedValue = combobox.getValue();
 	    	 Connection connection = ConnectToDB.connectionDB();
@@ -116,14 +116,14 @@ public class AjouterFactureController implements Initializable {
 	    }
 	    
 	    @FXML
-	    void Ajoutercommand(ActionEvent event){
+	    public void  Ajoutercommand(ActionEvent event){
 	    	System.out.println("numeroCommandeChoisie" + numeroCommandeChoisie);
 	          Facture newFacture = new Facture(0,dateFacture.getValue(),Float.parseFloat(montantFacture.getText()),numeroCommandeChoisie);
 	          Connection connection = ConnectToDB.connectionDB();
 	          ConnectToDB.insertFactureData(connection, newFacture);
 }
 
-	    public void initialize(URL arg0, ResourceBundle arg1) {
+	    public void  initialize(URL arg0, ResourceBundle arg1) {
 	    
 	    	
 	    	ResultSet commande = ConnectToDB.selecttous(connection, "Commande");
@@ -173,7 +173,7 @@ public class AjouterFactureController implements Initializable {
 	    
 //	    action pour desactiver les autres checkboxes si une checkbox est selectionner.
 	    
-		static void  disableCheckboxes(Commande commande) {
+		public static void  disableCheckboxes(Commande commande) {
 			if(commande.check.isSelected()) {controller.Checkboxs.forEach(checkbox -> {
 				checkbox.setDisable(true);
 			});

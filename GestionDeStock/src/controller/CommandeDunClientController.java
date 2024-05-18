@@ -66,7 +66,7 @@ public class CommandeDunClientController implements Initializable{
 
     @FXML
     private TableColumn<Client, Integer> teleclient;
-    static CommandeDunClientController controller;
+    public static CommandeDunClientController controller;
     Connection connection = ConnectToDB.connectionDB();
     int num_client;
     ArrayList<CheckBox> arrayOfcheckboxs = new ArrayList<>();
@@ -76,7 +76,7 @@ public class CommandeDunClientController implements Initializable{
     }
 
     @FXML
-    void chercher(ActionEvent event) {
+    public void  chercher(ActionEvent event) {
     	detruiretableau();
     	ResultSet Clients = ConnectToDB.data(connection, "client",combobox.getValue(),cherchetext.getText());
     	ObservableList<Client> ListClient = FXCollections.observableArrayList();
@@ -105,7 +105,7 @@ public class CommandeDunClientController implements Initializable{
 				
     	
     }
-    static void checkboxIsSelected(boolean selected,int numClient) {
+    public static void checkboxIsSelected(boolean selected,int numClient) {
 	      if(selected) {
 	    	  controller.num_client = numClient;
 	    	for (int i =0;i<controller.arrayOfcheckboxs.size();i++) {
@@ -129,7 +129,7 @@ public class CommandeDunClientController implements Initializable{
 	      }
 	    	
 	    }
-    static void setcommandetotable() {
+    public static void setcommandetotable() {
         
         try {
       	  controller.observerlistofcommandes = FXCollections.observableArrayList();
@@ -153,11 +153,11 @@ public class CommandeDunClientController implements Initializable{
     });
 		}
    }
-    static void detruiretableau() {
+    public static void detruiretableau() {
     	controller.observerlistofcommandes = FXCollections.observableArrayList();
     	controller.tableaucommande.setItems(controller.observerlistofcommandes);
     }
-    public void initialize(URL arg0, ResourceBundle arg1) {
+    public void  initialize(URL arg0, ResourceBundle arg1) {
     	ObservableList<String> options = 
 		        FXCollections.observableArrayList(
 		            "nom",

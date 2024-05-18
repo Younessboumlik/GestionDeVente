@@ -20,7 +20,7 @@ public class clientController{
 	
 	
 	 @FXML
-	    void AjouterClient(ActionEvent event) {
+	    public void  AjouterClient(ActionEvent event) {
 		  System.out.println("lllllllllllllllllllll");
           Client client = new Client(0,textnomclient.getText(),textprenomclient.getText(),
         		  textadressclient.getText(),Integer.parseInt(textteleclient.getText()));

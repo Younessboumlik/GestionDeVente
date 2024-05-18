@@ -1,15 +1,17 @@
 package application;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ChangePassword extends Application {
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void  start(Stage primaryStage) {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("changepassword.fxml"));
 			Scene scene = new Scene(root,663,419);

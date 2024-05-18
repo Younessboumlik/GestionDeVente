@@ -12,6 +12,7 @@ import org.jasypt.util.text.BasicTextEncryptor;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
@@ -35,7 +36,7 @@ public class ChangePasswordController {
 
 
     @FXML
-    void changePassword(ActionEvent event) {
+    public void  changePassword(ActionEvent event) {
 		try {
 	        BufferedReader readline;
 	        BufferedWriter writer = null;

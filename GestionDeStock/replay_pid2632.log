@@ -356,7 +356,7 @@ instanceKlass java/lang/invoke/LambdaForm$Name
 instanceKlass java/lang/invoke/Invokers
 instanceKlass sun/invoke/util/ValueConversions
 instanceKlass java/lang/invoke/DirectMethodHandle$Holder
-instanceKlass java/lang/Void
+instanceKlass java/lang/public void 
 instanceKlass sun/invoke/util/Wrapper$Format
 instanceKlass java/lang/invoke/MethodHandleImpl$1
 instanceKlass jdk/internal/access/JavaLangInvokeAccess

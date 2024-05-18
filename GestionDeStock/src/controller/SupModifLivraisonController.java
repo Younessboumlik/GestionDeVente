@@ -5,17 +5,18 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.ConnectToDB;
+import classes.Livraison;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -67,7 +68,7 @@ public class SupModifLivraisonController implements Initializable{
     private TableView<Livraison> tableLivraison;
 
     @FXML
-    void cherche(ActionEvent event) {
+    public void  cherche(ActionEvent event) {
       	 String Valeur = choosetext.getText();
        	 Connection connection = ConnectToDB.connectionDB();
        	 ResultSet result = ConnectToDB.data(connection,"Livraison",combobox.getValue(),Valeur);
@@ -98,7 +99,7 @@ public class SupModifLivraisonController implements Initializable{
     }
 
     @FXML
-    void modifier(ActionEvent event) {
+    public void  modifier(ActionEvent event) {
         Connection connection = ConnectToDB.connectionDB();
         ConnectToDB.updateLivraison(connection, new Livraison(Integer.parseInt(newNumeroLivraison.getText()),newDateLivraison.getValue(),Integer.parseInt(newNumeroCommande.getText())));
     }
@@ -114,7 +115,7 @@ public class SupModifLivraisonController implements Initializable{
     	
     	
     }
-	static SupModifLivraisonController  controller;
+	public static SupModifLivraisonController  controller;
 	
 	public SupModifLivraisonController() {
 		controller = this;
@@ -158,7 +159,7 @@ public class SupModifLivraisonController implements Initializable{
     
 //  permet d'initialiser le tableau des factures
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void  initialize(URL arg0, ResourceBundle arg1) {
 		
 		ObservableList<String> options = FXCollections.observableArrayList("numeroLivraison", "dateLivraison", "numeroCommande");
 		combobox.setItems(options);

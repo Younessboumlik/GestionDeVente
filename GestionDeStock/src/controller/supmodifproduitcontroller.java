@@ -2,7 +2,6 @@ package controller;
 
 
 import java.net.URL;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -71,10 +71,10 @@ public class supmodifproduitcontroller implements Initializable{
     @FXML
     private TableColumn<Produit, Button> modifier;
     int numproduit;
-    static supmodifproduitcontroller controller;
+    public static supmodifproduitcontroller controller;
 
     @FXML
-    void cherche(ActionEvent event) {
+    public void  cherche(ActionEvent event) {
     	 Connection connection = ConnectToDB.connectionDB();
     	 ResultSet result = ConnectToDB.data(connection,"produits",combobox.getValue(),choosetext.getText());
     	 ObservableList<Produit> ListProduit = FXCollections.observableArrayList();
@@ -102,7 +102,7 @@ public class supmodifproduitcontroller implements Initializable{
     }
 
     @FXML
-    void getvalue(ActionEvent event) {
+    public void  getvalue(ActionEvent event) {
 
     }
     public supmodifproduitcontroller (){
@@ -111,13 +111,13 @@ public class supmodifproduitcontroller implements Initializable{
     }
 
     @FXML
-    void modifier(ActionEvent event) {
+    public void  modifier(ActionEvent event) {
     	Produit produit = new Produit(numproduit,nomprdtext.getText(),Integer.parseInt(quatitetext.getText()),Double.parseDouble(prixtext.getText()));
     	Connection connection = ConnectToDB.connectionDB();
     	ConnectToDB.modifierproduit(connection,produit);
          refreche();
     }
-     static void refreche() {
+     public static void refreche() {
     	 Connection connection = ConnectToDB.connectionDB();
     	 ResultSet result = ConnectToDB.selecttous(connection,"produits");
     	 ObservableList<Produit> ListProduit = FXCollections.observableArrayList();
@@ -152,7 +152,7 @@ public class supmodifproduitcontroller implements Initializable{
     	controller.numproduit = produit.getNumProduit();
     	
     }
-    public void initialize(URL arg0, ResourceBundle arg1) {
+    public void  initialize(URL arg0, ResourceBundle arg1) {
 		ObservableList<String> options = 
 		        FXCollections.observableArrayList(
 		            "numeroproduit",

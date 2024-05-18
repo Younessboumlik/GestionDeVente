@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -84,7 +85,7 @@ public class supmodifcommandecontroller implements Initializable{
     @FXML
     private TextField textnumclient;
     Connection connection = ConnectToDB.connectionDB();
-    static supmodifcommandecontroller controller;
+    public static supmodifcommandecontroller controller;
     int num_commande;
     int num_prod;
     String nom_prod;
@@ -93,7 +94,7 @@ public class supmodifcommandecontroller implements Initializable{
     ObservableList<Produit> observerlistofproduit = FXCollections.observableArrayList();
     
     @FXML
-    void chercher(ActionEvent event) {
+    public void  chercher(ActionEvent event) {
        ResultSet Commandes = ConnectToDB.data(connection, "Commande",combobox.getValue() , cherchetext.getText());
        ObservableList<Commande> ListCommandes = FXCollections.observableArrayList();
        try {
@@ -129,11 +130,11 @@ public class supmodifcommandecontroller implements Initializable{
 	}    
        
     }
-    static void detruiretableau() {
+    public static void detruiretableau() {
     	controller.observerlistofproduit = FXCollections.observableArrayList();
     	controller.tableauproduit.setItems(controller.observerlistofproduit);
     }
-    static void setpruducttotable() {
+    public static void setpruducttotable() {
           
           try {
         	  controller.observerlistofproduit = FXCollections.observableArrayList();
@@ -158,7 +159,7 @@ public class supmodifcommandecontroller implements Initializable{
     });
 		}
     }
-    static void checkboxIsSelected(boolean selected,int num_commande) {
+    public static void checkboxIsSelected(boolean selected,int num_commande) {
 	      if(selected) {
 	    	  controller.num_commande = num_commande;
 	    	for (int i =0;i<controller.arrayofcheckboxes.size();i++) {
@@ -185,34 +186,34 @@ public class supmodifcommandecontroller implements Initializable{
     }
 
    @FXML
-    void modifiercomm(ActionEvent event) {
+    public void  modifiercomm(ActionEvent event) {
       ConnectToDB.modifiercomande(connection, new Commande(num_commandeAmodifier,datetext.getValue(),Integer.parseInt(textnumclient.getText())));
       refresh();
     }
 
     @FXML
-    void modifierproduit(ActionEvent event) {
+    public void  modifierproduit(ActionEvent event) {
     	ConnectToDB.modifierproduit(connection,new Produit(num_prod,nom_prod,Integer.parseInt(quantitetext.getText())), num_commande);
     	setpruducttotable();
     }
-    static void suppproduitfromavoir(int num_prod) {
+    public static void suppproduitfromavoir(int num_prod) {
     	ConnectToDB.supprimerrproduit(controller.connection,num_prod, controller.num_commande);
     	setpruducttotable();
     	
     }
-static void setinfotomodifproduit (Produit produit) {
+public static void setinfotomodifproduit (Produit produit) {
     	controller.quantitetext.setText(Integer.toString(produit.getQuantitechoisie()));
          
     	controller.num_prod = produit.getNumProduit();
     	controller.nom_prod = produit.getNomProduit();
     }
     
-static void setinfotomodifcommande(Commande commande) {
+public static void setinfotomodifcommande(Commande commande) {
 	controller.textnumclient.setText(Integer.toString(commande.getNum_client()));
 	controller.datetext.setValue(commande.getDatecomande());
 	controller.num_commandeAmodifier = commande.getNumerocommande();
 }
-    static void refresh() {
+    public static void refresh() {
     	ResultSet Commandes = ConnectToDB.selecttous(controller.connection, "commande");
     	ObservableList<Commande> ListCommandes = FXCollections.observableArrayList();
     	try {
@@ -242,7 +243,7 @@ static void setinfotomodifcommande(Commande commande) {
     	controller.datetext.setValue(null);
     	detruiretableau();
     }
-    public void initialize(URL arg0, ResourceBundle arg1) {
+    public void  initialize(URL arg0, ResourceBundle arg1) {
     	ObservableList<String> options = 
 		        FXCollections.observableArrayList(
 		            "numerocommande",
