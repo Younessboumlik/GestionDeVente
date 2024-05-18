@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ajouetrproduitcontroller">
+   <children>
+      <TextField fx:id="textnomproduit" layoutX="152.0" layoutY="85.0" prefHeight="25.0" prefWidth="219.0" />
+      <TextField fx:id="textquantite" layoutX="152.0" layoutY="151.0" prefHeight="25.0" prefWidth="227.0" />
+      <TextField fx:id="textprix" layoutX="148.0" layoutY="207.0" prefHeight="25.0" prefWidth="227.0" />
+      <Label layoutX="59.0" layoutY="89.0" prefHeight="17.0" prefWidth="71.0" text="nom produit" />
+      <Label layoutX="59.0" layoutY="147.0" prefHeight="17.0" prefWidth="71.0" text="  `quantite :" />
+      <Label layoutX="59.0" layoutY="211.0" prefHeight="17.0" prefWidth="71.0" text="    prix:" />
+      <Label layoutX="185.0" layoutY="43.0" prefHeight="17.0" prefWidth="184.0" text="entrer les information de clients" />
+      <Button fx:id="ajouter" layoutX="238.0" layoutY="277.0" mnemonicParsing="false" onAction="#AjouterProduit" text="Ajouter" />
+   </children>
+</AnchorPane>

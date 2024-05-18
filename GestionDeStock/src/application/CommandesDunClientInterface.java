@@ -3,9 +3,11 @@ package application;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 public class CommandesDunClientInterface extends Application{
@@ -18,7 +20,18 @@ public class CommandesDunClientInterface extends Application{
 ////			Scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
-		} catch (IOException e) {
+		} catch (Exception e) {
+		    Platform.runLater(() -> {
+		        Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setTitle("Erreur");
+		        alert.setHeaderText("Une erreur s'est produite.");
+		        alert.setContentText(e.getMessage());
+		        alert.showAndWait();
+		    });
+		}
+
+			
+			
 		}
 		
 		// primaryStage.setHeight(400);

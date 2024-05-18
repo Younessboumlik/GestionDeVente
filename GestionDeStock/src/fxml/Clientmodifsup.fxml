@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientsuppmodifController">
+   <children>
+      <TableView fx:id="TableClient" layoutX="196.0" layoutY="170.0" prefHeight="209.0" prefWidth="460.0">
+        <columns>
+          <TableColumn fx:id="nomcolon" prefWidth="75.0" text="nom" />
+            <TableColumn fx:id="prenomcolone" prefWidth="75.0" text="prenom" />
+            <TableColumn fx:id="adresscolone" prefWidth="75.0" text="adress" />
+            <TableColumn fx:id="telecolone" prefWidth="75.0" text="telephone" />
+            <TableColumn fx:id="modifcolone" prefWidth="76.0" text="modifier" />
+            <TableColumn fx:id="suppcolone" prefWidth="75.33331298828125" text="supprimer" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="combobox" layoutX="300.0" layoutY="76.0" onAction="#getvalue" prefHeight="25.0" prefWidth="249.0">
+      </ComboBox>
+      <TextField fx:id="choosetext" layoutX="273.0" layoutY="132.0" prefHeight="25.0" prefWidth="249.0" />
+      <Label layoutX="188.0" layoutY="21.0" prefHeight="17.0" prefWidth="223.0" text="suppression et modification client" />
+      <TextField fx:id="adresstext" layoutX="26.0" layoutY="262.0" />
+      <Label layoutX="321.0" layoutY="49.0" prefHeight="17.0" prefWidth="149.0" text="search a client by :" />
+      <Label fx:id="label" layoutX="321.0" layoutY="111.0" prefHeight="17.0" prefWidth="202.0" />
+      <TextField fx:id="nomtext" layoutX="26.0" layoutY="132.0" />
+      <TextField fx:id="prenomtext" layoutX="31.0" layoutY="200.0" />
+      <TextField fx:id="telephonetext" layoutX="26.0" layoutY="311.0" />
+      <Button fx:id="modifier" layoutX="62.0" layoutY="348.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
+      <Label layoutX="72.0" layoutY="235.0" prefHeight="17.0" prefWidth="80.0" text="adresse" />
+      <Label layoutX="78.0" layoutY="102.0" prefHeight="18.0" prefWidth="34.0" text="nom" />
+      <Label layoutX="79.0" layoutY="170.0" text="prenom" />
+      <Label layoutX="62.0" layoutY="293.0" prefHeight="18.0" prefWidth="65.0" text="telephone" />
+      <Button fx:id="cherche" layoutX="531.0" layoutY="130.0" mnemonicParsing="false" onAction="#cherche" text="cherche" />
+   </children>
+</AnchorPane>
