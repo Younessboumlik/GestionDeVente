@@ -13,7 +13,7 @@ public class Main extends Application {
 	@Override
 	public void  start(Stage primaryStage) {
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/Sample.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/SupModifFacture.fxml"));
 			Scene scene = new Scene(root,663,419);
 			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -24,7 +24,8 @@ public class Main extends Application {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 	}

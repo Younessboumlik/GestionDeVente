@@ -29,7 +29,8 @@ public class clientAjoueinterface extends Application {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 		

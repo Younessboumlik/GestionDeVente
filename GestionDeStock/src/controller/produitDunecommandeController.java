@@ -99,7 +99,8 @@ public class produitDunecommandeController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	  	}    
 	         
@@ -149,7 +150,8 @@ public class produitDunecommandeController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 			}
 	    }
@@ -201,7 +203,8 @@ public class produitDunecommandeController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 				}    
 	    }

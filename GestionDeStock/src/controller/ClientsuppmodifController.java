@@ -18,6 +18,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -31,6 +33,9 @@ public class ClientsuppmodifController implements Initializable{
 
 	    @FXML
 	    private Button cherche;
+	    
+	    @FXML
+	    private Button annuler;
 
 	    @FXML
 	    private TextField choosetext;
@@ -44,6 +49,14 @@ public class ClientsuppmodifController implements Initializable{
 	    @FXML
 	    private Button modifier;
 
+	    @FXML
+	    private MenuButton export;
+
+	    @FXML
+	    private MenuItem exportToCsv;
+
+	    @FXML
+	    private MenuItem exportToPdf;
 
 	    @FXML
 	    private TableColumn<Client, String> nomcolon;
@@ -104,7 +117,8 @@ public class ClientsuppmodifController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 				}
 	    	
@@ -157,7 +171,8 @@ public class ClientsuppmodifController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 				}
 	    	 nomcolon.setCellValueFactory(new PropertyValueFactory<Client,String>("nom"));
@@ -167,6 +182,14 @@ public class ClientsuppmodifController implements Initializable{
 	    	 modifcolone.setCellValueFactory(new PropertyValueFactory<Client,Button>("modifbutton"));
 	    	 suppcolone.setCellValueFactory(new PropertyValueFactory<Client,Button>("suppbutton"));
 	    	 TableClient.setItems(ListClient);
+	    	 
+	    	 
+	 		exportToCsv.setOnAction(event -> ConnectToDB.exportToCsvclient(TableClient));
+			exportToPdf.setOnAction(event -> ConnectToDB.exportToPdfclient(TableClient));
+			annuler.setOnAction(event -> {
+				choosetext.clear();
+				refreshClient();
+			});
 			
 		}
 	    public static void refreshClient() {
@@ -187,7 +210,8 @@ public class ClientsuppmodifController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 				}
 	    	 controller.TableClient.setItems(ListClient);

@@ -82,7 +82,8 @@ public class ChangePasswordController {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -91,7 +92,8 @@ public class ChangePasswordController {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 		catch(Exception e) {
@@ -100,7 +102,8 @@ public class ChangePasswordController {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
     }

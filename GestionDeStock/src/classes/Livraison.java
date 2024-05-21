@@ -9,6 +9,8 @@ import controller.SupModifLivraisonController;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Livraison {
 
@@ -28,11 +30,21 @@ public class Livraison {
 //		Le button de suppresion
 		this.deletebutton = new Button();
 		this.deletebutton.setText("Delete");
-		this.deletebutton.setOnAction(event -> deleteLivraison());
+
 		this.deletebutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+		Image image = new Image("images/delete.png");
+		ImageView imageView = new ImageView(image);
+		imageView.setFitWidth(16);
+		imageView.setFitHeight(16);
+		this.deletebutton.setGraphic(imageView);
+		this.deletebutton.setOnAction(event -> deleteLivraison());
+
+
 //		Le button de modification
+
 		this.modifbutton = new Button("modifier");
 		this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+
 		this.modifbutton.setOnAction(event -> modifieLivraison());
 		
 	}

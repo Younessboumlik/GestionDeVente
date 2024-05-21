@@ -1,37 +1,24 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-
-public class CommandesDunClientInterface extends Application{
+public class MainInterface extends Application{
 	public void  start(Stage primaryStage){
 		
 		try {
-			Parent root; 
-			root = FXMLLoader.load(getClass().getResource("/fxml/CommandeDunClient.fxml"));
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
 			Scene Scene = new Scene(root);
 ////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
-		} catch (Exception e) {
-		    Platform.runLater(() -> {
-		        Alert alert = new Alert(Alert.AlertType.ERROR);
-		        alert.setTitle("Erreur");
-		        alert.setHeaderText("Une erreur s'est produite.");
-		        alert.setContentText(e.getMessage());
-		alert.showAndWait();
-e.printStackTrace();
-		    });
-		}
-
-			
-			
+		} catch (IOException e) {
 		}
 		
 		// primaryStage.setHeight(400);
@@ -39,9 +26,10 @@ e.printStackTrace();
 		// primaryStage.setResizable(false);
 		// primaryStage.setFullScreen(true);
 		// primaryStage.show();
-	
+	}
 
 	public static void main(String[] args) {
 		launch(args);
 	}
+}
 }

@@ -2,9 +2,6 @@ package controller;
 
 
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
@@ -12,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -29,16 +25,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class SampleController implements Initializable{
+public class SupModifFactureController implements Initializable{
 	
-	public static SampleController  controller;
+	public static SupModifFactureController  controller;
 	
-	public SampleController() {
+	public SupModifFactureController() {
 		controller = this;
 	}
 	
@@ -81,10 +79,21 @@ public class SampleController implements Initializable{
     private Button cherche;
     
     @FXML
-    private Button exportToCsv;
+    private Button annuler;
+    
 
     @FXML
     private Button modifier;
+    
+    @FXML
+    private MenuButton export;
+
+    @FXML
+    private MenuItem exportToCsv;
+
+    @FXML
+    private MenuItem exportToPdf;
+    
 
     @FXML
     private ComboBox<String> combobox;
@@ -121,7 +130,8 @@ public class SampleController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 			}
    	
@@ -239,46 +249,18 @@ public class SampleController implements Initializable{
 		
 		tableventes.setItems(getfacturedata());
 		
+		exportToCsv.setOnAction(event -> ConnectToDB.exportToCsvfact(tableventes));
+		exportToPdf.setOnAction(event -> ConnectToDB.exportToPdffac(tableventes));
+		annuler.setOnAction(event -> {
+			choosetext.clear();
+			refreshfacture();
+		});
+		
 		
 	}
 	
 	
-//	convert data to csv file
-    @FXML
-    public void  toCsv(ActionEvent event) {
-		
-    	FileWriter w;
-		try {
-			w = new FileWriter("C:\\Users\\YOUNESS\\Desktop\\studies\\ENSA\\IID\\S2\\Java\\factures.csv");
-	    	BufferedWriter w2 = new BufferedWriter(w);
-	    	
-	    	 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
-	    	
-//	    	w2.write();
-	    	for (Facture facture : getfacturedata()) {
-	    		String value = Integer.toString(facture.numeroFacture) + ',' +facture.dateFacture.format(formatter) + ',' + facture.montant ;
-	    		w2.write(value);
-	    		System.out.println(facture.numeroFacture);
-	    		w2.newLine();
-	    	}
-	    	
-	        w2.flush();
-	        w2.close();
-	        
-	        System.out.println("Le fichiers est cree avec succes");
-	   
 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			    Platform.runLater(() -> {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur");
-        alert.setHeaderText("Une erreur s'est produite.");
-        alert.setContentText(e.getMessage());
-        alert.showAndWait();
-    });
-		}
-			
-	}
+
 
 }

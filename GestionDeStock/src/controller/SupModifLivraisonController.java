@@ -22,6 +22,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -31,6 +33,9 @@ public class SupModifLivraisonController implements Initializable{
 
     @FXML
     private Button cherche;
+    
+    @FXML
+    private Button annuler;
 
     @FXML
     private TextField choosetext;
@@ -42,7 +47,13 @@ public class SupModifLivraisonController implements Initializable{
     private TableColumn<Livraison, LocalDate> dateLivraison;
 
     @FXML
-    private Button exportToCsv;
+    private MenuButton export;
+
+    @FXML
+    private MenuItem exportToCsv;
+
+    @FXML
+    private MenuItem exportToPdf;
 
     @FXML
     private Label label;
@@ -91,7 +102,8 @@ public class SupModifLivraisonController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
     			}
        	
@@ -185,9 +197,13 @@ public class SupModifLivraisonController implements Initializable{
 		tableLivraison.getColumns().add(modifiebutton);
 		tableLivraison.getColumns().add(deletebutton);
 		
-		
 
-		
+		exportToCsv.setOnAction(event -> ConnectToDB.exportToCsvliv(tableLivraison));
+		exportToPdf.setOnAction(event -> ConnectToDB.exportToPdfliv(tableLivraison));
+		annuler.setOnAction(event -> {
+			choosetext.clear();
+			refreshLivraison();
+		});
 		
 	}
 
