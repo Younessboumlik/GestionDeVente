@@ -1,4 +1,8 @@
 package application;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -8,15 +12,23 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import classes.Client;
 import classes.Commande;
 import classes.Facture;
 import classes.Livraison;
 import classes.Produit;
-import controller.SampleController;
+import controller.SupModifFactureController;
 import controller.SupModifLivraisonController;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableView;
+import javafx.stage.FileChooser;
 public class ConnectToDB {
 	
 
@@ -26,7 +38,7 @@ public class ConnectToDB {
 		
 		String url = "jdbc:mysql://localhost:3306/gestioncommande";
 		String user = "root";
-		String password = "12345678";
+		String password = "";
 		Connection connection = null;
 		
 
@@ -46,7 +58,8 @@ public class ConnectToDB {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 		
@@ -59,7 +72,8 @@ public class ConnectToDB {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 		
@@ -96,7 +110,8 @@ public class ConnectToDB {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 		return null;
@@ -121,7 +136,8 @@ public class ConnectToDB {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	  }
 	  }
@@ -146,7 +162,8 @@ public class ConnectToDB {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		  }
 }
@@ -168,7 +185,8 @@ public class ConnectToDB {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
           }
           }
@@ -182,7 +200,7 @@ public static void updatefacture(Connection connextion,Facture facture) {
 		prepare.setInt(3, facture.getNumeroCommande());
 
 		prepare.execute();
-		SampleController.refreshfacture();
+		SupModifFactureController.refreshfacture();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		    Platform.runLater(() -> {
@@ -190,7 +208,8 @@ public static void updatefacture(Connection connextion,Facture facture) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -213,7 +232,8 @@ public static void updateLivraison(Connection connexion,Livraison livraison) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -235,7 +255,8 @@ public static ResultSet data(Connection connection,String table,String condition
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		return null;
 	}
@@ -260,7 +281,8 @@ public static void modifieuser(Connection connection,Client client) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -277,7 +299,8 @@ public static ResultSet selecttous(Connection connection,String Table) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		return null;
 	}
@@ -304,7 +327,8 @@ public static ResultSet selecttous(Connection connection,String Table) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
 	}
@@ -347,7 +371,8 @@ public static void insertcommande(Connection connection,Commande commande) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -363,7 +388,8 @@ public static ResultSet getproducts(Connection connection,int numcommmande){
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		return null;
 	}
@@ -384,7 +410,8 @@ public static void supprimercommande(Connection connection , Commande commande) 
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 	
@@ -404,7 +431,8 @@ public static void  modifiercomande(Connection connection ,Commande commande) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -423,7 +451,8 @@ public static void modifierproduit(Connection connection ,Produit produit,int nu
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -443,7 +472,8 @@ public static void supprimerrproduit(Connection connection , int num_produit ,in
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -464,7 +494,8 @@ public static void modifierproduit(Connection connection,Produit produit) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}
 }
@@ -482,8 +513,466 @@ public static void AJouterProduit(Connection connection ,Produit produit) {
 		  
 	  }
 	  catch (SQLException e){
-		  e.getNextException();
+		  
+		    Platform.runLater(() -> {
+		        Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setTitle("Erreur");
+		        alert.setHeaderText("Une erreur s'est produite.");
+		        alert.setContentText(e.getMessage());
+		alert.showAndWait();
+		e.printStackTrace();
+		    });
 }
 }
 
+
+public static void exportToCsvliv(TableView<Livraison> tableau){
+	
+	    FileChooser fileChooser = new FileChooser();
+
+	    // Set extension filter for text files
+	    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+	    fileChooser.getExtensionFilters().add(extFilter);
+
+	    // Show save file dialog
+	    File file = fileChooser.showSaveDialog(null);
+	    
+//	    pour prendre les donnes du tableau de livraison.\
+
+	    ObservableList<Livraison> items = tableau.getItems();
+	    
+
+
+	    if (file != null) {
+	        try {
+	            FileWriter writer = new FileWriter(file);
+	    	    writer.write("NumeroLivraison,DateLivraison,NumeroCommande\n");
+	            // TODO: replace this with your actual data
+	    		for (int i = 0; i < items.size(); i++) {
+	    			writer.write(Integer.toString(items.get(i).getNumeroLivraison()));
+	    			writer.write(",");
+	    			writer.write(items.get(i).getDateLivraison().toString());
+	    			writer.write(",");
+	    			writer.write(Integer.toString(items.get(i).getNumeroCommande()));
+	    			writer.write("\n");
+	    		}
+	            writer.close();
+	        } catch (IOException ex) {
+			    Platform.runLater(() -> {
+			        Alert alert = new Alert(Alert.AlertType.ERROR);
+			        alert.setTitle("Erreur");
+			        alert.setHeaderText("Une erreur s'est produite.");
+			        alert.setContentText(ex.getMessage());
+			alert.showAndWait();
+			ex.printStackTrace();
+			    });
+	        }
+	    }
 }
+	
+public static void exportToPdfliv(TableView<Livraison> tableau) {
+    FileChooser fileChooser = new FileChooser();
+
+    // Set extension filter for PDF files
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+    fileChooser.getExtensionFilters().add(extFilter);
+
+    // Show save file dialog
+    File file = fileChooser.showSaveDialog(null);
+
+    ObservableList<Livraison> items = tableau.getItems();
+
+    if (file != null) {
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(file));
+            document.open();
+
+            PdfPTable pdfTable = new PdfPTable(3);
+            pdfTable.addCell("NumeroLivraison");
+            pdfTable.addCell("DateLivraison");
+            pdfTable.addCell("NumeroCommande");
+
+            for (Livraison item : items) {
+                pdfTable.addCell(Integer.toString(item.getNumeroLivraison()));
+                pdfTable.addCell(item.getDateLivraison().toString());
+                pdfTable.addCell(Integer.toString(item.getNumeroCommande()));
+            }
+
+            document.add(pdfTable);
+            document.close();
+
+        } catch (DocumentException | IOException ex) {
+		    Platform.runLater(() -> {
+		        Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setTitle("Erreur");
+		        alert.setHeaderText("Une erreur s'est produite.");
+		        alert.setContentText(ex.getMessage());
+		alert.showAndWait();
+		ex.printStackTrace();
+		    });
+        }
+    }
+}
+
+public static void exportToCsvfact(TableView<Facture> tableau){
+
+	FileChooser fileChooser = new FileChooser();
+
+	// Set extension filter for text files
+	FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+	fileChooser.getExtensionFilters().add(extFilter);
+
+	// Show save file dialog
+	File file = fileChooser.showSaveDialog(null);
+	
+	//	pour prendre les donnes du tableau de facture.\
+	ObservableList<Facture> items = tableau.getItems();
+	
+    if (file != null) {
+        try {
+            FileWriter writer = new FileWriter(file);
+    	    writer.write("NumeroLivraison,DateLivraison,Montant,NumeroCommande\n");
+            // TODO: replace this with your actual data
+    		for (int i = 0; i < items.size(); i++) {
+    			writer.write(Integer.toString(items.get(i).getNumeroFacture()));
+    			writer.write(",");
+    			writer.write(items.get(i).getDateFacture().toString());
+    			writer.write(",");
+    			writer.write(Float.toString(items.get(i).getMontant()));
+    			writer.write(",");
+    			writer.write(Integer.toString(items.get(i).getNumeroCommande()));
+    			writer.write("\n");
+    		}
+            writer.close();
+        } catch (IOException ex) {
+		    Platform.runLater(() -> {
+		        Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setTitle("Erreur");
+		        alert.setHeaderText("Une erreur s'est produite.");
+		        alert.setContentText(ex.getMessage());
+		alert.showAndWait();
+		ex.printStackTrace();
+		    });
+        }
+    }
+}
+public static void exportToPdffac(TableView<Facture> tableau) {
+    FileChooser fileChooser = new FileChooser();
+
+    // Set extension filter for PDF files
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+    fileChooser.getExtensionFilters().add(extFilter);
+
+    // Show save file dialog
+    File file = fileChooser.showSaveDialog(null);
+
+    ObservableList<Facture> items = tableau.getItems();
+
+    if (file != null) {
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(file));
+            document.open();
+//			Definition du tableau a 4 cases
+            PdfPTable pdfTable = new PdfPTable(4);
+//            les champs du tableau.
+            pdfTable.addCell("NumeroFacture");
+            pdfTable.addCell("DateFacture");
+            pdfTable.addCell("Montant");
+            pdfTable.addCell("NumeroCommande");
+
+            for (Facture item : items) {
+                pdfTable.addCell(Integer.toString(item.getNumeroCommande()));
+                pdfTable.addCell(item.getDateFacture().toString());
+                pdfTable.addCell(Float.toString(item.getMontant()));
+                pdfTable.addCell(Integer.toString(item.getNumeroCommande()));
+            }
+
+            document.add(pdfTable);
+            document.close();
+
+        } catch (DocumentException | IOException ex) {
+		    Platform.runLater(() -> {
+		        Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setTitle("Erreur");
+		        alert.setHeaderText("Une erreur s'est produite.");
+		        alert.setContentText(ex.getMessage());
+		alert.showAndWait();
+		ex.printStackTrace();
+		    });
+        }
+    }
+}
+
+public static void exportToCsvprod(TableView<Produit> tableau){
+
+    FileChooser fileChooser = new FileChooser();
+
+    // Set extension filter for text files
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+    fileChooser.getExtensionFilters().add(extFilter);
+
+    // Show save file dialog
+    File file = fileChooser.showSaveDialog(null);
+    
+    //	pour prendre les donnes du tableau de produit.\
+//    ObservableList<Produit> items = tableau.getItems();
+    
+    if (file != null) {
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write("NumeroProduit,NomProduit,Quantite,Prix\n");
+
+}
+        
+        catch (IOException ex) {
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText("Une erreur s'est produite.");
+                alert.setContentText(ex.getMessage());
+        alert.showAndWait();
+        ex.printStackTrace();
+            });
+        }
+    }
+}
+
+public static void exportToPdfprod(TableView<Produit> tableau) {
+    FileChooser fileChooser = new FileChooser();
+
+    // Set extension filter for PDF files
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+    fileChooser.getExtensionFilters().add(extFilter);
+
+    // Show save file dialog
+    File file = fileChooser.showSaveDialog(null);
+
+    ObservableList<Produit> items = tableau.getItems();
+
+    if (file != null) {
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(file));
+            document.open();
+
+            PdfPTable pdfTable = new PdfPTable(4);
+            pdfTable.addCell("NumeroProduit");
+            pdfTable.addCell("NomProduit");
+            pdfTable.addCell("Quantite");
+            pdfTable.addCell("Prix");
+
+            for (Produit item : items) {
+                pdfTable.addCell(Integer.toString(item.getNumProduit()));
+                pdfTable.addCell(item.getNomProduit());
+                pdfTable.addCell(Integer.toString(item.getQuantiteProduit()));
+                pdfTable.addCell(Double.toString(item.getPrix()));
+            }
+
+            document.add(pdfTable);
+            document.close();
+
+        } catch (DocumentException | IOException ex) {
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText("Une erreur s'est produite.");
+                alert.setContentText(ex.getMessage());
+        alert.showAndWait();
+        ex.printStackTrace();
+            });
+        }
+    }
+    
+    
+}
+
+public static void exportToCsvclient(TableView<Client> tableau){
+
+    FileChooser fileChooser = new FileChooser();
+
+    // Set extension filter for text files
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+    fileChooser.getExtensionFilters().add(extFilter);
+
+    // Show save file dialog
+    File file = fileChooser.showSaveDialog(null);
+    
+    //	pour prendre les donnes du tableau de client.\
+    ObservableList<Client> items = tableau.getItems();
+    
+    if (file != null) {
+        try {
+            FileWriter writer = new FileWriter(file);
+    	    writer.write("NumeroClient,Nom,Prenom,Adresse,Telephone\n");
+    	    
+        		for (int i = 0; i < items.size(); i++) {
+        			writer.write(Integer.toString(items.get(i).getId_client()));
+        			writer.write(",");
+        			writer.write(items.get(i).getNom());
+        			writer.write(",");
+        			writer.write(items.get(i).getPrenom());
+        			writer.write(",");
+        			writer.write(items.get(i).getAdresse());
+        			writer.write(",");
+        			writer.write(Integer.toString(items.get(i).getTelephone()));
+        			writer.write("\n");
+        		}
+            writer.close();
+        		}
+        catch (IOException ex) {
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText("Une erreur s'est produite.");
+                alert.setContentText(ex.getMessage());
+                alert.showAndWait();
+                ex.printStackTrace();
+                });
+            
+        }
+    }
+}
+
+public static void exportToPdfclient(TableView<Client> tableau) {
+	FileChooser fileChooser = new FileChooser();
+
+	// Set extension filter for PDF files
+	FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+	fileChooser.getExtensionFilters().add(extFilter);
+
+	// Show save file dialog
+	File file = fileChooser.showSaveDialog(null);
+
+	ObservableList<Client> items = tableau.getItems();
+
+	if (file != null) {
+		try {
+			Document document = new Document();
+			PdfWriter.getInstance(document, new FileOutputStream(file));
+			document.open();
+
+			PdfPTable pdfTable = new PdfPTable(5);
+			pdfTable.addCell("NumeroClient");
+			pdfTable.addCell("Nom");
+			pdfTable.addCell("Prenom");
+			pdfTable.addCell("Adresse");
+			pdfTable.addCell("Telephone");
+
+			for (Client item : items) {
+				pdfTable.addCell(Integer.toString(item.getId_client()));
+				pdfTable.addCell(item.getNom());
+				pdfTable.addCell(item.getPrenom());
+				pdfTable.addCell(item.getAdresse());
+				pdfTable.addCell(Integer.toString(item.getTelephone()));
+			}
+
+			document.add(pdfTable);
+			document.close();
+
+		} catch (DocumentException | IOException ex) {
+			Platform.runLater(() -> {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("Erreur");
+				alert.setHeaderText("Une erreur s'est produite.");
+				alert.setContentText(ex.getMessage());
+				alert.showAndWait();
+				ex.printStackTrace();
+			});
+		}
+	}
+}
+
+public static void exportToCsvcommande(TableView<Commande> tableau){
+
+    FileChooser fileChooser = new FileChooser();
+
+    // Set extension filter for text files
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+    fileChooser.getExtensionFilters().add(extFilter);
+
+    // Show save file dialog
+    File file = fileChooser.showSaveDialog(null);
+    
+    //	pour prendre les donnes du tableau de commande.\
+    ObservableList<Commande> items = tableau.getItems();
+    
+    if (file != null) {
+        try {
+            FileWriter writer = new FileWriter(file);
+    	    writer.write("NumeroCommande,DateCommande,NumeroClient\n");
+    	    
+        		for (int i = 0; i < items.size(); i++) {
+        			writer.write(Integer.toString(items.get(i).getNumerocommande()));
+        			writer.write(",");
+        			writer.write(items.get(i).getDatecomande().toString());
+        			writer.write(",");
+        			writer.write(Integer.toString(items.get(i).getNum_client()));
+        			writer.write("\n");
+        		}
+            writer.close();
+        		}
+        catch (IOException ex) {
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText("Une erreur s'est produite.");
+                alert.setContentText(ex.getMessage());
+                alert.showAndWait();
+                ex.printStackTrace();
+                });
+            
+        }
+    }
+}
+
+public static void exportToPdfcommande(TableView<Commande> tableau) {
+	FileChooser fileChooser = new FileChooser();
+
+	// Set extension filter for PDF files
+	FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+	fileChooser.getExtensionFilters().add(extFilter);
+
+	// Show save file dialog
+	File file = fileChooser.showSaveDialog(null);
+
+	ObservableList<Commande> items = tableau.getItems();
+
+	if (file != null) {
+		try {
+			Document document = new Document();
+			PdfWriter.getInstance(document, new FileOutputStream(file));
+			document.open();
+
+			PdfPTable pdfTable = new PdfPTable(3);
+			pdfTable.addCell("NumeroCommande");
+			pdfTable.addCell("DateCommande");
+			pdfTable.addCell("NumeroClient");
+
+			for (Commande item : items) {
+				pdfTable.addCell(Integer.toString(item.getNumerocommande()));
+				pdfTable.addCell(item.getDatecomande().toString());
+				pdfTable.addCell(Integer.toString(item.getNum_client()));
+			}
+
+			document.add(pdfTable);
+			document.close();
+
+		} catch (DocumentException | IOException ex) {
+			Platform.runLater(() -> {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("Erreur");
+				alert.setHeaderText("Une erreur s'est produite.");
+				alert.setContentText(ex.getMessage());
+				alert.showAndWait();
+				ex.printStackTrace();
+			});
+		}
+	}
+}
+
+
+}
+
+
+

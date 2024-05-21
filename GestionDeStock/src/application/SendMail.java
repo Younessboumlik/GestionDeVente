@@ -6,7 +6,6 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 
 
 
@@ -29,7 +28,7 @@ public class SendMail {
 				    .addHeader("Content-Type", "application/json")
 				    .build();
 				try {
-					Response response = client.newCall(request).execute();
+					client.newCall(request).execute();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

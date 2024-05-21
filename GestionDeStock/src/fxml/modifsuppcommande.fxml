@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -40,5 +42,12 @@
       <TextField fx:id="cherchetext" layoutX="40.0" layoutY="72.0" />
       <Label layoutX="393.0" layoutY="360.0" prefHeight="17.0" prefWidth="55.0" text="quantite" />
       <Button fx:id="cherche" layoutX="214.0" layoutY="72.0" mnemonicParsing="false" onAction="#chercher" text="chercher" />
+      <MenuButton fx:id="export" layoutX="451.0" layoutY="40.0" mnemonicParsing="false" text="Export">
+         <items>
+            <MenuItem fx:id="exportToCsv" mnemonicParsing="false" text="To CSV" />
+            <MenuItem fx:id="exportToPdf" mnemonicParsing="false" text="To PDF" />
+         </items>
+      </MenuButton>
+      <Button fx:id="annuler" layoutX="290.0" layoutY="72.0" mnemonicParsing="false" text="Annuler" />
    </children>
 </AnchorPane>

@@ -21,6 +21,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -28,7 +30,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class supmodifcommandecontroller implements Initializable{
 	 @FXML
-	    private Button cherche;
+	 private Button cherche;
+	 
+	 @FXML
+	 private Button annuler;
     @FXML
     private TableColumn<Commande, CheckBox> checkocommande;
 
@@ -49,6 +54,15 @@ public class supmodifcommandecontroller implements Initializable{
 
     @FXML
     private Button modifiercomm;
+    
+    @FXML
+    private MenuButton export;
+
+    @FXML
+    private MenuItem exportToCsv;
+
+    @FXML
+    private MenuItem exportToPdf;
 
     @FXML
     private TableColumn<Commande, Button> modifiercommande;
@@ -126,7 +140,8 @@ public class supmodifcommandecontroller implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 	}    
        
@@ -156,7 +171,8 @@ public class supmodifcommandecontroller implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
     }
@@ -236,7 +252,8 @@ public static void setinfotomodifcommande(Commande commande) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 		}
     	controller.tableaucommand.setItems(ListCommandes);
@@ -279,6 +296,17 @@ public static void setinfotomodifcommande(Commande commande) {
 	    	 nomproduit.setCellValueFactory(new PropertyValueFactory<Produit,String>("nomProduit"));
 	    	 supprimerprod.setCellValueFactory(new PropertyValueFactory<Produit,Button>("suppproduittinavoir"));
 	    	 modifierprod.setCellValueFactory(new PropertyValueFactory<Produit,Button>("modifproduitinavoir"));
+	    	 
+	    	 
+	 		exportToCsv.setOnAction(event -> ConnectToDB.exportToCsvcommande(tableaucommand));
+			exportToPdf.setOnAction(event -> ConnectToDB.exportToPdfcommande(tableaucommand));
+			annuler.setOnAction(event -> {
+				cherchetext.clear();
+				refresh();
+			});
+			
+			
+			
 	    	 }
 	    	 catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -287,7 +315,8 @@ public static void setinfotomodifcommande(Commande commande) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+alert.showAndWait();
+e.printStackTrace();
     });
 			}    
     }

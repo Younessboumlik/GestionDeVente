@@ -29,5 +29,6 @@
 	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/okhttp-5.0.0-alpha.14.jar"/>
 	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/okio-3.0.0-alpha.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/okio-3.0.0-alpha.9-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/itextpdf-5.5.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

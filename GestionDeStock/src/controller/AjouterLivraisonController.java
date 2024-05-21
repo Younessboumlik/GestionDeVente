@@ -102,7 +102,8 @@ public class AjouterLivraisonController implements Initializable{
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-        alert.showAndWait();
+		alert.showAndWait();
+		e.printStackTrace();
     });
 				}
 	    	
@@ -157,12 +158,13 @@ public class AjouterLivraisonController implements Initializable{
 					combobox.setItems(options);
 		    	 }
 		    	 catch (SQLException e) {
-    Platform.runLater(() -> {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur SQL");
-        alert.setHeaderText("Une erreur SQL s'est produite.");
-        alert.setContentText(e.getMessage());
-        alert.showAndWait();
+		    		 Platform.runLater(() -> {
+		    		Alert alert = new Alert(Alert.AlertType.ERROR);
+        			alert.setTitle("Erreur SQL");
+        			alert.setHeaderText("Une erreur SQL s'est produite.");
+        			alert.setContentText(e.getMessage());
+        			alert.showAndWait();
+        			e.printStackTrace();
     });
 }
 

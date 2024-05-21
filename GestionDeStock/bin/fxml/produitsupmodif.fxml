@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -55,5 +57,12 @@
             <Image url="@../imges/search.png" />
          </image>
       </ImageView>
+      <MenuButton fx:id="export" layoutX="68.0" layoutY="86.0" mnemonicParsing="false" text="Export">
+         <items>
+            <MenuItem fx:id="exportToCsv" mnemonicParsing="false" text="To CSV" />
+            <MenuItem fx:id="exportToPdf" mnemonicParsing="false" text="To PDF" />
+         </items>
+      </MenuButton>
+      <Button fx:id="annuler" layoutX="566.0" layoutY="128.0" mnemonicParsing="false" text="Annuler" />
    </children>
 </AnchorPane>

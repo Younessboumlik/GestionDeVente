@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import application.ConnectToDB;
-import controller.SampleController;
+import controller.SupModifFactureController;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -62,12 +62,12 @@ public class Facture {
 			Connection connexion = ConnectToDB.connectionDB();
 			ConnectToDB.delete(connexion, "facture", "numerofacture", this.numeroFacture);
 
-			SampleController.refreshfacture();
+			SupModifFactureController.refreshfacture();
 		}
 	}
 	
 	public void  modifieclicked() {
-		SampleController.modifierFacture(this);
+		SupModifFactureController.modifierFacture(this);
 	}
 
 	
