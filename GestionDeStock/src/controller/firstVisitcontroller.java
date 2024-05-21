@@ -54,9 +54,10 @@ public class firstVisitcontroller {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("userdata"));
 			writer.write(textEncryptor.encrypt(username.getText()));
 			writer.write('\n');
-			writer.write(textEncryptor.encrypt(password.getText()));
-			writer.write('\n');
+			
 			writer.write(textEncryptor.encrypt(sicuritykey.getText()));
+			writer.write('\n');
+			writer.write(textEncryptor.encrypt(password.getText()));
 			writer.close();
 			progressbar.setVisible(true);
 			progressVlue = progressbar.getProgress();
@@ -69,7 +70,7 @@ public class firstVisitcontroller {
 					timeline.pause();
 					Parent root;
 					try {
-						root = FXMLLoader.load(getClass().getResource("login.fxml"));
+						root = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
 						Scene Scene = new Scene(root);
 						Node source = (Node) event.getSource();
 						Stage stage = (Stage) source.getScene().getWindow();

@@ -45,7 +45,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="380.0" layoutY="17.0" minWidth="-Infinity" prefHeight="53.0" prefWidth="193.0" text="Login" textAlignment="CENTER" textFill="#165d62">
+      <Label layoutX="372.0" layoutY="41.0" minWidth="-Infinity" prefHeight="53.0" prefWidth="193.0" text="Login" textAlignment="CENTER" textFill="#165d62">
          <cursor>
             <Cursor fx:constant="NE_RESIZE" />
          </cursor>
@@ -56,5 +56,6 @@
             <Font name="Arial Black" size="46.0" />
          </font>
       </Label>
+      <Label fx:id="labelcheck" layoutX="318.0" layoutY="1.0" prefHeight="51.0" prefWidth="255.0" style="-fx-background-radius:11;" />
    </children>
 </AnchorPane>

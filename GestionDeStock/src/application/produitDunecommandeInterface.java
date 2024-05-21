@@ -13,9 +13,9 @@ public class produitDunecommandeInterface extends Application{
 		
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("produitDunecommande.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/fxml/produitDunecommande.fxml"));
 			Scene Scene = new Scene(root);
-////			Scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {

@@ -13,9 +13,9 @@ public class AjouterFactureInterface extends Application {
 	@Override
 	public void  start(Stage primaryStage) {
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("AjouterFacture.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/AjouterFacture.fxml"));
 			Scene scene = new Scene(root,663,560);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) { 

@@ -13,9 +13,9 @@ public class ChangePassword extends Application {
 	@Override
 	public void  start(Stage primaryStage) {
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("changepassword.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/changepassword.fxml"));
 			Scene scene = new Scene(root,663,419);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) { 

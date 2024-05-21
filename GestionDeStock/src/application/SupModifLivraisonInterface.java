@@ -18,9 +18,9 @@ public class SupModifLivraisonInterface extends Application {
 		
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("SupModifLivraison.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/fxml/SupModifLivraison.fxml"));
 			Scene Scene = new Scene(root);
-//			Scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
 		} catch (IOException e) {

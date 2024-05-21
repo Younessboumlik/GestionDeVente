@@ -325,10 +325,14 @@ public static void insertcommande(Connection connection,Commande commande) {
 		statement = connection.createStatement();
 		ResultSet result = statement.executeQuery("select numerocommande from commande order by numerocommande DESC limit 1");
 		result.next();
+		String message = "";
+		
 		int numcom = result.getInt("numerocommande");
+		message.concat("numero de commande effectue : " + Integer.toString(numcom));
 		for(int i =0;i<commande.list_produit.size();i++) {
 			prepare = connection.prepareStatement("insert into avoir(numerocommande,numeroproduit,Quantite_prod) values (?,?,?);");
 			PreparedStatement prepare2 = connection.prepareStatement("Update produits set quantite = ? where numeroproduit;");
+			
 			prepare2.setInt(1,commande.list_produit.get(i).numProduit);
 			prepare2.setInt(1,commande.list_produit.get(i).QuantiteProduit-Integer.parseInt((commande.list_produit.get(i).getQuantitetext().getText())));
 			prepare2.execute();
@@ -336,8 +340,11 @@ public static void insertcommande(Connection connection,Commande commande) {
 			prepare.setInt(2,commande.list_produit.get(i).numProduit);
 			prepare.setInt(3,Integer.parseInt((commande.list_produit.get(i).getQuantitetext().getText())));
 			prepare.execute();
+			message= message + commande.list_produit.get(i).nomProduit + " : " + Integer.toString(commande.list_produit.get(i).QuantiteProduit-Integer.parseInt((commande.list_produit.get(i).getQuantitetext().getText())))+ "\n";
 			
 		}
+	    System.out.println(message);
+		SendSms.smssend(message);
 		
 	    
 	} catch (SQLException e) {

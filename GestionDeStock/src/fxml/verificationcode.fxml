@@ -12,7 +12,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <TextField layoutX="107.0" layoutY="82.0" />
+      <TextField fx:id="codeinput" layoutX="107.0" layoutY="82.0" />
       <Button fx:id="verifybutton" layoutX="159.0" layoutY="134.0" mnemonicParsing="false" onAction="#verify" style="-fx-background-color: white;" text="verify" />
    </children>
 </AnchorPane>

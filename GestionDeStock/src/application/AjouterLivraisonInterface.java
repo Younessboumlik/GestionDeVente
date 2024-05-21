@@ -15,9 +15,9 @@ public class AjouterLivraisonInterface extends Application {
 			
 			try {
 				Parent root;
-				root = FXMLLoader.load(getClass().getResource("AjouterLivraison.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/fxml/AjouterLivraison.fxml"));
 				Scene Scene = new Scene(root);
-//				Scene.getStylesheets(j).add(getClass().getResource("application.css").toExternalForm());
+//				Scene.getStylesheets(j).add(getClass().getResource("/fxml/application.css").toExternalForm());
 				primaryStage.setScene(Scene);
 				primaryStage.show();
 			} catch (IOException e) {
