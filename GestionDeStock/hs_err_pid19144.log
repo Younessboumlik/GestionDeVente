@@ -1,0 +1,231 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=19144, tid=20268
+#
+# JRE version:  (21.0.2+13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.2+13-LTS-58, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --module-path=C:\java_Project\javafx-sdk-22.0.1\lib --add-modules=javafx.controls,javafx.fxml -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages --add-modules=java.smartcardio,jdk.charsets,jdk.crypto.cryptoki,jdk.crypto.ec,jdk.crypto.mscapi,jdk.editpad,jdk.hotspot.agent,jdk.internal.vm.ci,jdk.internal.vm.compiler,jdk.internal.vm.compiler.management,jdk.jcmd,jdk.jdeps,jdk.jlink,jdk.jpackage,jdk.jstatd,jdk.localedata,jdk.naming.dns,jdk.naming.rmi,jdk.random application.dashbordwindow
+
+Host: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Thu May 23 00:53:04 2024 Morocco Daylight Time elapsed time: 0.015989 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ec0a159860):  JavaThread "Unknown thread" [_thread_in_vm, id=20268, stack(0x0000005a0f800000,0x0000005a0f900000) (1024K)]
+
+Stack: [0x0000005a0f800000,0x0000005a0f900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6cade9]
+V  [jvm.dll+0x8569c1]
+V  [jvm.dll+0x858d2e]
+V  [jvm.dll+0x859413]
+V  [jvm.dll+0x280e56]
+V  [jvm.dll+0x6c74d5]
+V  [jvm.dll+0x6bbeca]
+V  [jvm.dll+0x355bca]
+V  [jvm.dll+0x35d816]
+V  [jvm.dll+0x3ae67e]
+V  [jvm.dll+0x3ae928]
+V  [jvm.dll+0x3295dc]
+V  [jvm.dll+0x32a16b]
+V  [jvm.dll+0x81efa9]
+V  [jvm.dll+0x3bba01]
+V  [jvm.dll+0x807928]
+V  [jvm.dll+0x44f50e]
+V  [jvm.dll+0x450e11]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17344]
+C  [ntdll.dll+0x526b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff965fdbb88, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001ec0a1a5860 WorkerThread "GC Thread#0"                     [id=12644, stack(0x0000005a0f900000,0x0000005a0fa00000) (1024K)]
+  0x000001ec0a1b6c20 ConcurrentGCThread "G1 Main Marker"            [id=9472, stack(0x0000005a0fa00000,0x0000005a0fb00000) (1024K)]
+  0x000001ec0a1b7630 WorkerThread "G1 Conc#0"                       [id=12716, stack(0x0000005a0fb00000,0x0000005a0fc00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff96574c6a7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff96604ce68] Heap_lock - owner thread: 0x000001ec0a159860
+
+Heap address: 0x0000000082400000, size: 2012 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000082400000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff965b339f9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6fc270000 - 0x00007ff6fc280000 	C:\Program Files\Java\jdk-21\bin\javaw.exe
+0x00007ff9a66b0000 - 0x00007ff9a68a8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff9a47a0000 - 0x00007ff9a485d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff9a4350000 - 0x00007ff9a4646000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff9a41e0000 - 0x00007ff9a42e0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff994490000 - 0x00007ff9944ab000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007ff99b370000 - 0x00007ff99b389000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007ff9a6520000 - 0x00007ff9a65d0000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff9a65d0000 - 0x00007ff9a666e000 	C:\Windows\System32\msvcrt.dll
+0x00007ff9a6220000 - 0x00007ff9a62c0000 	C:\Windows\System32\sechost.dll
+0x00007ff9a5ca0000 - 0x00007ff9a5dc3000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff9a3db0000 - 0x00007ff9a3dd7000 	C:\Windows\System32\bcrypt.dll
+0x00007ff9a5e70000 - 0x00007ff9a600f000 	C:\Windows\System32\USER32.dll
+0x00007ff9a41b0000 - 0x00007ff9a41d2000 	C:\Windows\System32\win32u.dll
+0x00007ff9a5c40000 - 0x00007ff9a5c6b000 	C:\Windows\System32\GDI32.dll
+0x00007ff9a3f30000 - 0x00007ff9a4047000 	C:\Windows\System32\gdi32full.dll
+0x00007ff9a3e90000 - 0x00007ff9a3f2d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff98aee0000 - 0x00007ff98b17a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007ff99c1c0000 - 0x00007ff99c1ca000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff9a49f0000 - 0x00007ff9a4a22000 	C:\Windows\System32\IMM32.DLL
+0x00007ff99f330000 - 0x00007ff99f33c000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007ff97db10000 - 0x00007ff97db9e000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007ff965410000 - 0x00007ff966127000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007ff9a61b0000 - 0x00007ff9a621b000 	C:\Windows\System32\WS2_32.dll
+0x00007ff9a3290000 - 0x00007ff9a32db000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ff98ac50000 - 0x00007ff98ac77000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff9a3150000 - 0x00007ff9a3162000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ff9a2570000 - 0x00007ff9a2582000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ff99bcd0000 - 0x00007ff99bcda000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007ff98da90000 - 0x00007ff98dc74000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff98d830000 - 0x00007ff98d864000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff9a4650000 - 0x00007ff9a46d2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff994410000 - 0x00007ff99442f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: --module-path=C:\java_Project\javafx-sdk-22.0.1\lib --add-modules=javafx.controls,javafx.fxml -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages --add-modules=java.smartcardio,jdk.charsets,jdk.crypto.cryptoki,jdk.crypto.ec,jdk.crypto.mscapi,jdk.editpad,jdk.hotspot.agent,jdk.internal.vm.ci,jdk.internal.vm.compiler,jdk.internal.vm.compiler.management,jdk.jcmd,jdk.jdeps,jdk.jlink,jdk.jpackage,jdk.jstatd,jdk.localedata,jdk.naming.dns,jdk.naming.rmi,jdk.random 
+java_command: application.dashbordwindow
+java_class_path (initial): C:\GestionDeVente\GestionDeStock\bin;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.base.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.controls.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.fxml.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.graphics.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.media.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.swing.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx.web.jar;C:\java_Project\javafx-sdk-22.0.1\lib\javafx-swt.jar;C:\GestionDeVente\GestionDeStock\dependecies\kotlin-stdlib-2.0.0-RC3.jar;C:\GestionDeVente\GestionDeStock\dependecies\mysql-connector-j-8.4.0.jar;C:\GestionDeVente\GestionDeStock\dependecies\okhttp-5.0.0-alpha.14.jar;C:\GestionDeVente\GestionDeStock\dependecies\okio-3.0.0-alpha.9.jar;C:\GestionDeVente\GestionDeStock\dependecies\okio-3.0.0-alpha.9-javadoc.jar;C:\jasypt-1.9.0\lib\icu4j-3.4.4.jar;C:\jasypt-1.9.0\lib\jasypt-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-1.9.0-lite.jar;C:\jasypt-1.9.0\lib\jasypt-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-acegisecurity-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-acegisecurity-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-acegisecurity-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-hibernate3-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-hibernate3-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-hibernate3-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-hibernate4-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-hibernate4-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-hibernate4-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-spring2-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-spring2-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-spring2-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-spring3-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-spring3-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-spring3-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-spring31-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-spring31-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-spring31-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-springsecurity2-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-springsecurity2-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-springsecurity2-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-springsecurity3-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-springsecurity3-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-springsecurity3-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-wicket13-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-wicket13-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-wicket13-1.9.0-sources.jar;C:\jasypt-1.9.0\lib\jasypt-wicket15-1.9.0.jar;C:\jasypt-1.9.0\lib\jasypt-wicket15-1.9.0-javadoc.jar;C:\jasypt-1.9.0\lib\jasypt-wicket15-1.9.0-sources.jar;C:\GestionDeVente\GestionDeStock\client-6.1.0.jar;C:\GestionDeVente\GestionDeStock\httpclient-4.5.14.jar;C:\GestionDeVente\GestionDeStock\httpcore-4.4.11.jar;C:\GestionDeVente\GestionDeStock\jackson-annotations-2.17.1.jar;C:\GestionDeVente\GestionDeStock\jackson-core-2.17.1.jar;C:\GestionDeVente\GestionDeStock\jackson-databind-2.17.1.jar;C:\GestionDeVente\GestionDeStock\jackson-datatype-jsr310-2.17.1.jar;C:\GestionDeVente\GestionDeStock\log4j-1.2.17.jar;C:\GestionDeVente\GestionDeStock\slf4j-api-1.7.32.jar;C:\GestionDeVente\GestionDeStock\slf4j-api-2.0.13.jar;C:\GestionDeVente\GestionDeStock\slf4j-log4j12-1.7.32.jar;C:\GestionDeVente\GestionDeStock\twilio-10.1.5.jar;C:\commons-logging-1.3.2.jar;C:\commons-logging-1.3.2-adapters.jar;C:\commons-logging-1.3.2-api.jar;C:\commons-logging-1.3.2-javadoc.jar;C:\commons-logging-1.3.2-sources.jar;C:\commons-logging-1.3.2-tests.jar;C:\commons-logging-1.3.2-test-sources.jar;C:\findsecbugs-plugin-1.13.0.jar;C:\GestionDeVente\GestionDeStock\dependecies\itextpdf-5.5.13.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2109734912                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 2109734912                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;CUserssaski outchihaDownloadsCompressedaircrack-ng-1.7-winaircrack-ng-1.7-winbin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Java\jre-1.8\bin;C:\xampp\php;C:\Windows\System32;C:\ProgramData\ComposerSetup\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\saski outchiha\AppData\Local\Microsoft\WindowsApps;C:\Users\saski outchiha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\saski outchiha\AppData\Local\GitHubDesktop\bin;C:\MinGW;C:\Users\saski outchiha\AppData\Roaming\npm;C:\Users\saski outchiha\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\xampp\php;C:\Users\saski outchiha\AppData\Roaming\Composer\vendor\bin
+USERNAME=saski outchiha
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+TMP=C:\Users\SASKIO~1\AppData\Local\Temp
+TEMP=C:\Users\SASKIO~1\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+OS uptime: 2 days 10:33 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3 microcode 0xf0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, rtm, adx, fma, vzeroupper, clflush, clflushopt, rdtscp, f16c
+Processor Information for all 4 processors :
+  Max Mhz: 2496, Current Mhz: 798, Mhz Limit: 798
+
+Memory: 4k page, system-wide physical 8047M (1387M free)
+TotalPageFile size 18668M (AvailPageFile size 98M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 52M, peak: 177M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.2+13-LTS-58) for windows-amd64 JRE (21.0.2+13-LTS-58), built on 2024-01-05T18:32:24Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.

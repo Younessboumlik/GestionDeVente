@@ -27,6 +27,7 @@ import controller.SupModifLivraisonController;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.stage.FileChooser;
 public class ConnectToDB {
@@ -38,7 +39,7 @@ public class ConnectToDB {
 		
 		String url = "jdbc:mysql://localhost:3306/gestioncommande";
 		String user = "root";
-		String password = "";
+		String password = "12345678";
 		Connection connection = null;
 		
 
@@ -355,9 +356,9 @@ public static void insertcommande(Connection connection,Commande commande) {
 		message.concat("numero de commande effectue : " + Integer.toString(numcom));
 		for(int i =0;i<commande.list_produit.size();i++) {
 			prepare = connection.prepareStatement("insert into avoir(numerocommande,numeroproduit,Quantite_prod) values (?,?,?);");
-			PreparedStatement prepare2 = connection.prepareStatement("Update produits set quantite = ? where numeroproduit;");
+			PreparedStatement prepare2 = connection.prepareStatement("Update produits set quantite = ? where numeroproduit = ?;");
 			
-			prepare2.setInt(1,commande.list_produit.get(i).numProduit);
+			prepare2.setInt(2,commande.list_produit.get(i).numProduit);
 			prepare2.setInt(1,commande.list_produit.get(i).QuantiteProduit-Integer.parseInt((commande.list_produit.get(i).getQuantitetext().getText())));
 			prepare2.execute();
 			prepare.setInt(1,numcom);
@@ -977,7 +978,117 @@ public static void exportToPdfcommande(TableView<Commande> tableau) {
 		}
 	}
 }
+public static ResultSet selectnbrproduitgrpbynom(Connection connection) {
+	try {
+		Statement statement;
+		statement = connection.createStatement();
+	
+		return statement.executeQuery("select count(Quantite_prod),nomproduit from avoir,produits where avoir.numeroproduit = produits.numeroproduit group by avoir.numeroproduit;");
 
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+}
+public static ArrayList<Integer> getlivrasonended(Connection connection){
+	Statement statement;
+	try {
+		statement = connection.createStatement();
+		try {
+			ArrayList<Integer> livrresult = new ArrayList<>();
+			ResultSet alllivr = statement.executeQuery("select count(numerolivraison) from livraison;");
+			alllivr.next();
+			livrresult.add(alllivr.getInt("count(numerolivraison)"));
+			
+			ResultSet alllivrBeforNow = statement.executeQuery("select count(numerolivraison) from livraison where datelivraison <= NOW();");
+			alllivrBeforNow.next();
+			System.out.println(alllivrBeforNow.getInt("count(numerolivraison)"));
+			livrresult.add(alllivrBeforNow.getInt("count(numerolivraison)"));
+	
+			
+			
+			return  livrresult;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+	catch (Exception e) {
+		e.printStackTrace();
+		return null;
+	}
+
+	
+
+	
+}
+public static ResultSet nbrCommandInMounth(Connection connection) {
+	
+	try {
+		Statement statement = connection.createStatement();
+		return statement.executeQuery("select MONTH(commande.datecommande) as month,sum(avoir.Quantite_prod*produits.prix) as TOTAL from commande,avoir,produits where commande.numerocommande = avoir.numerocommande and avoir.numeroproduit = produits.numeroproduit and YEAR(commande.datecommande) = YEAR(NOW()) group by MONTH(commande.datecommande);"
+			);
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+}
+public static ResultSet clientfidel(Connection connection) {
+	
+	try {
+		Statement statement = connection.createStatement();
+		return statement.executeQuery("select nom,prenom,sum(avoir.Quantite_prod*produits.prix) as  TotalBudget from client,commande,avoir,produits where client.numeroclient = commande.numeroclient and commande.numerocommande = avoir.numerocommande and avoir.numeroproduit = produits.numeroproduit group by client.numeroclient order by TotalBudget limit 2;");
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+}
+public static ResultSet produitemptystock(Connection connection) {
+	
+	try {
+		Statement statement = connection.createStatement();
+		return statement.executeQuery("select quantite,nomproduit from produits where quantite <= 25 order by quantite desc limit 3");
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return null;
+	}
+	
+}
+public static void labelsstats(Connection connection, Label cli,Label prds,Label comm,Label livr,Label facture){
+	try {
+		Statement statement = connection.createStatement();
+		 ResultSet cliSet = statement.executeQuery("select count(numeroclient) as nbrclient from client");
+		 cliSet.next();
+		 cli.setText(Integer.toString(cliSet.getInt("nbrclient")));
+		 ResultSet prdSet = statement.executeQuery("select count(numeroproduit) as nbrprd from produits");
+		 prdSet.next();
+		 prds.setText(Integer.toString(prdSet.getInt("nbrprd")));
+		 ResultSet cmdSet = statement.executeQuery("select count(numerocommande) as nbrcmd from commande");
+		 cmdSet.next();
+		 comm.setText(Integer.toString(cmdSet.getInt("nbrcmd")));
+		 ResultSet livSet = statement.executeQuery("select count(numerolivraison) as nbrliv from livraison");
+		 livSet.next();
+		 livr.setText(Integer.toString(livSet.getInt("nbrliv")));
+		 ResultSet fctSet = statement.executeQuery("select count(numerofacture) as nbrfct from facture");
+		 fctSet.next();
+		 facture.setText(Integer.toString(fctSet.getInt("nbrfct")));
+		 
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 
 }
 

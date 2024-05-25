@@ -1,8 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="798.0" style="-fx-background-color: white;" styleClass="AnchorPane" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="149.0" prefWidth="777.0" spacing="20.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <AnchorPane prefHeight="141.0" prefWidth="164.0" style="-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1); -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);;">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="46.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imges/box.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nbrcommandeabel" layoutX="21.0" layoutY="91.0" prefHeight="35.0" prefWidth="91.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="27.0" layoutY="65.0" prefHeight="29.0" prefWidth="79.0" text="COMMANDES" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="141.0" prefWidth="164.0" style="-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1); -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="62.0" fitWidth="48.0" layoutX="2.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imges/patient.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="71.0" prefHeight="29.0" prefWidth="55.0" text="CLIENTS" textFill="#ccc8c8">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="nbrclientlabel" layoutX="22.0" layoutY="94.0" prefHeight="29.0" prefWidth="91.0" stylesheets="@../css/Main.css" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="121.0" prefWidth="164.0" style="-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1); -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="57.0" fitWidth="47.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imges/fast-delivery.png" />
+                     </image></ImageView>
+                  <Label layoutX="35.0" layoutY="65.0" prefHeight="29.0" prefWidth="66.0" text="LIVRAISON" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="nbrlivrlabel" layoutX="24.0" layoutY="96.0" prefHeight="29.0" prefWidth="91.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="141.0" prefWidth="164.0" style="-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1); -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="58.0" fitWidth="45.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imges/brand-identity.png" />
+                     </image></ImageView>
+                  <Label fx:id="nbrprdlabel" layoutX="22.0" layoutY="97.0" prefHeight="29.0" prefWidth="91.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="35.0" layoutY="65.0" prefHeight="29.0" prefWidth="65.0" text="PRODUITS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="141.0" prefWidth="164.0" style="-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1); -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="57.0" fitWidth="48.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imges/invoice.png" />
+                     </image></ImageView>
+                  <Label fx:id="nbrfactlabel" layoutX="22.0" layoutY="97.0" prefHeight="29.0" prefWidth="91.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="36.0" layoutY="65.0" prefHeight="29.0" prefWidth="63.0" text="FACTURES" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <bottom>
+      <HBox prefHeight="197.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+         <children>
+            <PieChart fx:id="pie" prefHeight="197.0" prefWidth="263.0" />
+            <VBox prefHeight="197.0" prefWidth="537.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="515.0" style="-fx-alignment: center;" text="les produits proche a epuise " textFill="#bbfcff" />
+                  <HBox fx:id="Hboxfooter" alignment="TOP_CENTER" prefHeight="248.0" prefWidth="512.0" spacing="10.0" />
+               </children>
+            </VBox>
+         </children></HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="403.0" prefWidth="195.0" BorderPane.alignment="BOTTOM_LEFT">
+         <children>
+            <Label prefHeight="18.0" prefWidth="112.0" style="-fx-text-fill: #2bd2ae;" text="les clients fideles" textFill="#2bd2ae">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <ImageView fitHeight="97.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <image>
+                  <Image url="@../imges/patient.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="nameclientone" prefHeight="23.0" prefWidth="133.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="budgetclone" prefHeight="23.0" prefWidth="105.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="99.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imges/patient.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="budgetcltwo" prefHeight="23.0" prefWidth="105.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameclienttwo" prefHeight="23.0" prefWidth="105.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="50.0" right="40.0" />
+         </padding></VBox>
+   </right>
+   <left>
+      <VBox fx:id="leftVbox" prefHeight="311.0" prefWidth="177.0" style="-fx-background-color: none;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="19.0" prefWidth="177.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="125.0" style="-fx-text-fill: red;" text="livraison non effectue" textFill="#fb0505">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nonaffeclivrnbr" prefHeight="18.0" prefWidth="42.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="20.0" prefWidth="177.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="104.0" style="-fx-text-fill: green;" text="livraison effectue" textFill="#d6d6d6">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="affeclivrnbr" prefHeight="18.0" prefWidth="60.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <BarChart fx:id="barchart" prefHeight="290.0" prefWidth="405.0" BorderPane.alignment="CENTER">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </center>
+</BorderPane>
