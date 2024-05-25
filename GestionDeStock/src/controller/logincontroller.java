@@ -9,7 +9,6 @@ import java.io.IOException;
 
 import org.jasypt.util.text.BasicTextEncryptor;
 
-import application.SendMail;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

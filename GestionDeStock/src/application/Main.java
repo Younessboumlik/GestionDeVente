@@ -1,36 +1,39 @@
 package application;
-	
+
+import java.io.IOException;
+
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class Main extends Application {
-	@Override
-	public void  start(Stage primaryStage) {
-		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/SupModifFacture.fxml"));
-			Scene scene = new Scene(root,663,419);
-			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) { 
-			    Platform.runLater(() -> {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Erreur");
-        alert.setHeaderText("Une erreur s'est produite.");
-        alert.setContentText(e.getMessage());
-alert.showAndWait();
-e.printStackTrace();
-    });
+		public void  start(Stage primaryStage){
+			
+			try {
+				Parent root;
+				root = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
+				Scene Scene = new Scene(root);
+				Scene.getStylesheets().add(getClass().getResource("/css/Main.css").toExternalForm());
+		        primaryStage.initStyle(StageStyle.UNDECORATED);
+				primaryStage.setScene(Scene);
+				primaryStage.show();
+			} catch (IOException e) {
+			}
+			
+			// primaryStage.setHeight(400);
+			// primaryStage.setWidth(400);
+			// primaryStage.setResizable(false);
+			// primaryStage.setFullScreen(true);
+			// primaryStage.show();
+		}
+
+		public static void main(String[] args) {
+			launch(args);
 		}
 	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
-}
+
+
