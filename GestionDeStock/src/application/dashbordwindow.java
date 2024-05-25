@@ -13,7 +13,7 @@ public class dashbordwindow extends Application {
 			
 			try {
 				Parent root;
-				root = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/fxml/globalMain.fxml"));
 				Scene Scene = new Scene(root);
 				Scene.getStylesheets().add(getClass().getResource("/css/Main.css").toExternalForm());
 				primaryStage.setScene(Scene);

@@ -9,21 +9,67 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.ConnectToDB;
+import application.clientAjoueinterface;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import ringprogress.RingProgressIndicator;
 import ringprogress.SousClassRingProgressIndicator;
 
 public class MainController implements Initializable{
+	@FXML
+    private Label livrpourclabel;
 
+    @FXML
+    private Label nbrclientlabel;
+
+    @FXML
+    private Label nbrcommandeabel;
+
+    @FXML
+    private Label nbrfactlabel;
+
+    @FXML
+    private Label nbrlivrlabel;
+
+    @FXML
+    private Label nbrprdlabel;
+
+    @FXML
+    private PieChart pie;
+    @FXML
+    private VBox leftVbox;
+    @FXML
+    private Label affeclivrnbr;
+    @FXML
+    private Label nonaffeclivrnbr;
+    @FXML
+    private BarChart<String, Double> barchart;
+    @FXML
+    private Label budgetclone;
+
+    @FXML
+    private Label budgetcltwo;
+    @FXML
+    private Label nameclientone;
+
+    @FXML
+    private Label nameclienttwo;
+    @FXML
+    private HBox Hboxfooter;
+	@SuppressWarnings("rawtypes")
 	   @FXML
 	    private AnchorPane choices;
 
@@ -335,6 +381,5 @@ void showProduit(MouseEvent event) {
         
 		
 	}
-
 
 }
