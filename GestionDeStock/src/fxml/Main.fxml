@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -10,10 +11,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="798.0" style="-fx-background-color: white;" styleClass="AnchorPane" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <top>
       <HBox alignment="CENTER" prefHeight="149.0" prefWidth="777.0" spacing="20.0">
@@ -216,3 +227,253 @@
       </BarChart>
    </center>
 </BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="1072.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <AnchorPane fx:id="sidebar" layoutX="-4.0" layoutY="28.0" maxHeight="1.7976931348623157E308" minWidth="270.0" prefHeight="635.0" prefWidth="200.0" style="-fx-background-color: #24848b;" AnchorPane.leftAnchor="-4.0" AnchorPane.topAnchor="28.0">
+         <children>
+            <VBox layoutX="96.0" layoutY="80.0" prefHeight="419.0" prefWidth="80.0" style="-fx-spacing: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="120.0">
+               <children>
+                  <HBox maxHeight="20.0" minWidth="80.0" prefHeight="16.0" prefWidth="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Label fx:id="label1" maxHeight="46.0" maxWidth="250.0" minHeight="40.0" minWidth="90.0" onMouseClicked="#show" prefHeight="40.0" prefWidth="250.0" text="Client">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="USER" text="" />
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" top="2.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="choices" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="choix1_1" layoutY="-11.0" onMouseClicked="#ajouterClient" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: none;" text="Ajouter Client" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="choix1_2" layoutY="41.0" prefHeight="27.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Client" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox maxHeight="20.0" minWidth="100.0" prefHeight="16.0" prefWidth="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Label fx:id="label2" maxHeight="40.0" minHeight="40.0" minWidth="100.0" onMouseClicked="#showProduit" prefHeight="40.0" prefWidth="250.0" style="-: ;" text="Produit">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CUBE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></FontAwesomeIcon>
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" top="2.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="choices1" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="choix2_1" style="-fx-background-color: none;" text="Ajouter Produit" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Arial Narrow" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="choix2_2" prefHeight="108.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Produit" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox maxHeight="20.0" minWidth="100.0" prefHeight="16.0" prefWidth="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Label fx:id="label3" maxHeight="40.0" minHeight="40.0" minWidth="100.0" onMouseClicked="#showCommande" prefHeight="40.0" prefWidth="249.0" style="-: ;" text="Commande">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="SHOPPING_CART" />
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" top="2.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="choices2" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="choix3_1" style="-fx-background-color: none;" text="Ajouter Commande" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="choix3_2" prefHeight="108.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Commande" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox maxHeight="20.0" minWidth="100.0" prefHeight="16.0" prefWidth="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Label fx:id="label4" maxHeight="40.0" minHeight="40.0" minWidth="100.0" onMouseClicked="#showFacture" prefHeight="40.0" prefWidth="250.0" style="-: ;" text="Facture">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="FILE_TEXT_ALT" />
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" top="2.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="choices3" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="choix4_1" style="-fx-background-color: none;" text="Ajouter Facture" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="choix4_2" prefHeight="108.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Facture" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox maxHeight="20.0" minWidth="100.0" prefHeight="16.0" prefWidth="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Label fx:id="label5" maxHeight="40.0" minHeight="40.0" minWidth="100.0" onMouseClicked="#showLivraison" prefHeight="40.0" prefWidth="250.0" style="-: ;" text="Livraison">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="TRUCK" />
+                           </graphic>
+                           <padding>
+                              <Insets left="20.0" top="2.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="choices4" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="choix5_1" style="-fx-background-color: none;" text="Ajouter Livraison" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="choix5_2" prefHeight="108.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Livraison" visible="false" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="Century" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children></VBox>
+            <Label layoutX="51.0" layoutY="49.0" prefHeight="29.0" prefWidth="193.0" text="Bienvenue USER">
+               <font>
+                  <Font name="Alfa Slab One Regular" size="19.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane layoutY="-4.0" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="1281.0" style="-fx-background-color: #165d62;">
+         <children>
+            <Button fx:id="menuicon" mnemonicParsing="false" textFill="#f60000" AnchorPane.topAnchor="6.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="BARS" onMouseClicked="#showMenu" size="3em">
+                     <font>
+                        <Font size="49.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+            </Button>
+            <Button fx:id="close" layoutX="998.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#closingWindow" prefHeight="21.0" prefWidth="31.0" textFill="#dd0808" AnchorPane.topAnchor="3.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="CLOSE" selectionFill="RED" size="2em">
+                     <font>
+                        <Font size="86.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <Accordion layoutX="181.0" layoutY="152.0" />
+   </children>
+</AnchorPane>
+</AnchorPane>

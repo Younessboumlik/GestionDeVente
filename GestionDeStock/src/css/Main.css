@@ -1,3 +1,4 @@
+
 AnchorPane{
 	-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1)
 
@@ -16,3 +17,29 @@ VBox{
 BorderPane{
 	-fx-background-color:#ccc8c8;
 }
+
+#close{
+	-fx-background-color : none;
+}
+
+#close:hover{
+	-fx-background-color : red;
+}
+
+#menuicon{
+	-fx-background-color: none;
+}
+
+#menuicon:hover{
+	-fx-background-color: #1d7076;
+}
+
+
+#label1,#label2,#label3,#label4,#label5{
+	-fx-background-color :  #24848b;
+}
+
+#label1:hover,#label2:hover,#label3:hover,#label4:hover,#label5:hover{
+	-fx-background-color : #2b99a1;
+}
+

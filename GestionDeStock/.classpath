@@ -81,5 +81,34 @@
 	<classpathentry kind="lib" path="C:/commons-logging-1.3.2-test-sources.jar"/>
 	<classpathentry kind="lib" path="C:/findsecbugs-plugin-1.13.0.jar"/>
 	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/dependecies/itextpdf-5.5.13.jar"/>
+
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2-adapters.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/commons-logging-1.3.2-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/findsecbugs-plugin-1.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/httpclient-4.5.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/httpcore-4.4.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/itextpdf-5.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/jackson-annotations-2.17.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/jackson-core-2.17.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/jackson-databind-2.17.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/jackson-datatype-jsr310-2.17.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/kotlin-stdlib-2.0.0-RC3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/mysql-connector-j-8.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/okhttp-5.0.0-alpha.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/okio-3.0.0-alpha.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/okio-3.0.0-alpha.9-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/slf4j-api-1.7.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/slf4j-api-2.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/slf4j-log4j12-1.7.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/twilio-10.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/controlsfx-9.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/YOUNESS/Desktop/studies/ENSA/IID/S2/Java/projet/GestionDeVente/GestionDeStock/dependecies/fontawesomefx-8.2.jar"/>
+
 	<classpathentry kind="output" path="bin"/>
 </classpath>
