@@ -48,7 +48,7 @@
                         </HBox>
                         <AnchorPane fx:id="choices" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="choix1_1" onMouseClicked="#ajouterClient" style="-fx-background-color: none;" text="Ajouter Client" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix1_1" onMouseClicked="#ajouterClient" text="Ajouter Client" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Arial Narrow" size="11.0" />
                                  </font>
@@ -56,7 +56,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="choix1_2" layoutY="41.0" onMouseClicked="#supmodifClient" prefHeight="27.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Client" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix1_2" layoutY="41.0" onMouseClicked="#supmodifClient" prefHeight="27.0" prefWidth="256.0" text="Supprimer et Modifier Client" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Arial Narrow" size="11.0" />
                                  </font>
@@ -90,7 +90,7 @@
                         </HBox>
                         <AnchorPane fx:id="choices1" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="choix2_1" onMouseClicked="#ajouterProduit" style="-fx-background-color: none;" text="Ajouter Produit" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix2_1" onMouseClicked="#ajouterProduit" text="Ajouter Produit" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -98,7 +98,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="choix2_2" layoutY="33.0" onMouseClicked="#supmodifProduit" prefHeight="32.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Produit" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix2_2" layoutY="33.0" onMouseClicked="#supmodifProduit" prefHeight="32.0" prefWidth="256.0" text="Supprimer et Modifier Produit" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -131,7 +131,7 @@
                         </HBox>
                         <AnchorPane fx:id="choices2" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="choix3_1" onMouseClicked="#ajouterCommande" style="-fx-background-color: none;" text="Ajouter Commande" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix3_1" onMouseClicked="#ajouterCommande" text="Ajouter Commande" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -139,7 +139,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="choix3_2" layoutY="46.0" onMouseClicked="#supmodifCommande" prefHeight="35.0" prefWidth="197.0" style="-fx-background-color: none;" text="Supprimer et Modifier Commande" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix3_2" layoutY="46.0" onMouseClicked="#supmodifCommande" prefHeight="35.0" prefWidth="197.0" text="Supprimer et Modifier Commande" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -151,7 +151,7 @@
                         </AnchorPane>
                         <HBox maxHeight="20.0" minWidth="100.0" prefHeight="16.0" prefWidth="20.0" style="-fx-background-color: transparent;">
                            <children>
-                              <Label fx:id="label4" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" onMouseClicked="#showFacture" prefHeight="40.0" prefWidth="120.0" style="-: ;" text="Facture">
+                              <Label fx:id="label4" maxHeight="40.0" maxWidth="197.0" minHeight="40.0" minWidth="210.0" onMouseClicked="#showFacture" prefHeight="40.0" prefWidth="197.0" style="-: ;" text="Facture">
                                  <font>
                                     <Font name="System Bold" size="21.0" />
                                  </font>
@@ -173,7 +173,7 @@
                         </HBox>
                         <AnchorPane fx:id="choices3" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="choix4_1" onMouseClicked="#ajouterFacture" style="-fx-background-color: none;" text="Ajouter Facture" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix4_1" onMouseClicked="#ajouterFacture" text="Ajouter Facture" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -181,7 +181,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="choix4_2" layoutY="42.0" onMouseClicked="#supmodifFacture" prefHeight="32.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Facture" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix4_2" layoutY="42.0" onMouseClicked="#supmodifFacture" prefHeight="32.0" prefWidth="256.0" text="Supprimer et Modifier Facture" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -214,7 +214,7 @@
                         </HBox>
                         <AnchorPane fx:id="choices4" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="choix5_1" onMouseClicked="#ajouterLivraison" style="-fx-background-color: none;" text="Ajouter Livraison" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix5_1" onMouseClicked="#ajouterLivraison" text="Ajouter Livraison" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>
@@ -222,7 +222,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </Label>
-                              <Label fx:id="choix5_2" layoutY="30.0" onMouseClicked="#supmodifLivraison" prefHeight="32.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Livraison" visible="false" AnchorPane.leftAnchor="40.0">
+                              <Label fx:id="choix5_2" layoutY="30.0" onMouseClicked="#supmodifLivraison" prefHeight="32.0" prefWidth="256.0" text="Supprimer et Modifier Livraison" visible="false" AnchorPane.leftAnchor="40.0">
                                  <font>
                                     <Font name="Century" size="11.0" />
                                  </font>

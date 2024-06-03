@@ -27,6 +27,13 @@ BorderPane{
 #label1:hover,#label2:hover,#label3:hover,#label4:hover,#label5:hover{
 	-fx-background-color : #2b99a1;
 }
+
+#choix1_1,#choix1_2,#choix2_1,#choix2_2,#choix3_1,#choix3_2,#choix4_1,#choix4_2,#choix5_1,#choix5_2s{
+		-fx-background-color: none;
+}
+#choix1_1:hover,#choix1_2:hover,#choix2_1:hover,#choix2_2:hover,#choix3_1:hover,#choix3_2:hover,#choix4_1:hover,#choix4_2:hover,#choix5_1:hover,#choix5_2:hover{
+		-fx-font-size:13;
+}
 #close{
 	-fx-background : none
 }

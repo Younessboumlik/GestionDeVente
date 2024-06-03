@@ -47,7 +47,7 @@
                   </HBox>
                   <AnchorPane fx:id="choices" maxHeight="100.0" minHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="choix1_1" layoutY="-11.0" onMouseClicked="#ajouterClient" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: none;" text="Ajouter Client" visible="false" AnchorPane.leftAnchor="40.0">
+                        <Label fx:id="choix1_1" layoutY="-11.0" onMouseClicked="#ajouterClient" prefHeight="28.0" prefWidth="78.0" style="-: ;" text="Ajouter Client" visible="false" AnchorPane.leftAnchor="40.0">
                            <font>
                               <Font name="Arial Narrow" size="15.0" />
                            </font>
@@ -55,7 +55,7 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Label>
-                        <Label fx:id="choix1_2" layoutY="41.0" prefHeight="27.0" prefWidth="256.0" style="-fx-background-color: none;" text="Supprimer et Modifier Client" visible="false" AnchorPane.leftAnchor="40.0">
+                        <Label fx:id="choix1_2" layoutY="41.0" prefHeight="27.0" prefWidth="256.0" text="Supprimer et Modifier Client" visible="false" AnchorPane.leftAnchor="40.0">
                            <font>
                               <Font name="Arial Narrow" size="15.0" />
                            </font>
