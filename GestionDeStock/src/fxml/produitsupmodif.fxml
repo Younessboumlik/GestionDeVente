@@ -29,12 +29,12 @@
       <ComboBox fx:id="combobox" layoutX="281.0" layoutY="85.0" prefHeight="25.0" prefWidth="249.0">
       </ComboBox>
       <TextField fx:id="choosetext" layoutX="273.0" layoutY="132.0" prefHeight="25.0" prefWidth="249.0" />
-      <Label layoutX="222.0" layoutY="22.0" prefHeight="25.0" prefWidth="225.0" text="suppression et modification client">
+      <Label layoutX="222.0" layoutY="22.0" prefHeight="25.0" prefWidth="225.0" text="suppression et modification produit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
       <TextField fx:id="quatitetext" layoutX="20.0" layoutY="229.0" />
-      <Label layoutX="331.0" layoutY="61.0" prefHeight="17.0" prefWidth="149.0" text="search a client by :" />
+      <Label layoutX="331.0" layoutY="61.0" prefHeight="17.0" prefWidth="149.0" text="search a produit by :" />
       <Label fx:id="label" layoutX="321.0" layoutY="111.0" prefHeight="17.0" prefWidth="202.0" />
       <TextField fx:id="nomprdtext" layoutX="20.0" layoutY="157.0" />
       <TextField fx:id="prixtext" layoutX="17.0" layoutY="295.0" />

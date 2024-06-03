@@ -81,5 +81,6 @@
 	<classpathentry kind="lib" path="C:/commons-logging-1.3.2-test-sources.jar"/>
 	<classpathentry kind="lib" path="C:/findsecbugs-plugin-1.13.0.jar"/>
 	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/dependecies/itextpdf-5.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/GestionDeVente/GestionDeStock/dependecies/fontawesomefx-8.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

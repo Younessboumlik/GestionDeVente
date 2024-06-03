@@ -20,6 +20,7 @@ public class Clientsupmod extends Application {
 			Parent root;
 			root = FXMLLoader.load(getClass().getResource("/fxml/Clientmodifsup.fxml"));
 			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
 //			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();

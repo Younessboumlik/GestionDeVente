@@ -137,11 +137,11 @@ e.printStackTrace();
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-alert.showAndWait();
-e.printStackTrace();
-    });
-	  }
-	  }
+          alert.showAndWait();
+           e.printStackTrace();
+                });
+	              }
+	              }
 	
 	public static void insertFactureData(Connection connection,Facture facture) {
 		  try {
@@ -282,11 +282,11 @@ public static void modifieuser(Connection connection,Client client) {
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-alert.showAndWait();
-e.printStackTrace();
-    });
-	}
-}
+       alert.showAndWait();
+       e.printStackTrace();
+         });
+	     }
+          }
 public static ResultSet selecttous(Connection connection,String Table) {
 	try {
 		Statement statement;
@@ -312,11 +312,11 @@ e.printStackTrace();
 	
 
 	
-	public static void delete(Connection connection, String table,String columnid,Integer ind) {
+	public static void delete(Connection connection, String table,String columnid,Integer id) {
 		try {
 			Statement statement = connection.createStatement();
 			
-			String request = "DELETE FROM " + table +" WHERE " + columnid + " = "  +ind ;
+			String request = "DELETE FROM " + table +" WHERE " + columnid + " = "  +id ;
 			
 			statement.executeUpdate(request);
 			
@@ -328,11 +328,11 @@ e.printStackTrace();
         alert.setTitle("Erreur");
         alert.setHeaderText("Une erreur s'est produite.");
         alert.setContentText(e.getMessage());
-alert.showAndWait();
-e.printStackTrace();
-    });
+      alert.showAndWait();
+     e.printStackTrace();
+       });
 		}
-	}
+     	}
 //	public static void main(String[] args) {
 //		Connection connexion = ConnectToDB.connectionDB();
 //		getData(connexion,"facture","montant");

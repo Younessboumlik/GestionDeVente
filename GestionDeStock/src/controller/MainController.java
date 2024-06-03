@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,15 +10,19 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.ConnectToDB;
-import application.clientAjoueinterface;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -30,115 +35,315 @@ import ringprogress.SousClassRingProgressIndicator;
 
 public class MainController implements Initializable{
 	@FXML
-    private Label livrpourclabel;
+	private Label livrpourclabel;
 
-    @FXML
-    private Label nbrclientlabel;
+	@FXML
+	private Label nbrclientlabel;
 
-    @FXML
-    private Label nbrcommandeabel;
+	@FXML
+	private Label nbrcommandeabel;
 
-    @FXML
-    private Label nbrfactlabel;
+	@FXML
+	private Label nbrfactlabel;
 
-    @FXML
-    private Label nbrlivrlabel;
+	@FXML
+	private Label nbrlivrlabel;
 
-    @FXML
-    private Label nbrprdlabel;
+	@FXML
+	private Label nbrprdlabel;
 
-    @FXML
-    private PieChart pie;
-    @FXML
-    private VBox leftVbox;
-    @FXML
-    private Label affeclivrnbr;
-    @FXML
-    private Label nonaffeclivrnbr;
-    @FXML
-    private BarChart<String, Double> barchart;
-    @FXML
-    private Label budgetclone;
+	@FXML
+	private PieChart pie;
 
-    @FXML
-    private Label budgetcltwo;
-    @FXML
-    private Label nameclientone;
+	@FXML
+	private VBox leftVbox;
 
-    @FXML
-    private Label nameclienttwo;
-    @FXML
-    private HBox Hboxfooter;
-	@SuppressWarnings("rawtypes")
-	   @FXML
-	    private AnchorPane choices;
+	@FXML
+	private Label affeclivrnbr;
 
-	    @FXML
-	    private AnchorPane choices1;
+	@FXML
+	private Label nonaffeclivrnbr;
 
-	    @FXML
-	    private AnchorPane choices2;
+	@FXML
+	private BarChart<String, Double> barchart;
 
-	    @FXML
-	    private AnchorPane choices3;
+	@FXML
+	private Label budgetclone;
 
-	    @FXML
-	    private AnchorPane choices4;
+	@FXML
+	private Label budgetcltwo;
 
-	    @FXML
-	    private Label choix1_1;
+	@FXML
+	private Label nameclientone;
 
-	    @FXML
-	    private Label choix1_2;
+	@FXML
+	private Label nameclienttwo;
 
-	    @FXML
-	    private Label choix2_1;
+	@FXML
+	private HBox Hboxfooter;
 
-	    @FXML
-	    private Label choix2_2;
+	@FXML
+	private AnchorPane choices;
 
-	    @FXML
-	    private Label choix3_1;
+	@FXML
+	private AnchorPane choices1;
 
-	    @FXML
-	    private Label choix3_2;
+	@FXML
+	private AnchorPane choices2;
 
-	    @FXML
-	    private Label choix4_1;
+	@FXML
+	private AnchorPane choices3;
 
-	    @FXML
-	    private Label choix4_2;
+	@FXML
+	private AnchorPane choices4;
 
-	    @FXML
-	    private Label choix5_1;
+	@FXML
+	private Label choix1_1;
 
-	    @FXML
-	    private Label choix5_2;
+	@FXML
+	private Label choix1_2;
+
+	@FXML
+	private Label choix2_1;
+
+	@FXML
+	private Label choix2_2;
+
+	@FXML
+	private Label choix3_1;
+
+	@FXML
+	private Label choix3_2;
+
+	@FXML
+	private Label choix4_1;
+
+	@FXML
+	private Label choix4_2;
+
+	@FXML
+	private Label choix5_1;
+
+	@FXML
+	private Label choix5_2;
+
+	@FXML
+	private Button close;
+
+	@FXML
+	private Button menuicon;
+
+	@FXML
+	private Label label1;
+
+	@FXML
+	private Label label2;
+
+	@FXML
+	private Label label3;
+
+	@FXML
+	private Label label4;
+
+	@FXML
+	private Label label5;
+
+	@FXML
+	private AnchorPane sidebar;
+	
+	
+	@FXML
+	private Button livcom;
+	 @FXML
+	    private AnchorPane movmentwindow;
+	 private double xOffset = 0;
+	    private double yOffset = 0;
 	    
-	    @FXML
-	    private Button close;
-	    
-	    @FXML
-	    private Button menuicon;
-	    
-	    @FXML
-	    private Label label1;
+	
 
-	    @FXML
-	    private Label label2;
-
-	    @FXML
-	    private Label label3;
-
-	    @FXML
-	    private Label label4;
-
-	    @FXML
-	    private Label label5;
-	    
     
     @FXML
-    private AnchorPane sidebar;
+    void comdecli(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		Parent root;
+    	try {
+			root = FXMLLoader.load(getClass().getResource("/fxml/CommandeDunClient.fxml"));
+			Scene Scene = new Scene(root);
+			Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
+
+    @FXML
+    void facdecom(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		Parent root;
+    	try {
+			root = FXMLLoader.load(getClass().getResource("/fxml/FactureForCommande.fxml"));
+			Scene Scene = new Scene(root);
+			Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void livdecom(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		Parent root;
+    	try {
+			root = FXMLLoader.load(getClass().getResource("/fxml/LivraisonToCommande.fxml"));
+			Scene Scene = new Scene(root);
+			Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+    @FXML
+    void proddecom(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		Parent root;
+    	try {
+			root = FXMLLoader.load(getClass().getResource("/fxml/produitDuneCommande.fxml"));
+			Scene Scene = new Scene(root);
+			Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
+    @FXML
+    void supmodifClient(MouseEvent event) {
+       	Stage primaryStage = new Stage();
+		try {
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/Clientmodifsup.fxml"));
+			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+//			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+    });
+		}
+    }
+
+    @FXML
+    void supmodifCommande(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		try {
+			Parent root;
+
+			root = FXMLLoader.load(getClass().getResource("../fxml/modifsuppcommande.fxml"));
+			
+			Scene Scene = new Scene(root);
+			Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+//			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+    });
+		}
+    }
+
+    @FXML
+    void supmodifFacture(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		try {
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/SupModifFacture.fxml"));
+			Scene Scene = new Scene(root);
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+		}
+		
+		// primaryStage.setHeight(400);
+		// primaryStage.setWidth(400);
+		// primaryStage.setResizable(false);
+		// primaryStage.setFullScreen(true);
+		// primaryStage.show();
+	}
+
+
+    @FXML
+    void supmodifLivraison(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		try {
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/SupModifLivraison.fxml"));
+			Scene Scene = new Scene(root);
+			Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+//			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+    });
+		}
+    }
+
+    @FXML
+    void supmodifProduit(MouseEvent event) {
+    	Stage primaryStage = new Stage();
+		try {
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/produitsupmodif.fxml"));
+			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+    });
+		}
+    }
     
     
     @FXML
@@ -175,7 +380,7 @@ public class MainController implements Initializable{
         choices.setPrefHeight(70);
         choix1_1.setVisible(true);
         choix1_2.setVisible(true);
-        choix1_1.setMouseTransparent(true);
+//        choix1_1.setMouseTransparent(true);
     	}
     }
     
@@ -287,10 +492,111 @@ void showProduit(MouseEvent event) {
 
     @FXML
     void ajouterClient(MouseEvent event) {
-    	clientAjoueinterface clientAddController = new clientAjoueinterface();
-    	clientAddController.start(null);
-    	System.out.println("ajouter client");
+    	try {
+    		
+    	Stage primaryStage = new Stage();
+    	Parent root;
+		root = FXMLLoader.load(getClass().getResource("/fxml/clientAjoue.fxml"));
+		Scene Scene = new Scene(root);
+		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+//		Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+		primaryStage.setScene(Scene);
+		primaryStage.show();
+	} catch (IOException e) {
+		    Platform.runLater(() -> {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("Erreur");
+    alert.setHeaderText("Une erreur s'est produite.");
+    alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+});
+	}
     }
+    
+
+    @FXML
+    void ajouterCommande(MouseEvent event) {
+		try {
+	    	Stage primaryStage = new Stage();
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/AjoueCommand.fxml"));
+			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			// primaryStage.setHeight(400);
+			// primaryStage.setWidth(400);
+			// primaryStage.setResizable(false);
+			// primaryStage.setFullScreen(true);
+			// primaryStage.show();
+		}
+		
+
+	}
+
+    @FXML
+    void ajouterFacture(MouseEvent event) {
+		try {
+	    	Stage primaryStage = new Stage();
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/AjouterFacture.fxml"));
+			Scene scene = new Scene(root,663,560);
+//			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
+    		scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch(Exception e) { 
+			    Platform.runLater(() -> {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
+        alert.setHeaderText("Une erreur s'est produite.");
+        alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+    });
+		}
+    }
+
+    @FXML
+    void ajouterLivraison(MouseEvent event) {
+		try {
+	    	Stage primaryStage = new Stage();
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/AjouterLivraison.fxml"));
+			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+//			Scene.getStylesheets(j).add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			    Platform.runLater(() -> {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("Erreur");
+    alert.setHeaderText("Une erreur s'est produite.");
+    alert.setContentText(e.getMessage());
+alert.showAndWait();
+e.printStackTrace();
+});
+		}
+    }
+
+    @FXML
+    void ajouterProduit(MouseEvent event) {
+		try {
+	    	Stage primaryStage = new Stage();
+			Parent root;
+			root = FXMLLoader.load(getClass().getResource("/fxml/ajouterproduit.fxml"));
+			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
+////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
+			primaryStage.setScene(Scene);
+			primaryStage.show();
+		} catch (IOException e) {
+		}
+    }
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		System.out.println("sssssssss");
 		Connection connection = ConnectToDB.connectionDB();
@@ -378,7 +684,18 @@ void showProduit(MouseEvent event) {
 			e.printStackTrace();
 		}
         ConnectToDB.labelsstats(connection,nbrclientlabel,nbrprdlabel,nbrcommandeabel,nbrlivrlabel,nbrfactlabel);
+        movmentwindow.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
         
+        movmentwindow.setOnMouseDragged(event -> {
+        	Node source = (Node) event.getSource();
+            Stage primaryStage = (Stage) source.getScene().getWindow();
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
 		
 	}
 

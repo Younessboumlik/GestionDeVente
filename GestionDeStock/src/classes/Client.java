@@ -8,6 +8,8 @@ import controller.ClientsuppmodifController;
 import controller.CommandeDunClientController;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 public class Client{
@@ -33,9 +35,19 @@ public class Client{
 		this.nom = nom;
 		this.suppbutton = new Button("supprimer");
 		this.suppbutton.setOnAction(event -> delet());
-		this.suppbutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:red;");
+		this.suppbutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+		Image image = new Image("images/delete.png");
+		ImageView imageView = new ImageView(image);
+		imageView.setFitWidth(16);
+		imageView.setFitHeight(16);
+		this.suppbutton.setGraphic(imageView);
 		this.modifbutton = new Button("modifier");
-		this.modifbutton.setStyle("-fx-background-color:blue");
+		this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+		Image imagemod = new Image("imges/pen.png");
+		ImageView imageViewmod = new ImageView(imagemod);
+		imageViewmod.setFitWidth(16);
+		imageViewmod.setFitHeight(16);
+		this.modifbutton.setGraphic(imageViewmod);
 		this.modifbutton.setOnAction(event -> modifie());
 		
 		this.prenom = prenom;

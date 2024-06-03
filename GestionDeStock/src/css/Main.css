@@ -1,19 +1,4 @@
 
-AnchorPane{
-	-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1)
-
-}AnchorPane:hover{
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-}
-VBox:hover{
-	-fx-background-color: linear-gradient(to right ,#165d62 , #2b99a1);
-    -fx-background-radius:20;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
-}
-VBox{
-  -fx-background-color:white;
-  -fx-background-radius:20;
-}
 BorderPane{
 	-fx-background-color:#ccc8c8;
 }
@@ -42,4 +27,10 @@ BorderPane{
 #label1:hover,#label2:hover,#label3:hover,#label4:hover,#label5:hover{
 	-fx-background-color : #2b99a1;
 }
+#close{
+	-fx-background : none
+}
 
+Button{
+		-fx-background :  none;
+}

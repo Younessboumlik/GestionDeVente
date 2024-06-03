@@ -14,6 +14,8 @@ import controller.produitDunecommandeController;
 import controller.supmodifcommandecontroller;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Commande {
  public int numerocommande;
@@ -44,12 +46,24 @@ public Button getSuppbutton() {
 public void  setSuppbutton(Button suppbutton) {
 	this.suppbutton = suppbutton;
 	this.suppbutton.setOnAction(event ->supprimercommmande());
+	this.suppbutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+	Image image = new Image("images/delete.png");
+	ImageView imageView = new ImageView(image);
+	imageView.setFitWidth(16);
+	imageView.setFitHeight(16);
+	this.suppbutton.setGraphic(imageView);
 }
 public Button getModifbutton() {
 	return modifbutton;
 }
 public void  setModifbutton(Button modifbutton) {
 	this.modifbutton = modifbutton;
+	this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+	Image imagemod = new Image("imges/pen.png");
+	ImageView imageViewmod = new ImageView(imagemod);
+	imageViewmod.setFitWidth(16);
+	imageViewmod.setFitHeight(16);
+	this.modifbutton.setGraphic(imageViewmod);
 	this.modifbutton.setOnAction(event ->setinfotomodif());
 }
 public Commande(int numerocommande, LocalDate datecomande, int num_client){

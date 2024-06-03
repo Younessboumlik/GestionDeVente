@@ -13,9 +13,14 @@ import org.jasypt.util.text.BasicTextEncryptor;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class ChangePasswordController {
@@ -28,9 +33,6 @@ public class ChangePasswordController {
 
     @FXML
     private PasswordField newPassword;
-
-    @FXML
-    private PasswordField oldPassword;
     
     @FXML
     private Label labelcheck;
@@ -46,30 +48,34 @@ public class ChangePasswordController {
 	        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
 	        textEncryptor.setPassword("Gestion de vente");
 
-	        String password = oldPassword.getText();
 	        String input = newPassword.getText();
 	         
 	        String user = readline.readLine();
+	        String email = readline.readLine();
 //	        Criptage de mot de passe
 	        
 //	        decryptage de mot de passe dans le file et la comparaison avec le mot de passe saisie
 	        
-	        if (password.equals(textEncryptor.decrypt(readline.readLine()))){
+	        
 				if (input.equals(confirmNewPassword.getText())) {
 					writer = new BufferedWriter(new FileWriter("userdata"));
 					writer.write(user);
 					writer.newLine();
+					writer.write(email);
+					writer.newLine();
 //					criptage de mot de passe avant de l'ecrire dans le file
 					writer.write(textEncryptor.encrypt(input));
-					labelcheck.setText("your password is changed !");
-					System.out.println("Password changer...");
+					Stage primaryStage = new Stage();
+					Parent root;
+					root = FXMLLoader.load(getClass().getResource("/fxml/total.fxml"));
+					Scene Scene = new Scene(root);
+	 				Scene.getStylesheets().add(getClass().getResource("/css/Main.css").toExternalForm());
+					primaryStage.setScene(Scene);
+					primaryStage.initStyle(StageStyle.UNDECORATED);
+					primaryStage.show();
 				} else {
 					labelcheck.setText("new password and confirm password are not the same !");
 				}
-	        }
-			else {
-				labelcheck.setText("old passord is incorrect !");
-			}
 	        readline.close();
 	        if (writer != null) {
 	            writer.close();

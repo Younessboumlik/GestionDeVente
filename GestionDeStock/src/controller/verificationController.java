@@ -44,8 +44,12 @@ public class verificationController implements Initializable{
 		try {
 			root = (AnchorPane)FXMLLoader.load(getClass().getResource("/fxml/changepassword.fxml"));
 			Scene scene = new Scene(root,663,419);
-			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.setMaxWidth(357);
+	        primaryStage.setMaxHeight(319);
+			primaryStage.setMinWidth(357);
+	        primaryStage.setMinHeight(319);
 			primaryStage.show();
 			Node source = (Node) event.getSource();
 			Stage stage = (Stage) source.getScene().getWindow();

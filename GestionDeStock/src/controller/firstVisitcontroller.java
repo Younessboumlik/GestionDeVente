@@ -33,7 +33,8 @@ public class firstVisitcontroller {
     private Button save;
 
     @FXML
-    private PasswordField sicuritykey;
+    private PasswordField email;
+
 
     @FXML
     private TextField username;
@@ -55,7 +56,7 @@ public class firstVisitcontroller {
 			writer.write(textEncryptor.encrypt(username.getText()));
 			writer.write('\n');
 			
-			writer.write(textEncryptor.encrypt(sicuritykey.getText()));
+			writer.write(textEncryptor.encrypt(email.getText()));
 			writer.write('\n');
 			writer.write(textEncryptor.encrypt(password.getText()));
 			writer.close();

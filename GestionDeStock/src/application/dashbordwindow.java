@@ -7,16 +7,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class dashbordwindow extends Application {
 		public void  start(Stage primaryStage){
 			
 			try {
 				Parent root;
-				root = FXMLLoader.load(getClass().getResource("/fxml/globalMain.fxml"));
+				root = FXMLLoader.load(getClass().getResource("/fxml/total.fxml"));
 				Scene Scene = new Scene(root);
-				Scene.getStylesheets().add(getClass().getResource("/css/Main.css").toExternalForm());
+ 				Scene.getStylesheets().add(getClass().getResource("/css/Main.css").toExternalForm());
 				primaryStage.setScene(Scene);
+				primaryStage.initStyle(StageStyle.UNDECORATED);
 				primaryStage.show();
 			} catch (IOException e) {
 			}

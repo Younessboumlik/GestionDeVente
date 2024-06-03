@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 // import javafx.scene.text.*;
 public class logincontroller {
     @FXML
@@ -35,65 +36,6 @@ public class logincontroller {
     	
 
     public void  opencodeverifwindow(ActionEvent event) {
-//    	Properties props = new Properties();
-////    	props.put("mail.smtp.user", "boulidamabdellah8@gmail.com");
-//    	props.put("mail.smtp.debug", "true");
-//    	props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-//        props.put("mail.smtp.auth", "true"); // Enable authentication if needed
-//        props.put("mail.smtp.starttls.enable", "true"); // Enable TLS encryption
-//
-//        props.setProperty("mail.smtp.ssl.trust","*");
-//        props.setProperty("mail.smtp.port", "2525");
-//
-//        props.setProperty("mail.smtp.port", "25");
-//        props.setProperty("mail.smtp.ssl.trust","*");
-//
-//        // Get mail session
-//        Session session = Session.getInstance(props);
-//
-//        try {
-//          // Create MimeMessage object
-//          MimeMessage email = new MimeMessage(session);
-//
-//          // Set sender address
-//          email.setFrom(new InternetAddress("admin@localserver.com"));
-//
-//          // Set recipient address
-//          email.setRecipients(MimeMessage.RecipientType.TO, InternetAddress.parse("boulidamabdellah8@gmail.com"));
-//
-//          // Set subject
-//          email.setSubject("code verification");
-//
-//          // Set message content (text/plain)
-//          email.setContent("this is you code " + Math.random()*100, "text/plain; charset=utf-8");
-//
-//          // Send the email
-//          System.out.println("lllllll");
-//          Transport transport = session.getTransport("smtp");
-//
-//          transport.connect("sandbox.smtp.mailtrap.io", "boulidamabdellah8@gmail.com", "d6c113fabad2e1"); // Connect to SMTP server
-//
-//          transport.connect("smtp-mail.outlook.com", "testsmtplib@outlook.com", "smtplib2023."); // Connect to SMTP server
-//
-//          transport.sendMessage(email, email.getAllRecipients()); // Send email
-//          transport.close();
-//
-//          System.out.println("Email sent successfully!");
-////
-//        } catch (MessagingException e) {
-//              Platform.runLater(() -> {
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Erreur");
-//        alert.setHeaderText("Une erreur s'est produite.");
-//        alert.setContentText(e.getMessage());
-//alert.showAndWait();
-//e.printStackTrace();
-    
-//        }
-    	
-
-    	
-
     	try {
     		Stage  primaryStage = new Stage();
 			Parent root;
@@ -130,8 +72,14 @@ e.printStackTrace();
         String password = passwordtext.getText();
         if (input.equals(textEncryptor.decrypt( readline.readLine()))){
            if (password.equals(textEncryptor.decrypt(readline.readLine()))){
-              labelcheck.setText("your password is correct !");
-              labelcheck.setStyle("-fx-background-color:#5cb85c;-fx-text-fill:green");
+              Stage primaryStage = new Stage();
+				Parent root;
+				root = FXMLLoader.load(getClass().getResource("/fxml/total.fxml"));
+				Scene Scene = new Scene(root);
+				Scene.getStylesheets().add(getClass().getResource("/css/Main.css").toExternalForm());
+				primaryStage.setScene(Scene);
+				primaryStage.initStyle(StageStyle.UNDECORATED);
+				primaryStage.show();
            }
            else {
             labelcheck.setText("erreur survenue: le mot de passe ou username est incorrect |");

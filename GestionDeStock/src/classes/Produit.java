@@ -8,6 +8,8 @@ import controller.supmodifproduitcontroller;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 public class Produit{
    public int numProduit;
    public String nomProduit;
@@ -25,7 +27,12 @@ public class Produit{
 public void  setSupprimerprd(Button supprimerprd) {
 	this.supprimerprd = supprimerprd;
 	supprimerprd.setOnAction(event->supprimerproduit());
-	this.supprimerprd.setStyle("-fx-background-color:red");
+	this.supprimerprd.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+	Image image = new Image("images/delete.png");
+	ImageView imageView = new ImageView(image);
+	imageView.setFitWidth(16);
+	imageView.setFitHeight(16);
+	this.supprimerprd.setGraphic(imageView);
 }
 public Button getModifierprd() {
 	return modifierprd;
@@ -33,7 +40,12 @@ public Button getModifierprd() {
 public void  setModifierprd(Button modifierprd) {
 	this.modifierprd = modifierprd;
 	this.modifierprd.setOnAction(event->modifierproduit());
-	this.modifierprd.setStyle("-fx-background-color:blue");
+	this.modifierprd.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+	Image imagemod = new Image("imges/pen.png");
+	ImageView imageViewmod = new ImageView(imagemod);
+	imageViewmod.setFitWidth(16);
+	imageViewmod.setFitHeight(16);
+	this.modifierprd.setGraphic(imageViewmod);
 }
 public Button getSuppproduittinavoir() {
 	return suppproduittinavoir;
@@ -41,7 +53,12 @@ public Button getSuppproduittinavoir() {
 public void  setSuppproduittinavoir(Button suppproduittinavoir) {
 	this.suppproduittinavoir = suppproduittinavoir;
 	this.suppproduittinavoir.setOnAction(event->suppproduitinavoir());
-	this.suppproduittinavoir.setStyle("-fx-background-color:red");
+	this.suppproduittinavoir.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+	Image image = new Image("images/delete.png");
+	ImageView imageView = new ImageView(image);
+	imageView.setFitWidth(16);
+	imageView.setFitHeight(16);
+	this.suppproduittinavoir.setGraphic(imageView);
 }
 public Button getModifproduitinavoir() {
 	return modifproduitinavoir;
@@ -49,7 +66,12 @@ public Button getModifproduitinavoir() {
 public void  setModifproduitinavoir(Button modifproduitinavoir) {
 	this.modifproduitinavoir = modifproduitinavoir;
 	this.modifproduitinavoir.setOnAction(event->modifierproduitinavoir());
-	this.modifproduitinavoir.setStyle("-fx-background-color:blue");
+	this.modifproduitinavoir.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+	Image imagemod = new Image("imges/pen.png");
+	ImageView imageViewmod = new ImageView(imagemod);
+	imageViewmod.setFitWidth(16);
+	imageViewmod.setFitHeight(16);
+	this.modifproduitinavoir.setGraphic(imageViewmod);
 	
 
 }

@@ -44,6 +44,11 @@ public class Livraison {
 
 		this.modifbutton = new Button("modifier");
 		this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+		Image imagemod = new Image("imges/pen.png");
+		ImageView imageViewmod = new ImageView(imagemod);
+		imageViewmod.setFitWidth(16);
+		imageViewmod.setFitHeight(16);
+		this.modifbutton.setGraphic(imageViewmod);
 
 		this.modifbutton.setOnAction(event -> modifieLivraison());
 		

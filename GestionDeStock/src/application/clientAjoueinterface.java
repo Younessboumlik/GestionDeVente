@@ -20,6 +20,7 @@ public class clientAjoueinterface extends Application {
 			Parent root;
 			root = FXMLLoader.load(getClass().getResource("/fxml/clientAjoue.fxml"));
 			Scene Scene = new Scene(root);
+    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
 //			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();

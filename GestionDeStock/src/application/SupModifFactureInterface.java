@@ -8,14 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AjouterProduitInterface extends Application{
+public class SupModifFactureInterface extends Application{
 	public void  start(Stage primaryStage){
 		
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("/fxml/ajouterproduit.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/fxml/SupModifFacture.fxml"));
 			Scene Scene = new Scene(root);
-    		Scene.getStylesheets().add(getClass().getResource("/css/tablestyle.css").toExternalForm());
 ////			Scene.getStylesheets().add(getClass().getResource("/fxml/application.css").toExternalForm());
 			primaryStage.setScene(Scene);
 			primaryStage.show();
@@ -32,4 +31,5 @@ public class AjouterProduitInterface extends Application{
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }

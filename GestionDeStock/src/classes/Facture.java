@@ -10,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Facture {
 
@@ -37,8 +39,18 @@ public class Facture {
 		this.deletebutton.setText("Delete");
 		this.deletebutton.setOnAction(event -> deletefacture());
 		this.deletebutton.setStyle("-fx-background-color:#cc0202;-fx-text-fill:white;");
+		Image image = new Image("images/delete.png");
+		ImageView imageView = new ImageView(image);
+		imageView.setFitWidth(16);
+		imageView.setFitHeight(16);
+		this.deletebutton.setGraphic(imageView);
 		this.modifbutton = new Button("modifier");
 		this.modifbutton.setStyle("-fx-background-color:blue;-fx-text-fill:white;");
+		Image imagemod = new Image("imges/pen.png");
+		ImageView imageViewmod = new ImageView(imagemod);
+		imageViewmod.setFitWidth(16);
+		imageViewmod.setFitHeight(16);
+		this.modifbutton.setGraphic(imageViewmod);
 		this.modifbutton.setOnAction(event -> modifieclicked());
 		
 		this.check = new CheckBox();
