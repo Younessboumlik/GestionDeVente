@@ -181,6 +181,7 @@ e.printStackTrace();
 					ListClient.add(client);
 				}
 	    	 System.out.println("hhhhhhh");
+	    	 numclient.setCellValueFactory(new PropertyValueFactory<Client,Integer>("id_client"));
 	    	 nomclient.setCellValueFactory(new PropertyValueFactory<Client,String>("nom"));
 	    	 prenomclient.setCellValueFactory(new PropertyValueFactory<Client,String>("prenom"));
 	    	 adressclient.setCellValueFactory(new PropertyValueFactory<Client,String>("adresse"));
