@@ -348,9 +348,7 @@ e.printStackTrace();
     
     @FXML
     void closingWindow(MouseEvent event) {
-		Node source = (Node) event.getSource();
-		Stage stage = (Stage) source.getScene().getWindow();
-	    stage.close();
+    	Platform.exit();
     }
 
 

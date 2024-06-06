@@ -71,6 +71,7 @@ e.printStackTrace();
         String input = usernametext.getText();
         String password = passwordtext.getText();
         if (input.equals(textEncryptor.decrypt( readline.readLine()))){
+        	readline.readLine();
            if (password.equals(textEncryptor.decrypt(readline.readLine()))){
               Stage primaryStage = new Stage();
 				Parent root;

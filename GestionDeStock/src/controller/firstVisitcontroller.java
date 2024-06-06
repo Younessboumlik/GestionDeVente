@@ -33,7 +33,7 @@ public class firstVisitcontroller {
     private Button save;
 
     @FXML
-    private PasswordField email;
+    private TextField email;
 
 
     @FXML
