@@ -65,6 +65,11 @@ Ce projet consiste en une application de bureau développée avec JavaFX, visant
 - **Tableau de Bord**: Visualisation des statistiques avec des graphiques.
 - **Sécurité**: Interfaces de login, réinitialisation de mot de passe et vérification des utilisateurs.
 
+  ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/5a27c9f6-0fc9-474b-9f3e-d4854e816305)
+  ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/8f7fb0cd-1a96-4ff7-92f2-d871c4c7776b)
+  
+
+
 ## Fonctionnalités
 
 - **Exportation**: Exportation des données des tableaux en fichiers CSV ou PDF.
