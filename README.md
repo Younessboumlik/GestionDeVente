@@ -41,10 +41,6 @@ Ce projet consiste en une application de bureau développée avec JavaFX, visant
 
 ## Conception
 
-### Modèle Conceptuel de Données (MCD)
-
-![MCD](https://app.sqldbm.com/MySQL/DatabaseExplorer/p300334)
-
 ### Modèle Logique de Données (MLD)
 
 - **Client**(numeroclient, nom, prenom, adresse, telephone)
