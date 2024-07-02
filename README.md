@@ -67,7 +67,11 @@ Ce projet consiste en une application de bureau développée avec JavaFX, visant
 
   ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/5a27c9f6-0fc9-474b-9f3e-d4854e816305)
   ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/8f7fb0cd-1a96-4ff7-92f2-d871c4c7776b)
-  
+  ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/966a7b84-2755-46ae-b0ba-b38ac68cd982)
+  ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/2305529e-497b-4ba7-98a9-fc347f15430c)
+  ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/c88481ad-3658-429b-8c30-121d7952f9bb)
+  ![image](https://github.com/Younessboumlik/GestionDeVente/assets/104656844/afe50578-b98a-4d8c-9673-e4a08a4f3a19)
+  <img width="376" alt="image" src="https://github.com/Younessboumlik/GestionDeVente/assets/104656844/d422f1b7-bd22-4742-ad25-68d07e4e9e95">
 
 
 ## Fonctionnalités
